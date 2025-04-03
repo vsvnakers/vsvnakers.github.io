@@ -43,5 +43,5 @@ theme = 'PaperMod'
   name = ""
   url = "https://github.com/vsvnakers"
   weight = 5
-  pre = "<img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 20px;' />"
+  pre = "<img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 18px;' />"
 
