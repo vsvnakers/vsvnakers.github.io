@@ -11,7 +11,7 @@ def run_git_commands():
     try:
         subprocess.run([GIT, "add", "."], check=True)
         subprocess.run([GIT, "commit", "-m", commit_message], check=True)
-        subprocess.run({GIT, "push", "origin", "main"}, check=True)
+        subprocess.run([GIT, "push", "origin", "main"], check=True)
         print(f"✅ 已成功提交并推送：{commit_message}")
     except subprocess.CalledProcessError as e:
         print(f"❌ 出现错误：{e}")
