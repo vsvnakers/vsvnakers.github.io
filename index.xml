@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>VSVnakers 主页</title><link>https://vsvnakers.github.io/</link><description>Recent content on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2 + 2 = 4 是如何成立的？</title><link>https://vsvnakers.github.io/docs/2plus2/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/2plus2/</guid><description>&lt;h1 id="教程2--2--4">教程：2 + 2 = 4&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>VSVnakers 主页</title><link>https://vsvnakers.github.io/</link><description>Recent content on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Fri, 04 Apr 2025 02:21:54 +0800</lastBuildDate><atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Test</title><link>https://vsvnakers.github.io/posts/test/</link><pubDate>Fri, 04 Apr 2025 02:21:54 +0800</pubDate><guid>https://vsvnakers.github.io/posts/test/</guid><description>&lt;p>这是测试文章。&lt;/p></description></item><item><title>2 + 2 = 4 是如何成立的？</title><link>https://vsvnakers.github.io/docs/2plus2/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/2plus2/</guid><description>&lt;h1 id="教程2--2--4">教程：2 + 2 = 4&lt;/h1>
 &lt;p>这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p>
 &lt;h2 id="-场景说明">🍎 场景说明：&lt;/h2>
 &lt;p>假设你有 2 个苹果：&lt;/p>
@@ -19,11 +19,24 @@
 &lt;blockquote>
 &lt;p>📢 小练习：3 + 3 = ❓&lt;/p>&lt;/blockquote>
 &lt;hr>
-&lt;p>感谢阅读！✌️&lt;/p></description></item><item><title>我的简历</title><link>https://vsvnakers.github.io/resume/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/resume/</guid><description>&lt;h2 id="基本信息">基本信息&lt;/h2>
+&lt;p>感谢阅读！✌️&lt;/p></description></item><item><title>学习</title><link>https://vsvnakers.github.io/study/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/study/</guid><description>&lt;h2 id="rust">Rust&lt;/h2>
+&lt;ul>
+&lt;li>&lt;em>&lt;strong>&lt;a href="https://course.rs/about-book.html">Rust语言圣经(Rust Course)&lt;/a>&lt;/strong>&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h2 id="操作系统">操作系统&lt;/h2>
+&lt;ul>
+&lt;li>&lt;em>&lt;strong>&lt;a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html">rCore-Tutorial-Book-v3&lt;/a>&lt;/strong>&lt;/em>&lt;/li>
+&lt;li>&lt;em>&lt;strong>&lt;a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html">rCore-Tutorial-Guide-2025S&lt;/a>&lt;/strong>&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;h2 id="verilog">Verilog&lt;/h2>
+&lt;ul>
+&lt;li>&lt;em>&lt;strong>&lt;a href="https://hdlbits.01xz.net/wiki/Main_Page">HDLBits&amp;ndash;Verilog Practice&lt;/a>&lt;/strong>&lt;/em>&lt;/li>
+&lt;/ul></description></item><item><title>我的信息</title><link>https://vsvnakers.github.io/resume/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/resume/</guid><description>&lt;h2 id="基本信息">基本信息&lt;/h2>
 &lt;ul>
 &lt;li>姓名：VSVnakers&lt;/li>
 &lt;li>职业：微电子&lt;/li>
 &lt;li>技能：None &amp;hellip;&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://github.com/vsvnakers">个人 Github&lt;/a>&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;h2 id="教育背景">教育背景&lt;/h2>
 &lt;p>某双非
