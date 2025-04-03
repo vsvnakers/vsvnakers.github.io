@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Docs on VSVnakers 主页</title><link>https://vsvnakers.github.io/docs/</link><description>Recent content in Docs on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><atom:link href="https://vsvnakers.github.io/docs/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Docs on VSVnakers 主页</title><link>https://vsvnakers.github.io/docs/</link><description>Recent content in Docs on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://vsvnakers.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>2 + 2 = 4 是如何成立的？</title><link>https://vsvnakers.github.io/docs/2plus2/</link><pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/2plus2/</guid><description>&lt;h1 id="教程2--2--4">教程：2 + 2 = 4&lt;/h1>
+&lt;p>这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p>
+&lt;h2 id="-场景说明">🍎 场景说明：&lt;/h2>
+&lt;p>假设你有 2 个苹果：&lt;/p>
+&lt;p>🍎🍎&lt;/p>
+&lt;p>你又拿来了 2 个苹果：&lt;/p>
+&lt;p>🍎🍎&lt;/p>
+&lt;p>一共几个苹果？用肉眼观察，就是：&lt;/p>
+&lt;blockquote>
+&lt;p>2 + 2 = &lt;strong>4&lt;/strong>&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-数学定义解释">💡 数学定义解释：&lt;/h2>
+&lt;p>根据自然数加法的封闭性，我们有：&lt;/p>
+&lt;blockquote>
+&lt;p>若 &lt;code>a = 2&lt;/code>，&lt;code>b = 2&lt;/code>，则 &lt;code>a + b = 4&lt;/code>&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-总结">✅ 总结&lt;/h2>
+&lt;p>我们刚刚完成了人生中第一个数学教程！🎉&lt;/p>
+&lt;blockquote>
+&lt;p>📢 小练习：3 + 3 = ❓&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;p>感谢阅读！✌️&lt;/p></description></item></channel></rss>
