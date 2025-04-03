@@ -1,0 +1,26 @@
+baseURL = 'https://vsvnakers.github.io/'
+languageCode = 'zh-cn'
+title = 'VSVnakers 主页'
+theme = 'PaperMod'
+
+[pagination]
+  pageSize = 10
+
+[params]
+    defaultTheme = "auto"
+    homeInfoParams = { Title = "你好，我是 VSVNakers 👋", Content = "欢迎来到我的主页：简历 / 博客 / 教程" }
+
+[[menu.main]]
+    name = "简历"
+    url = "/resume"
+    weight = 1
+
+[[menu.main]]
+  name = "博客"
+  url = "/posts"
+  weight = 2
+
+[[menu.main]]
+  name = "教程"
+  url = "/docs"
+  weight = 3
