@@ -6,21 +6,42 @@ theme = 'PaperMod'
 [pagination]
   pageSize = 10
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
-    defaultTheme = "auto"
-    homeInfoParams = {  Title = "你好，我是 VSVnakers 👋",  Content = "欢迎来到我的主页：简历 / 博客 / 教程" }
+  defaultTheme = "auto"
+  homeInfoParams = { Title = "你好，我是 VSVnakers 👋", Content = "欢迎来到我的主页：个人 / 博客 / 教程 / 学习" }
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/vsvnakers"  
 
 [[menu.main]]
-    name = "简历"
-    url = "/resume"
-    weight = 1
+  name = "👤 个人"
+  url = "/resume"
+  weight = 1
 
 [[menu.main]]
-  name = "博客"
+  name = "📘 博客"
   url = "/posts"
   weight = 2
 
 [[menu.main]]
-  name = "教程"
+  name = "📚 教程"
   url = "/docs"
   weight = 3
+
+[[menu.main]]
+  name = "🎓 学习"
+  url = "/study"
+  weight = 4
+
+[[menu.main]]
+  name = ""
+  url = "https://github.com/vsvnakers"
+  weight = 5
+  pre = "<img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 20px;' />"
+

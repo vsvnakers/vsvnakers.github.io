@@ -6,8 +6,15 @@
     <description>Recent content on VSVnakers 主页</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Apr 2025 02:21:54 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/posts/test/</link>
+      <pubDate>Fri, 04 Apr 2025 02:21:54 +0800</pubDate>
+      <guid>http://localhost:1313/posts/test/</guid>
+      <description>&lt;p&gt;这是测试文章。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>2 &#43; 2 = 4 是如何成立的？</title>
       <link>http://localhost:1313/docs/2plus2/</link>
@@ -37,7 +44,26 @@
 &lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
     </item>
     <item>
-      <title>我的简历</title>
+      <title>学习</title>
+      <link>http://localhost:1313/study/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/study/</guid>
+      <description>&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://course.rs/about-book.html&#34;&gt;Rust语言圣经(Rust Course)&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html&#34;&gt;rCore-Tutorial-Book-v3&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html&#34;&gt;rCore-Tutorial-Guide-2025S&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;verilog&#34;&gt;Verilog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://hdlbits.01xz.net/wiki/Main_Page&#34;&gt;HDLBits&amp;ndash;Verilog Practice&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>我的信息</title>
       <link>http://localhost:1313/resume/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/resume/</guid>
@@ -46,6 +72,7 @@
 &lt;li&gt;姓名：VSVnakers&lt;/li&gt;
 &lt;li&gt;职业：微电子&lt;/li&gt;
 &lt;li&gt;技能：None &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/vsvnakers&#34;&gt;个人 Github&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;教育背景&#34;&gt;教育背景&lt;/h2&gt;
 &lt;p&gt;某双非
