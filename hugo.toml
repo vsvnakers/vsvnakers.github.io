@@ -8,7 +8,7 @@ theme = 'PaperMod'
 
 [params]
     defaultTheme = "auto"
-    homeInfoParams = { Title = "你好，我是 VSVNakers 👋", Content = "欢迎来到我的主页：简历 / 博客 / 教程" }
+    homeInfoParams = { Title = "你好，我是 VSVnakers 👋", Content = "欢迎来到我的主页：简历 / 博客 / 教程" }
 
 [[menu.main]]
     name = "简历"
