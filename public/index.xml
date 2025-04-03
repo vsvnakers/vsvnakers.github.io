@@ -9,6 +9,34 @@
     <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>2 &#43; 2 = 4 是如何成立的？</title>
+      <link>https://vsvnakers.github.io/docs/2plus2/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vsvnakers.github.io/docs/2plus2/</guid>
+      <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;
+&lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;
+&lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;
+&lt;p&gt;假设你有 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;你又拿来了 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;一共几个苹果？用肉眼观察，就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2 + 2 = &lt;strong&gt;4&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-数学定义解释&#34;&gt;💡 数学定义解释：&lt;/h2&gt;
+&lt;p&gt;根据自然数加法的封闭性，我们有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若 &lt;code&gt;a = 2&lt;/code&gt;，&lt;code&gt;b = 2&lt;/code&gt;，则 &lt;code&gt;a + b = 4&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-总结&#34;&gt;✅ 总结&lt;/h2&gt;
+&lt;p&gt;我们刚刚完成了人生中第一个数学教程！🎉&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📢 小练习：3 + 3 = ❓&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>我的简历</title>
       <link>https://vsvnakers.github.io/resume/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
@@ -20,7 +48,8 @@
 &lt;li&gt;技能：None &amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;教育背景&#34;&gt;教育背景&lt;/h2&gt;
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;某双非
+&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;</description>
     </item>
