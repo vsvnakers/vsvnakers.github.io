@@ -13,6 +13,8 @@ draft: false
 
 - <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
 - <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
+- <a href="https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?" target="_blank" rel="noopener noreferrer"><b><i>Tsinghua操作系统课在线幻灯片链接</i></b></a>
+
 
 ## "一生一芯“
 - <a href="https://ysyx.oscc.cc/docs/" target="_blank" rel="noopener noreferrer"><b><i>讲义</i></b></a>
