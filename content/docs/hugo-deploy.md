@@ -1,6 +1,6 @@
 ---
 date : '2025-04-04'
-draft : true
+draft : false
 title : '使用Hugo 搭建博客并部署到 GitHub Pages'
 ---
 
