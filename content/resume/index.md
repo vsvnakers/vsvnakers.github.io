@@ -11,7 +11,7 @@ draft: false
 - 技能：None ...  
 - **[个人 Github](https://github.com/vsvnakers)**
 ## 教育背景
-某双非
+某学校
 ...
 
 ## 工作经历

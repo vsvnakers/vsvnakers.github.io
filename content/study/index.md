@@ -6,19 +6,19 @@ draft: false
 
 ## Rust
 
-- ***[Rust语言圣经(Rust Course)](https://course.rs/about-book.html)***
-
+- <a href="https://course.rs/about-book.html" target="_blank" rel="noopener noreferrer"><b><i>Rust语言圣经(Rust Course)</i></b></a>
 
 
 ## 操作系统
 
-- ***[rCore-Tutorial-Book-v3](https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html)***
-- ***[rCore-Tutorial-Guide-2025S](https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html)***
+- <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
+- <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
 
 ## "一生一芯“
-- ***[讲义](https://ysyx.oscc.cc/docs/)***
+- <a href="https://ysyx.oscc.cc/docs/" target="_blank" rel="noopener noreferrer"><b><i>讲义</i></b></a>
+
 
 ## Verilog
-- ***[HDLBits--Verilog Practice](https://hdlbits.01xz.net/wiki/Main_Page)***
+- <a href="https://hdlbits.01xz.net/wiki/Main_Page" target="_blank" rel="noopener noreferrer"><b><i>HDLBits--Verilog Practice</i></b></a>
 
 
