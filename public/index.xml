@@ -2,60 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VSVnakers 主页</title>
-    <link>http://localhost:1313/</link>
+    <link>https://vsvnakers.github.io/</link>
     <description>Recent content on VSVnakers 主页</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>使用Hugo 搭建博客并部署到 GitHub Pages</title>
-      <link>http://localhost:1313/docs/hugo-deploy/</link>
-      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/hugo-deploy/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;-一准备工作&#34;&gt;🧰 一、准备工作&lt;/h2&gt;
-&lt;h3 id=&#34;-1-安装-git&#34;&gt;✅ 1. 安装 Git&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;下载并安装：&lt;a href=&#34;https://git-scm.com&#34;&gt;https://git-scm.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;安装完成后，右键菜单应该出现 “Git Bash Here”&lt;/li&gt;
-&lt;li&gt;验证安装：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 打开 power shell 检查 git 安装成功&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git --version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-2-安装-hugo建议扩展版&#34;&gt;✅ 2. 安装 Hugo（建议扩展版）&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;仅需在 &lt;strong&gt;power shell&lt;/strong&gt; 输入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如需卸载&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 检查 Hugo是否安装成功 (重启终端 或 重启电脑)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-3-注册-github-并创建仓库&#34;&gt;✅ 3. 注册 GitHub 并创建仓库&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Github 注册: &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;创建一个&lt;strong&gt;与你用户名相同的仓库&lt;/strong&gt;，比如:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Github用户名&amp;gt;.github.io
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;tu&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/static/images/hugo-deploy/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.jpg&#34;&gt;&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Fri, 04 Apr 2025 02:21:54 +0800</lastBuildDate>
+    <atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>http://localhost:1313/posts/test/</link>
+      <link>https://vsvnakers.github.io/posts/test/</link>
       <pubDate>Fri, 04 Apr 2025 02:21:54 +0800</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
+      <guid>https://vsvnakers.github.io/posts/test/</guid>
       <description>&lt;p&gt;这是测试文章。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2 &#43; 2 = 4 是如何成立的？</title>
-      <link>http://localhost:1313/docs/2plus2/</link>
+      <link>https://vsvnakers.github.io/docs/2plus2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/2plus2/</guid>
+      <guid>https://vsvnakers.github.io/docs/2plus2/</guid>
       <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;
 &lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;
 &lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;
@@ -81,9 +45,9 @@
     </item>
     <item>
       <title>学习</title>
-      <link>http://localhost:1313/study/</link>
+      <link>https://vsvnakers.github.io/study/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/study/</guid>
+      <guid>https://vsvnakers.github.io/study/</guid>
       <description>&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://course.rs/about-book.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Rust语言圣经(Rust Course)&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
@@ -105,9 +69,9 @@
     </item>
     <item>
       <title>我的信息</title>
-      <link>http://localhost:1313/resume/</link>
+      <link>https://vsvnakers.github.io/resume/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/resume/</guid>
+      <guid>https://vsvnakers.github.io/resume/</guid>
       <description>&lt;h2 id=&#34;基本信息&#34;&gt;基本信息&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;姓名：VSVnakers&lt;/li&gt;
