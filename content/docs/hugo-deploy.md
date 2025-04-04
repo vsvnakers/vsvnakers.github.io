@@ -1,7 +1,6 @@
 ---
-date : '2025-04-04'
-draft : false
 title : '使用Hugo 搭建博客并部署到 GitHub Pages'
+date : '2025-04-04'
 ---
 
 > 本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.
