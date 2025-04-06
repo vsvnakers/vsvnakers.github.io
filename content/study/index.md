@@ -9,12 +9,12 @@ draft: false
 - <a href="https://course.rs/about-book.html" target="_blank" rel="noopener noreferrer"><b><i>Rust语言圣经(Rust Course)</i></b></a>
 - <a href="https://google.github.io/comprehensive-rust/zh-CN/index.html" target="_blank" rel="noopener noreferrer"><b><i>Comprehensive Rust 🦀</i></b></a>
 
-
 ## 操作系统
 
 - <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
 - <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
 - <a href="https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?" target="_blank" rel="noopener noreferrer"><b><i>Tsinghua操作系统课在线幻灯片链接</i></b></a>
+- <a href="https://jyywiki.cn/OS/2024/" target="_blank" rel="noopener noreferrer"><b><i>操作系统：设计与实现 By jyy</i></b></a>
 
 
 ## "一生一芯“
