@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>VSVnakers 主页</title><link>https://vsvnakers.github.io/</link><description>Recent content on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Hugo 搭建博客并部署到 GitHub Pages</title><link>https://vsvnakers.github.io/docs/hugo-deploy/</link><pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/hugo-deploy/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>VSVnakers 主页</title><link>https://vsvnakers.github.io/</link><description>Recent content on VSVnakers 主页</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>日志</title><link>https://vsvnakers.github.io/log/2025-04/07/</link><pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/log/2025-04/07/</guid><description>&lt;h2 id="4月7日">4月7日&lt;/h2>
+&lt;ul>
+&lt;li>完成个人网页的日志模块，以此记载本人工作内容&lt;/li>
+&lt;li>仅为提升 &lt;strong>github commit&lt;/strong> 次数(仅此而已)&lt;/li>
+&lt;/ul></description></item><item><title>使用Hugo 搭建博客并部署到 GitHub Pages</title><link>https://vsvnakers.github.io/docs/hugo-deploy/</link><pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/hugo-deploy/</guid><description>&lt;blockquote>
 &lt;p>本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p>&lt;/blockquote>
 &lt;h2 id="-一准备工作">🧰 一、准备工作&lt;/h2>
 &lt;h3 id="-1-安装-git">✅ 1. 安装 Git&lt;/h3>
@@ -54,14 +58,15 @@
 &lt;li>&lt;a href="https://google.github.io/comprehensive-rust/zh-CN/index.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>Comprehensive Rust 🦀&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="操作系统">操作系统&lt;/h2>
+&lt;h4 id="os训练营">OS训练营&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore-Tutorial-Book-v3&lt;/i>&lt;/b>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore-Tutorial-Guide-2025S&lt;/i>&lt;/b>&lt;/a>&lt;/li>
-&lt;li>
+&lt;li>&lt;a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore-Tutorial-Guide-2025S&lt;/i>&lt;/b>&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="https://cloud.tsinghua.edu.cn/d/eec08e3c8f224e27b01d/" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore讲解视频-2022&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="https://oslearning365.github.io/arceos-tutorial-book/" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>ArceOS Tutorial Book&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>Tsinghua操作系统课在线幻灯片链接&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://jyywiki.cn/OS/2024/" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>操作系统：设计与实现 By jyy&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;/ul>
