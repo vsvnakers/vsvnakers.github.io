@@ -59,8 +59,9 @@
 &lt;li>&lt;a href="https://google.github.io/comprehensive-rust/zh-CN/index.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>Comprehensive Rust 🦀&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="操作系统">操作系统&lt;/h2>
-&lt;h4 id="os训练营">OS训练营&lt;/h4>
+&lt;h3 id="os训练营">OS训练营&lt;/h3>
 &lt;ul>
+&lt;li>&lt;a href="https://opencamp.ai/os2edu" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>开源操作系统社区&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore-Tutorial-Book-v3&lt;/i>&lt;/b>&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer">&lt;b>&lt;i>rCore-Tutorial-Guide-2025S&lt;/i>&lt;/b>&lt;/a>
 &lt;ul>
