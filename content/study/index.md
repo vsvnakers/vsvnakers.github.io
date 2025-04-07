@@ -11,7 +11,8 @@ draft: false
 
 ## 操作系统
 
-#### OS训练营
+### OS训练营
+- <a href="https://opencamp.ai/os2edu" target="_blank" rel="noopener noreferrer"><b><i>开源操作系统社区</i></b></a>
 - <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
 - <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
   - <a href="https://www.yuque.com/xyong-9fuoz/qczol5/axrf11?" target="_blank" rel="noopener noreferrer"><b><i>实验讲解视频-2022</i></b></a>
