@@ -12,6 +12,7 @@ draft: false
 ## 操作系统
 
 ### OS训练营
+- <a href="https://opencamp.cn/EulixOS/camp/202501" target="_blank" rel="noopener noreferrer"><b><i>傲来操作系统（EulixOS）社区</i></b></a>
 - <a href="https://opencamp.ai/os2edu" target="_blank" rel="noopener noreferrer"><b><i>开源操作系统社区</i></b></a>
 - <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
 - <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
@@ -27,5 +28,10 @@ draft: false
 
 ## Verilog
 - <a href="https://hdlbits.01xz.net/wiki/Main_Page" target="_blank" rel="noopener noreferrer"><b><i>HDLBits--Verilog Practice</i></b></a>
+
+## 大模型与人工智能
+
+- <a href="https://opencamp.cn/InfiniTensor/camp/2024winter" target="_blank" rel="noopener noreferrer"><b><i>大模型与人工智能系统训练营</i></b></a>
+
 
 
