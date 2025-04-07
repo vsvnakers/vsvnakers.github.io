@@ -13,7 +13,11 @@
       <link>http://localhost:1313/log/2025-04/07/</link>
       <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/log/2025-04/07/</guid>
-      <description>&lt;p&gt;今天完成了 Hugo 博客部署，还做了样式调整和图标优化！&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;4月7日&#34;&gt;4月7日&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完成个人网页的日志模块，以此记载本人工作内容&lt;/li&gt;
+&lt;li&gt;仅为提升 &lt;strong&gt;github commit&lt;/strong&gt; 次数(仅此而已)&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>使用Hugo 搭建博客并部署到 GitHub Pages</title>

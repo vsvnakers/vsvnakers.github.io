@@ -6,9 +6,6 @@ theme = 'PaperMod'
 [pagination]
   pageSize = 10
 
-[params.assets]
-customCSS = ["css/custom.css"]
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
