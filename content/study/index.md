@@ -14,7 +14,7 @@ draft: false
 #### OS训练营
 - <a href="https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Book-v3</i></b></a>
 - <a href="https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html" target="_blank" rel="noopener noreferrer"><b><i>rCore-Tutorial-Guide-2025S</i></b></a>
-  - <a href="https://cloud.tsinghua.edu.cn/d/eec08e3c8f224e27b01d/" target="_blank" rel="noopener noreferrer"><b><i>rCore讲解视频-2022</i></b></a>
+  - <a href="https://www.yuque.com/xyong-9fuoz/qczol5/axrf11?" target="_blank" rel="noopener noreferrer"><b><i>实验讲解视频-2022</i></b></a>
 - <a href="https://oslearning365.github.io/arceos-tutorial-book/" target="_blank" rel="noopener noreferrer"><b><i>ArceOS Tutorial Book</i></b></a>
 - <a href="https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?" target="_blank" rel="noopener noreferrer"><b><i>Tsinghua操作系统课在线幻灯片链接</i></b></a>
 - <a href="https://jyywiki.cn/OS/2024/" target="_blank" rel="noopener noreferrer"><b><i>操作系统：设计与实现 By jyy</i></b></a>
