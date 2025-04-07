@@ -2,6 +2,7 @@
 &lt;ul>
 &lt;li>完成个人网页的日志模块，以此记载本人工作内容&lt;/li>
 &lt;li>仅为提升 &lt;strong>github commit&lt;/strong> 次数(仅此而已)&lt;/li>
+&lt;li>计划为网页从PaperMod更换为heyo主题&lt;/li>
 &lt;/ul></description></item><item><title>使用Hugo 搭建博客并部署到 GitHub Pages</title><link>https://vsvnakers.github.io/docs/hugo-deploy/</link><pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate><guid>https://vsvnakers.github.io/docs/hugo-deploy/</guid><description>&lt;blockquote>
 &lt;p>本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p>&lt;/blockquote>
 &lt;h2 id="-一准备工作">🧰 一、准备工作&lt;/h2>
