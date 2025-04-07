@@ -6,6 +6,9 @@ theme = 'PaperMod'
 [pagination]
   pageSize = 10
 
+[params.assets]
+customCSS = ["css/custom.css"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -40,8 +43,13 @@ theme = 'PaperMod'
   weight = 4
 
 [[menu.main]]
+  name = "🎓 日志"
+  url = "/log"
+  weight = 4
+
+[[menu.main]]
   name = ""
   url = "https://github.com/vsvnakers"
-  weight = 5
+  weight = 6
   pre = "<img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 18px;' />"
 

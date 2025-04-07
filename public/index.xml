@@ -6,8 +6,15 @@
     <description>Recent content on VSVnakers 主页</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/07/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/07/</guid>
+      <description>&lt;p&gt;今天完成了 Hugo 博客部署，还做了样式调整和图标优化！&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用Hugo 搭建博客并部署到 GitHub Pages</title>
       <link>http://localhost:1313/docs/hugo-deploy/</link>
@@ -90,10 +97,17 @@
 &lt;li&gt;&lt;a href=&#34;https://google.github.io/comprehensive-rust/zh-CN/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Comprehensive Rust 🦀&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;h4 id=&#34;os训练营&#34;&gt;OS训练营&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Book-v3&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Guide-2025S&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Guide-2025S&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.tsinghua.edu.cn/d/eec08e3c8f224e27b01d/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore讲解视频-2022&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://oslearning365.github.io/arceos-tutorial-book/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;ArceOS Tutorial Book&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Tsinghua操作系统课在线幻灯片链接&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jyywiki.cn/OS/2024/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;操作系统：设计与实现 By jyy&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;一生一芯&#34;&gt;&amp;ldquo;一生一芯“&lt;/h2&gt;
 &lt;ul&gt;
