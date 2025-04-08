@@ -7,6 +7,7 @@ draft: false
 ## Rust
 
 - <a href="https://course.rs/about-book.html" target="_blank" rel="noopener noreferrer"><b><i>Rust语言圣经(Rust Course)</i></b></a>
+- <a href="https://rustmagazine.github.io/rust_magazine_2021/chapter_3/projects.html" target="_blank" rel="noopener noreferrer"><b><i>Rust学习项目</i></b></a>
 - <a href="https://google.github.io/comprehensive-rust/zh-CN/index.html" target="_blank" rel="noopener noreferrer"><b><i>Comprehensive Rust 🦀</i></b></a>
 
 ## 操作系统
