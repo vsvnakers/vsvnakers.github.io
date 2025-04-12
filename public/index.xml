@@ -1,33 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VSVnakers 主页</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on VSVnakers 主页</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/11/</link>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/11/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;完成傲来ExlixOS的进阶阶段，只能说难度不大，但之前大二时看的看似无用的linux内核课在这个时候居然派上用场了😂&lt;/li&gt;
+&lt;li&gt;ysyx和rcore还是断了几天😒.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/10/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/10/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;做了一下傲来EulixOS的基础阶段，配置环境真的折磨，需要进入镜像内核进行test&lt;/li&gt;
+&lt;li&gt;花了点儿时间写了Resume&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/09/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/09/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;看了一下rcore的实验讲解，感觉作用不大，不如直接看文档和盯着代码发呆&lt;/li&gt;
+&lt;li&gt;做了一下Exlius的stage0&lt;/li&gt;
+&lt;li&gt;发现了一个rust的时间序列项目，不知道是什么，准备了解一下&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>日志</title>
       <link>http://localhost:1313/log/2025-04/08/</link>
       <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/log/2025-04/08/</guid>
-      <description>&lt;p&gt;啥也没干&lt;/p&gt;</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;写了一会儿尘封大半年的ysyx，之前只是写完了单周期cpu和给nemu启动完rtt就结束了，但现在给npc加上verilator并进行test发现还挺多困难。而且之前写的cpu好像有点问题，查了好久没发觉出来，或许是jal的指令。&lt;/li&gt;
+&lt;li&gt;准备继续看rcore了。&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>日志</title>
       <link>http://localhost:1313/log/2025-04/07/</link>
       <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/log/2025-04/07/</guid>
-      <description>&lt;h2 id=&#34;4月7日&#34;&gt;4月7日&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;完成个人网页的日志模块，以此记载本人工作内容&lt;/li&gt;&#xA;&lt;li&gt;仅为提升 &lt;strong&gt;github commit&lt;/strong&gt; 次数(仅此而已)&lt;/li&gt;&#xA;&lt;li&gt;计划为网页从 PaperMod 更换为 heyo 主题&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;4月7日&#34;&gt;4月7日&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完成个人网页的日志模块，以此记载本人工作内容&lt;/li&gt;
+&lt;li&gt;仅为提升 &lt;strong&gt;github commit&lt;/strong&gt; 次数(仅此而已)&lt;/li&gt;
+&lt;li&gt;计划为网页从 PaperMod 更换为 heyo 主题&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>使用Hugo 搭建博客并部署到 GitHub Pages</title>
       <link>http://localhost:1313/docs/hugo-deploy/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/hugo-deploy/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;-一准备工作&#34;&gt;🧰 一、准备工作&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-1-安装-git&#34;&gt;✅ 1. 安装 Git&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;下载并安装：&lt;a href=&#34;https://git-scm.com&#34;&gt;https://git-scm.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;安装完成后，右键菜单应该出现 “Git Bash Here”&lt;/li&gt;&#xA;&lt;li&gt;验证安装：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 打开 power shell 检查 git 安装成功&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git --version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-2-安装-hugo建议扩展版&#34;&gt;✅ 2. 安装 Hugo（建议扩展版）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;仅需在 &lt;strong&gt;power shell&lt;/strong&gt; 输入&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如需卸载&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 检查 Hugo是否安装成功 (重启终端 或 重启电脑)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-3-注册-github-并创建仓库&#34;&gt;✅ 3. 注册 GitHub 并创建仓库&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Github 注册: &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;创建一个&lt;strong&gt;与你用户名相同的仓库&lt;/strong&gt;，比如:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Github用户名&amp;gt;.github.io&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static/images/hugo-deploy/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.jpg&#34; alt=&#34;tu&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;-一准备工作&#34;&gt;🧰 一、准备工作&lt;/h2&gt;
+&lt;h3 id=&#34;-1-安装-git&#34;&gt;✅ 1. 安装 Git&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;下载并安装：&lt;a href=&#34;https://git-scm.com&#34;&gt;https://git-scm.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装完成后，右键菜单应该出现 “Git Bash Here”&lt;/li&gt;
+&lt;li&gt;验证安装：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 打开 power shell 检查 git 安装成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-2-安装-hugo建议扩展版&#34;&gt;✅ 2. 安装 Hugo（建议扩展版）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;仅需在 &lt;strong&gt;power shell&lt;/strong&gt; 输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如需卸载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 检查 Hugo是否安装成功 (重启终端 或 重启电脑)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-3-注册-github-并创建仓库&#34;&gt;✅ 3. 注册 GitHub 并创建仓库&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Github 注册: &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;创建一个&lt;strong&gt;与你用户名相同的仓库&lt;/strong&gt;，比如:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Github用户名&amp;gt;.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;tu&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/static/images/hugo-deploy/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test</title>
@@ -41,21 +109,88 @@
       <link>http://localhost:1313/docs/2plus2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/2plus2/</guid>
-      <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;&#xA;&lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;&#xA;&lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;&#xA;&lt;p&gt;假设你有 2 个苹果：&lt;/p&gt;&#xA;&lt;p&gt;🍎🍎&lt;/p&gt;&#xA;&lt;p&gt;你又拿来了 2 个苹果：&lt;/p&gt;&#xA;&lt;p&gt;🍎🍎&lt;/p&gt;&#xA;&lt;p&gt;一共几个苹果？用肉眼观察，就是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2 + 2 = &lt;strong&gt;4&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-数学定义解释&#34;&gt;💡 数学定义解释：&lt;/h2&gt;&#xA;&lt;p&gt;根据自然数加法的封闭性，我们有：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;若 &lt;code&gt;a = 2&lt;/code&gt;，&lt;code&gt;b = 2&lt;/code&gt;，则 &lt;code&gt;a + b = 4&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-总结&#34;&gt;✅ 总结&lt;/h2&gt;&#xA;&lt;p&gt;我们刚刚完成了人生中第一个数学教程！🎉&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;📢 小练习：3 + 3 = ❓&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;
+&lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;
+&lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;
+&lt;p&gt;假设你有 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;你又拿来了 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;一共几个苹果？用肉眼观察，就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2 + 2 = &lt;strong&gt;4&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-数学定义解释&#34;&gt;💡 数学定义解释：&lt;/h2&gt;
+&lt;p&gt;根据自然数加法的封闭性，我们有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若 &lt;code&gt;a = 2&lt;/code&gt;，&lt;code&gt;b = 2&lt;/code&gt;，则 &lt;code&gt;a + b = 4&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-总结&#34;&gt;✅ 总结&lt;/h2&gt;
+&lt;p&gt;我们刚刚完成了人生中第一个数学教程！🎉&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📢 小练习：3 + 3 = ❓&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
     </item>
     <item>
       <title>学习</title>
       <link>http://localhost:1313/study/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/study/</guid>
-      <description>&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://course.rs/about-book.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Rust语言圣经(Rust Course)&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://google.github.io/comprehensive-rust/zh-CN/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Comprehensive Rust 🦀&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;&#xA;&lt;h3 id=&#34;os训练营&#34;&gt;OS训练营&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://opencamp.cn/EulixOS/camp/202501&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;傲来操作系统（EulixOS）社区&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://opencamp.ai/os2edu&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;开源操作系统社区&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Book-v3&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Guide-2025S&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/xyong-9fuoz/qczol5/axrf11?&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;实验讲解视频-2022&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://oslearning365.github.io/arceos-tutorial-book/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;ArceOS Tutorial Book&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Tsinghua操作系统课在线幻灯片链接&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jyywiki.cn/OS/2024/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;操作系统：设计与实现 By jyy&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;一生一芯&#34;&gt;&amp;ldquo;一生一芯“&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://ysyx.oscc.cc/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;讲义&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;verilog&#34;&gt;Verilog&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hdlbits.01xz.net/wiki/Main_Page&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;HDLBits&amp;ndash;Verilog Practice&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;大模型与人工智能&#34;&gt;大模型与人工智能&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://opencamp.cn/InfiniTensor/camp/2024winter&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;大模型与人工智能系统训练营&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;rust&#34;&gt;Rust&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://course.rs/about-book.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Rust语言圣经(Rust Course)&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rustmagazine.github.io/rust_magazine_2021/chapter_3/projects.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Rust学习项目&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://google.github.io/comprehensive-rust/zh-CN/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Comprehensive Rust 🦀&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;h3 id=&#34;os训练营&#34;&gt;OS训练营&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://opencamp.cn/EulixOS/camp/202501&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;傲来操作系统（EulixOS）社区&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://opencamp.ai/os2edu&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;开源操作系统社区&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Book-v3&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;rCore-Tutorial-Guide-2025S&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/xyong-9fuoz/qczol5/axrf11?&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;实验讲解视频-2022&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://oslearning365.github.io/arceos-tutorial-book/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;ArceOS Tutorial Book&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yuque.com/xyong-9fuoz/qczol5/glemuu?&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Tsinghua操作系统课在线幻灯片链接&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jyywiki.cn/OS/2024/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;操作系统：设计与实现 By jyy&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;一生一芯&#34;&gt;&amp;ldquo;一生一芯“&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ysyx.oscc.cc/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;讲义&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;verilog&#34;&gt;Verilog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hdlbits.01xz.net/wiki/Main_Page&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;HDLBits&amp;ndash;Verilog Practice&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;大模型与人工智能&#34;&gt;大模型与人工智能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://opencamp.cn/InfiniTensor/camp/2024winter&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;大模型与人工智能系统训练营&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>我的信息</title>
       <link>http://localhost:1313/resume/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/resume/</guid>
-      <description>&lt;h2 id=&#34;基本信息&#34;&gt;基本信息&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;姓名：VSVnakers&lt;/li&gt;&#xA;&lt;li&gt;职业：微电子&lt;/li&gt;&#xA;&lt;li&gt;技能：None &amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/vsvnakers&#34;&gt;个人 Github&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;教育背景&#34;&gt;教育背景&lt;/h2&gt;&#xA;&lt;p&gt;某学校&#xA;&amp;hellip;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://opencamp.ai/user/my&#34;&gt;..&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;&#xA;&lt;p&gt;&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;基本信息&#34;&gt;基本信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;姓名：VSVnakers&lt;/li&gt;
+&lt;li&gt;职业：微电子&lt;/li&gt;
+&lt;li&gt;技能：None &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/vsvnakers&#34;&gt;个人 Github&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;教育背景&#34;&gt;教育背景&lt;/h2&gt;
+&lt;p&gt;某学校
+&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://opencamp.ai/user/my&#34;&gt;..&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

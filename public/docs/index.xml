@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docs on VSVnakers 主页</title>
     <link>http://localhost:1313/docs/</link>
     <description>Recent content in Docs on VSVnakers 主页</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,64 @@
       <link>http://localhost:1313/docs/hugo-deploy/</link>
       <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/hugo-deploy/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;-一准备工作&#34;&gt;🧰 一、准备工作&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-1-安装-git&#34;&gt;✅ 1. 安装 Git&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;下载并安装：&lt;a href=&#34;https://git-scm.com&#34;&gt;https://git-scm.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;安装完成后，右键菜单应该出现 “Git Bash Here”&lt;/li&gt;&#xA;&lt;li&gt;验证安装：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 打开 power shell 检查 git 安装成功&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git --version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-2-安装-hugo建议扩展版&#34;&gt;✅ 2. 安装 Hugo（建议扩展版）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;仅需在 &lt;strong&gt;power shell&lt;/strong&gt; 输入&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如需卸载&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 检查 Hugo是否安装成功 (重启终端 或 重启电脑)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-3-注册-github-并创建仓库&#34;&gt;✅ 3. 注册 GitHub 并创建仓库&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Github 注册: &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;创建一个&lt;strong&gt;与你用户名相同的仓库&lt;/strong&gt;，比如:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Github用户名&amp;gt;.github.io&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static/images/hugo-deploy/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.jpg&#34; alt=&#34;tu&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本教程将从 0 开始，手把手教你在 Windows 系统中使用 Hugo 创建一个静态博客，并通过 GitHub Actions 自动部署到 GitHub Pages.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;-一准备工作&#34;&gt;🧰 一、准备工作&lt;/h2&gt;
+&lt;h3 id=&#34;-1-安装-git&#34;&gt;✅ 1. 安装 Git&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;下载并安装：&lt;a href=&#34;https://git-scm.com&#34;&gt;https://git-scm.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装完成后，右键菜单应该出现 “Git Bash Here”&lt;/li&gt;
+&lt;li&gt;验证安装：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 打开 power shell 检查 git 安装成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-2-安装-hugo建议扩展版&#34;&gt;✅ 2. 安装 Hugo（建议扩展版）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;仅需在 &lt;strong&gt;power shell&lt;/strong&gt; 输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如需卸载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 检查 Hugo是否安装成功 (重启终端 或 重启电脑)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-3-注册-github-并创建仓库&#34;&gt;✅ 3. 注册 GitHub 并创建仓库&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Github 注册: &lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;创建一个&lt;strong&gt;与你用户名相同的仓库&lt;/strong&gt;，比如:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;Github用户名&amp;gt;.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;tu&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/static/images/hugo-deploy/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.jpg&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>2 &#43; 2 = 4 是如何成立的？</title>
       <link>http://localhost:1313/docs/2plus2/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/2plus2/</guid>
-      <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;&#xA;&lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;&#xA;&lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;&#xA;&lt;p&gt;假设你有 2 个苹果：&lt;/p&gt;&#xA;&lt;p&gt;🍎🍎&lt;/p&gt;&#xA;&lt;p&gt;你又拿来了 2 个苹果：&lt;/p&gt;&#xA;&lt;p&gt;🍎🍎&lt;/p&gt;&#xA;&lt;p&gt;一共几个苹果？用肉眼观察，就是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2 + 2 = &lt;strong&gt;4&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-数学定义解释&#34;&gt;💡 数学定义解释：&lt;/h2&gt;&#xA;&lt;p&gt;根据自然数加法的封闭性，我们有：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;若 &lt;code&gt;a = 2&lt;/code&gt;，&lt;code&gt;b = 2&lt;/code&gt;，则 &lt;code&gt;a + b = 4&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-总结&#34;&gt;✅ 总结&lt;/h2&gt;&#xA;&lt;p&gt;我们刚刚完成了人生中第一个数学教程！🎉&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;📢 小练习：3 + 3 = ❓&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;教程2--2--4&#34;&gt;教程：2 + 2 = 4&lt;/h1&gt;
+&lt;p&gt;这是一个非常重要的数学真理，我们来简单推导一下：&lt;/p&gt;
+&lt;h2 id=&#34;-场景说明&#34;&gt;🍎 场景说明：&lt;/h2&gt;
+&lt;p&gt;假设你有 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;你又拿来了 2 个苹果：&lt;/p&gt;
+&lt;p&gt;🍎🍎&lt;/p&gt;
+&lt;p&gt;一共几个苹果？用肉眼观察，就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2 + 2 = &lt;strong&gt;4&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-数学定义解释&#34;&gt;💡 数学定义解释：&lt;/h2&gt;
+&lt;p&gt;根据自然数加法的封闭性，我们有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若 &lt;code&gt;a = 2&lt;/code&gt;，&lt;code&gt;b = 2&lt;/code&gt;，则 &lt;code&gt;a + b = 4&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-总结&#34;&gt;✅ 总结&lt;/h2&gt;
+&lt;p&gt;我们刚刚完成了人生中第一个数学教程！🎉&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📢 小练习：3 + 3 = ❓&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;感谢阅读！✌️&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>日志归档 on VSVnakers 主页</title>
     <link>http://localhost:1313/log/</link>
     <description>Recent content in 日志归档 on VSVnakers 主页</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/10/</link>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/10/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;做了一下傲来EulixOS的基础阶段，配置环境真的折磨，需要进入镜像内核进行test&lt;/li&gt;
+&lt;li&gt;花了点儿时间写了Resume&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/09/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/09/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;看了一下rcore的实验讲解，感觉作用不大，不如直接看文档和盯着代码发呆&lt;/li&gt;
+&lt;li&gt;做了一下Exlius的stage0&lt;/li&gt;
+&lt;li&gt;发现了一个rust的时间序列项目，不知道是什么，准备了解一下&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>日志</title>
       <link>http://localhost:1313/log/2025-04/08/</link>
       <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/log/2025-04/08/</guid>
-      <description>&lt;p&gt;啥也没干&lt;/p&gt;</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;写了一会儿尘封大半年的ysyx，之前只是写完了单周期cpu和给nemu启动完rtt就结束了，但现在给npc加上verilator并进行test发现还挺多困难。而且之前写的cpu好像有点问题，查了好久没发觉出来，或许是jal的指令。&lt;/li&gt;
+&lt;li&gt;准备继续看rcore了。&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>日志</title>
       <link>http://localhost:1313/log/2025-04/07/</link>
       <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/log/2025-04/07/</guid>
-      <description>&lt;h2 id=&#34;4月7日&#34;&gt;4月7日&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;完成个人网页的日志模块，以此记载本人工作内容&lt;/li&gt;&#xA;&lt;li&gt;仅为提升 &lt;strong&gt;github commit&lt;/strong&gt; 次数(仅此而已)&lt;/li&gt;&#xA;&lt;li&gt;计划为网页从 PaperMod 更换为 heyo 主题&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;4月7日&#34;&gt;4月7日&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;完成个人网页的日志模块，以此记载本人工作内容&lt;/li&gt;
+&lt;li&gt;仅为提升 &lt;strong&gt;github commit&lt;/strong&gt; 次数(仅此而已)&lt;/li&gt;
+&lt;li&gt;计划为网页从 PaperMod 更换为 heyo 主题&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
