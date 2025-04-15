@@ -6,8 +6,20 @@
     <description>Recent content in 日志归档 on VSVnakers 主页</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/14/</link>
+      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/14/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;看了下拉扎维模集&lt;/li&gt;
+&lt;li&gt;简单做了会儿rcore&lt;/li&gt;
+&lt;li&gt;给网站检查了下无法push的bug(佛了。)&lt;/li&gt;
+&lt;li&gt;花了几个小时配置wsl2，基本可以替代虚拟机ubuntu&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>日志</title>
       <link>http://localhost:1313/log/2025-04/11/</link>
@@ -16,6 +28,18 @@
       <description>&lt;ul&gt;
 &lt;li&gt;完成傲来ExlixOS的进阶阶段，只能说难度不大，但之前大二时看的看似无用的linux内核课在这个时候居然派上用场了😂&lt;/li&gt;
 &lt;li&gt;ysyx和rcore还是断了几天😒.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>日志</title>
+      <link>http://localhost:1313/log/2025-04/15/</link>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/log/2025-04/15/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;请神完成了ysyx的NPC的HIT GOOD TRAP(泪目&lt;a href=&#34;https://verilator.org/guide/latest/faq.html?highlight=wave&#34;&gt;参考&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;verilog的debug还得是看波形&lt;/li&gt;
+&lt;li&gt;接下来是要增加trace和difftest&lt;/li&gt;
+&lt;li&gt;新增&amp;quot;工具集&amp;quot;模块&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>

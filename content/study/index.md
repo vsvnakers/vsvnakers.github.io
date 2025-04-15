@@ -33,6 +33,5 @@ draft: false
 ## 大模型与人工智能
 
 - <a href="https://opencamp.cn/InfiniTensor/camp/2024winter" target="_blank" rel="noopener noreferrer"><b><i>大模型与人工智能系统训练营</i></b></a>
-
-
+  
 

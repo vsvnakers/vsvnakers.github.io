@@ -40,13 +40,19 @@ theme = 'PaperMod'
   weight = 4
 
 [[menu.main]]
-  name = "🎓 日志"
+  name = "📘 日志"
   url = "/log"
-  weight = 4
+  weight = 5
+
+[[menu.main]]
+name = "🛠 工具集"
+url = "/tools"
+weight = 6
+
 
 [[menu.main]]
   name = ""
   url = "https://github.com/vsvnakers"
-  weight = 6
+  weight = 7
   pre = "<img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 18px;' />"
 
