@@ -6,8 +6,25 @@
     <description>Recent content on VSVnakers 主页</description>
     <generator>Hugo -- 0.146.4</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工具</title>
+      <link>https://vsvnakers.github.io/tools/</link>
+      <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vsvnakers.github.io/tools/</guid>
+      <description>&lt;p style=&#34;font-size: 15px; color: #555;&#34;&gt;
+  这里整理了一些我自己在学习、工作中用过觉得很不错的工具，涵盖了翻译、写作、调试等方向。😄
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://app.immersivetranslate.com/babel-doc &#34; style=&#34;font-size: 30px; color: teal;&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;b&gt;&lt;i&gt;Babel-DOC（文献双语翻译）&lt;/i&gt;&lt;/b&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Github&lt;/strong&gt;: &lt;a href=&#34;https://github.com/funstory-ai/BabelDOC&#34;&gt;https://github.com/funstory-ai/BabelDOC&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>日志</title>
       <link>https://vsvnakers.github.io/log/2025-04/14/</link>
@@ -39,6 +56,7 @@
 &lt;li&gt;请神完成了ysyx的NPC的HIT GOOD TRAP(泪目&lt;a href=&#34;https://verilator.org/guide/latest/faq.html?highlight=wave&#34;&gt;参考&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;verilog的debug还得是看波形&lt;/li&gt;
 &lt;li&gt;接下来是要增加trace和difftest&lt;/li&gt;
+&lt;li&gt;新增&amp;quot;工具集&amp;quot;模块&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>
