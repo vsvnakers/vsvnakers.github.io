@@ -33,5 +33,11 @@ draft: false
 ## 大模型与人工智能
 
 - <a href="https://opencamp.cn/InfiniTensor/camp/2024winter" target="_blank" rel="noopener noreferrer"><b><i>大模型与人工智能系统训练营</i></b></a>
-  
+
+## Linux内核学习
+
+- <a href="https://elixir.bootlin.com/linux/v6.13.7/source" target="_blank" rel="noopener noreferrer"><b><i>Linux内核源码</i></b></a>
+- <a href="https://www.kernel.org/doc/html/latest/#" target="_blank" rel="noopener noreferrer"><b><i>Linux内核手册</i></b></a>
+- <a href="https://www.kerneltravel.net/" target="_blank" rel="noopener noreferrer"><b><i>Linux内核之旅</i></b></a>
+
 
