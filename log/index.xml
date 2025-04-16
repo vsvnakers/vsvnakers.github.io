@@ -4,10 +4,19 @@
     <title>日志归档 on VSVnakers 主页</title>
     <link>https://vsvnakers.github.io/log/</link>
     <description>Recent content in 日志归档 on VSVnakers 主页</description>
-    <generator>Hugo -- 0.146.4</generator>
+    <generator>Hugo -- 0.146.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日志</title>
+      <link>https://vsvnakers.github.io/log/2025-04/16/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vsvnakers.github.io/log/2025-04/16/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;完成rcore实验的ch5（折磨）&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>日志</title>
       <link>https://vsvnakers.github.io/log/2025-04/14/</link>
