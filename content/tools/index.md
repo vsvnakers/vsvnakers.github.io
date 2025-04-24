@@ -13,3 +13,6 @@ draft: false
 
 - <a href="https://app.immersivetranslate.com/babel-doc " style="font-size: 30px; color: teal;" target="_blank" rel="noopener noreferrer"><b><i>Babel-DOC（文献双语翻译）</i></b></a>
     - **Github**: https://github.com/funstory-ai/BabelDOC
+
+- <a href="https://veusz.github.io/download/ " style="font-size: 30px; color: teal;" target="_blank" rel="noopener noreferrer"><b><i>Veusz（免费的科研图表绘图工具）</i></b></a>
+    - **Github**: https://github.com/veusz/veusz
