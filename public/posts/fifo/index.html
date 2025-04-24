@@ -5,68 +5,98 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>FIFO | VSVnakers 主页</title>
+<title>FIFO 页面置换算法 | VSVnakers 主页</title>
 <meta name="keywords" content="">
 <meta name="description" content="
-教-博客
-#include &#34;fifo.h&#34;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;string.h&gt;
-/**
- * 函数：模拟FIFO（先进先出）页面置换算法。
- *
- * @param queue_frames 一个字符串，表示页面访问序列。
- *                     字符串中的每个字符是一个数字，表示一个页面号。
- * @param num_frames   页框的数量，表示物理内存中可用的页框数。
- */
-void
-fifo_page_replacement (char *queue_frames, int num)
-{
-  // TODO
-  int *frames = (int *)malloc (num * sizeof (int));
-  int queue_size = 0;
-  int queue_index = 0;
+学习 FIFO 的总结
 
-  for (int i = 0; i &lt; num; i&#43;&#43;) {
-    frames[i] = -1; // 初始化页框
-  }
+🧠 理解 FIFO 页面置换算法
+在操作系统的内存管理中，页面置换算法起着至关重要的作用。当物理内存不足以容纳所有需要的页面时，系统必须选择一部分页面“换出去”，以便为新的页面腾出空间。
+本文将详细介绍最经典、最易理解的页面置换算法之一 —— FIFO（先进先出）页面置换算法，并解释一个令人惊讶的现象：Belady 异常。你还将看到 C 语言和 Rust 的完整实现及验证方式。
 
-  char *token = strtok (queue_frames, &#34;,&#34;);
-  while (token != NULL) {
-    int page = atoi (token);
-    printf(&#34;Access:%d,Frames: [&#34;, page);
-    
-    int found = 0;
+📌 一、什么是 FIFO 页面置换算法？
+FIFO（First-In, First-Out）页面置换算法是一种遵循“谁先进来谁先出去”的策略：
 
-    for (int i = 0; i &lt; num; i &#43;&#43;) {
-      if (frames[i] == page) {
-        found = 1;
-        break;
-      }
-    }
+最早进入内存的页面，会最先被淘汰。
+这就像排队买票，先排队的先服务，后来的人必须等队列的前面腾出位置。
+✅ 特点：
 
-    if (!found) {
-      if (queue_size &lt; num) {
-        frames[queue_size &#43;&#43;] = page;
-      } else {
-        frames[queue_index] = page;
-        queue_index = (queue_index &#43; 1) % num;
-      }
-    }
+实现简单
+使用队列（Queue） 结构模拟
+不考虑页面是否常用
 
-    for (int i = 0; i &lt; num; i&#43;&#43;) {
-      printf(&#34;%d&#34;, frames[i]);
-      if (i != num - 1) printf(&#34;,&#34;);
-    }
-    printf(&#34;]\n&#34;);
 
-    token = strtok(NULL, &#34;,&#34;);
-  }
+❗ 二、缺页中断机制简介
+当一个进程访问某个页面时：
 
-  free(frames);
-}
-">
+如果该页面已经在内存中 ✅ → 正常访问
+如果该页面不在内存中 ❌ → 触发 缺页中断（Page Fault）
+
+系统将：
+
+从磁盘中加载页面
+如内存已满，使用页面置换算法（如 FIFO）决定淘汰哪个页面
+更新内存状态，继续执行程序
+
+💡 缺页中断数就是衡量页面置换算法好坏的指标之一。
+
+🧪 三、FIFO 算法示例分析
+假设页面访问序列为：
+[7, 0, 1, 2, 0, 3, 0, 4]
+内存帧数为 3。
+使用 FIFO 策略处理：
+
+  
+      
+          操作
+          内存状态
+          缺页？
+      
+  
+  
+      
+          7
+          7
+          ✅
+      
+      
+          0
+          7 0
+          ✅
+      
+      
+          1
+          7 0 1
+          ✅
+      
+      
+          2
+          0 1 2
+          ✅
+      
+      
+          0
+          0 1 2
+          ❌
+      
+      
+          3
+          1 2 3
+          ✅
+      
+      
+          0
+          2 3 0
+          ✅
+      
+      
+          4
+          3 0 4
+          ✅
+      
+  
+
+缺页次数 = 6">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/fifo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
@@ -210,72 +240,223 @@ fifo_page_replacement (char *queue_frames, int num)
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      FIFO
+      FIFO 页面置换算法
     </h1>
     <div class="post-meta"><span title='2025-04-04 00:00:00 +0000 UTC'>April 4, 2025</span>
 
 </div>
   </header> 
   <div class="post-content"><blockquote>
-<p>教-博客</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;fifo.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 函数：模拟FIFO（先进先出）页面置换算法。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param queue_frames 一个字符串，表示页面访问序列。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *                     字符串中的每个字符是一个数字，表示一个页面号。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param num_frames   页框的数量，表示物理内存中可用的页框数。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fifo_page_replacement</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>queue_frames, <span style="color:#66d9ef">int</span> num)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// TODO
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>frames <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span> (num <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span> (<span style="color:#66d9ef">int</span>));
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> queue_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> queue_index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<p>学习 FIFO 的总结</p></blockquote>
+<hr>
+<h1 id="-理解-fifo-页面置换算法">🧠 理解 FIFO 页面置换算法<a hidden class="anchor" aria-hidden="true" href="#-理解-fifo-页面置换算法">#</a></h1>
+<p>在操作系统的内存管理中，<strong>页面置换算法</strong>起着至关重要的作用。当物理内存不足以容纳所有需要的页面时，系统必须选择一部分页面“换出去”，以便为新的页面腾出空间。</p>
+<p>本文将详细介绍最经典、最易理解的页面置换算法之一 —— <strong>FIFO（先进先出）页面置换算法</strong>，并解释一个令人惊讶的现象：<strong>Belady 异常</strong>。你还将看到 C 语言和 Rust 的完整实现及验证方式。</p>
+<hr>
+<h2 id="-一什么是-fifo-页面置换算法">📌 一、什么是 FIFO 页面置换算法？<a hidden class="anchor" aria-hidden="true" href="#-一什么是-fifo-页面置换算法">#</a></h2>
+<p><strong>FIFO（First-In, First-Out）页面置换算法</strong>是一种遵循“谁先进来谁先出去”的策略：</p>
+<blockquote>
+<p><strong>最早进入内存的页面，会最先被淘汰。</strong></p></blockquote>
+<p>这就像排队买票，先排队的先服务，后来的人必须等队列的前面腾出位置。</p>
+<h3 id="-特点">✅ 特点：<a hidden class="anchor" aria-hidden="true" href="#-特点">#</a></h3>
+<ul>
+<li>实现简单</li>
+<li>使用<strong>队列（Queue）</strong> 结构模拟</li>
+<li>不考虑页面是否常用</li>
+</ul>
+<hr>
+<h2 id="-二缺页中断机制简介">❗ 二、缺页中断机制简介<a hidden class="anchor" aria-hidden="true" href="#-二缺页中断机制简介">#</a></h2>
+<p>当一个进程访问某个页面时：</p>
+<ol>
+<li>如果该页面已经在内存中 ✅ → 正常访问</li>
+<li>如果该页面不在内存中 ❌ → 触发 <strong>缺页中断（Page Fault）</strong></li>
+</ol>
+<p>系统将：</p>
+<ul>
+<li>从磁盘中加载页面</li>
+<li>如内存已满，使用页面置换算法（如 FIFO）决定淘汰哪个页面</li>
+<li>更新内存状态，继续执行程序</li>
+</ul>
+<h3 id="-缺页中断数就是衡量页面置换算法好坏的指标之一">💡 缺页中断数就是衡量页面置换算法好坏的指标之一。<a hidden class="anchor" aria-hidden="true" href="#-缺页中断数就是衡量页面置换算法好坏的指标之一">#</a></h3>
+<hr>
+<h2 id="-三fifo-算法示例分析">🧪 三、FIFO 算法示例分析<a hidden class="anchor" aria-hidden="true" href="#-三fifo-算法示例分析">#</a></h2>
+<p>假设页面访问序列为：</p>
+<pre tabindex="0"><code>[7, 0, 1, 2, 0, 3, 0, 4]
+</code></pre><p>内存帧数为 <code>3</code>。</p>
+<p>使用 FIFO 策略处理：</p>
+<table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>内存状态</th>
+          <th>缺页？</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>7</td>
+          <td>7</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>7 0</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>7 0 1</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>0 1 2</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>0 1 2</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>1 2 3</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>2 3 0</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>3 0 4</td>
+          <td>✅</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>缺页次数 = 6</strong></p>
+<hr>
+<h2 id="-四c语言实现函数封装--验证">🔧 四、C语言实现（函数封装 + 验证）<a hidden class="anchor" aria-hidden="true" href="#-四c语言实现函数封装--验证">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fifo_page_replacement</span>(<span style="color:#66d9ef">int</span> pages[], <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> frames) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> memory[frames];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> frames; i<span style="color:#f92672">++</span>) memory[i] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>    frames[i] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 初始化页框
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, pageFaults <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span> (queue_frames, <span style="color:#e6db74">&#34;,&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (token <span style="color:#f92672">!=</span> NULL) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> page <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoi</span> (token);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Access:%d,Frames: [&#34;</span>, page);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> found <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> found <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> frames; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (memory[j] <span style="color:#f92672">==</span> pages[i]) {
+</span></span><span style="display:flex;"><span>                found <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; i <span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (frames[i] <span style="color:#f92672">==</span> page) {
-</span></span><span style="display:flex;"><span>        found <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>found) {
+</span></span><span style="display:flex;"><span>            memory[index] <span style="color:#f92672">=</span> pages[i]; <span style="color:#75715e">// 替换掉最老的页面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            index <span style="color:#f92672">=</span> (index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> frames;
+</span></span><span style="display:flex;"><span>            pageFaults<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>found) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (queue_size <span style="color:#f92672">&lt;</span> num) {
-</span></span><span style="display:flex;"><span>        frames[queue_size <span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> page;
-</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        frames[queue_index] <span style="color:#f92672">=</span> page;
-</span></span><span style="display:flex;"><span>        queue_index <span style="color:#f92672">=</span> (queue_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> num;
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, frames[i]);
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">!=</span> num <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span>(NULL, <span style="color:#e6db74">&#34;,&#34;</span>);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">free</span>(frames);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pageFaults;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> pages[] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(pages) <span style="color:#f92672">/</span> <span style="color:#66d9ef">sizeof</span>(pages[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> frames <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> faults <span style="color:#f92672">=</span> <span style="color:#a6e22e">fifo_page_replacement</span>(pages, n, frames);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;缺页中断次数: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, faults); <span style="color:#75715e">// 输出应为 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="-五rust-实现函数封装--验证">🦀 五、Rust 实现（函数封装 + 验证）<a hidden class="anchor" aria-hidden="true" href="#-五rust-实现函数封装--验证">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::collections::VecDeque;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">fifo_page_replacement</span>(pages: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">i32</span>], frames: <span style="color:#66d9ef">usize</span>) -&gt; <span style="color:#66d9ef">usize</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> memory: <span style="color:#a6e22e">VecDeque</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> VecDeque::new();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> faults <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">&amp;</span>page <span style="color:#66d9ef">in</span> pages {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>memory.contains(<span style="color:#f92672">&amp;</span>page) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> memory.len() <span style="color:#f92672">==</span> frames {
+</span></span><span style="display:flex;"><span>                memory.pop_front(); <span style="color:#75715e">// 移除最老页面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
+</span></span><span style="display:flex;"><span>            memory.push_back(page); <span style="color:#75715e">// 加入新页面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            faults <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    faults
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> pages <span style="color:#f92672">=</span> vec![<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> frames <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> faults <span style="color:#f92672">=</span> fifo_page_replacement(<span style="color:#f92672">&amp;</span>pages, frames);
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;缺页中断次数: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, faults); <span style="color:#75715e">// 应输出 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><hr>
+<h2 id="-六belady-异常内存越大越差">⚠️ 六、Belady 异常：内存越大越差？<a hidden class="anchor" aria-hidden="true" href="#-六belady-异常内存越大越差">#</a></h2>
+<blockquote>
+<p><strong>Belady 异常</strong>指的是在某些页面访问序列下，<strong>增加内存页框反而会导致缺页次数上升</strong>。这是 FIFO 算法独有的问题！</p></blockquote>
+<h3 id="-经典案例">🔥 经典案例：<a hidden class="anchor" aria-hidden="true" href="#-经典案例">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>页面访问序列：1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
+</span></span></code></pre></div><ul>
+<li>使用 <strong>3 个帧</strong>：缺页次数 = 9</li>
+<li>使用 <strong>4 个帧</strong>：缺页次数 = 10（反而更多了！）</li>
+</ul>
+<h3 id="-原因">🧠 原因：<a hidden class="anchor" aria-hidden="true" href="#-原因">#</a></h3>
+<p>FIFO 不考虑页面的使用频率，只按照“谁先来谁先走”，导致常用页面也可能被早早淘汰。</p>
+<h3 id="-哪些算法不会有这种问题">❓ 哪些算法不会有这种问题？<a hidden class="anchor" aria-hidden="true" href="#-哪些算法不会有这种问题">#</a></h3>
+<ul>
+<li>✅ LRU（最近最少使用）</li>
+<li>✅ Optimal（最优页面置换）</li>
+<li>❌ FIFO → 会发生 Belady 异常</li>
+</ul>
+<hr>
+<h2 id="-七总结一览">🧾 七、总结一览<a hidden class="anchor" aria-hidden="true" href="#-七总结一览">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>页面置换算法</td>
+          <td>FIFO（先进先出）</td>
+      </tr>
+      <tr>
+          <td>基本数据结构</td>
+          <td>队列（Queue）</td>
+      </tr>
+      <tr>
+          <td>缺页中断机制</td>
+          <td>页面不在内存时触发，执行置换并加载</td>
+      </tr>
+      <tr>
+          <td>Belady 异常</td>
+          <td>FIFO 在某些序列下会因帧数增多反而更差</td>
+      </tr>
+      <tr>
+          <td>适合学习/对比</td>
+          <td>是操作系统课程和面试中常见考点</td>
+      </tr>
+      <tr>
+          <td>更优选择（生产环境）</td>
+          <td>LRU、Clock、Optimal 等</td>
+      </tr>
+  </tbody>
+</table>
+
 
   </div>
 
