@@ -18,7 +18,6 @@
 &lt;hr&gt;
 &lt;h1 id=&#34;-理解-fifo-页面置换算法&#34;&gt;🧠 理解 FIFO 页面置换算法&lt;/h1&gt;
 &lt;p&gt;在操作系统的内存管理中，&lt;strong&gt;页面置换算法&lt;/strong&gt;起着至关重要的作用。当物理内存不足以容纳所有需要的页面时，系统必须选择一部分页面“换出去”，以便为新的页面腾出空间。&lt;/p&gt;
-&lt;p&gt;本文将详细介绍最经典、最易理解的页面置换算法之一 —— &lt;strong&gt;FIFO（先进先出）页面置换算法&lt;/strong&gt;，并解释一个令人惊讶的现象：&lt;strong&gt;Belady 异常&lt;/strong&gt;。你还将看到 C 语言和 Rust 的完整实现及验证方式。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-一什么是-fifo-页面置换算法&#34;&gt;📌 一、什么是 FIFO 页面置换算法？&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;FIFO（First-In, First-Out）页面置换算法&lt;/strong&gt;是一种遵循“谁先进来谁先出去”的策略：&lt;/p&gt;
