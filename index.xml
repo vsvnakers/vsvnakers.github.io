@@ -4,10 +4,106 @@
     <title>VSVnakers 主页</title>
     <link>https://vsvnakers.github.io/</link>
     <description>Recent content on VSVnakers 主页</description>
-    <generator>Hugo -- 0.146.7</generator>
+    <generator>Hugo -- 0.147.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LRU 页面置换算法</title>
+      <link>https://vsvnakers.github.io/posts/lru/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://vsvnakers.github.io/posts/lru/</guid>
+      <description>&lt;hr&gt;
+&lt;h1 id=&#34;-lru-页面置换算法&#34;&gt;🚀 LRU 页面置换算法&lt;/h1&gt;
+&lt;p&gt;在操作系统内存管理中，除了 FIFO，另一种更聪明且常用的页面置换策略是 —— &lt;strong&gt;LRU 页面置换算法&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-一什么是-lru-页面置换算法&#34;&gt;📌 一、什么是 LRU 页面置换算法？&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;LRU（Least Recently Used，最近最少使用）页面置换算法&lt;/strong&gt;是这样一种策略：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;淘汰最近最久未被访问过的页面。&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;直白地说&lt;/strong&gt;：如果一个页面很久没用了，那么它以后可能也不怎么用，所以优先把它换出去。&lt;/p&gt;
+&lt;h3 id=&#34;-特点&#34;&gt;✅ 特点：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;需要记录页面最近的访问历史&lt;/li&gt;
+&lt;li&gt;淘汰“最久没用”的页面，而不是最早进入的&lt;/li&gt;
+&lt;li&gt;通常使用&lt;strong&gt;栈（Stack）&lt;/strong&gt;、&lt;strong&gt;链表（List）&lt;/strong&gt; 或 **时间戳（Timestamp）**结构实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-二缺页中断机制简介同样适用-lru&#34;&gt;❗ 二、缺页中断机制简介（同样适用 LRU）&lt;/h2&gt;
+&lt;p&gt;当访问一个不在内存中的页面时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;触发缺页中断&lt;/li&gt;
+&lt;li&gt;如果内存满了，选择最近最久未使用的页面进行置换&lt;/li&gt;
+&lt;li&gt;加载新页面并恢复执行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 缺页次数依然是评估 LRU 表现的关键指标，通常 &lt;strong&gt;比 FIFO 更少的缺页次数&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-三lru-算法示例分析&#34;&gt;🧪 三、LRU 算法示例分析&lt;/h2&gt;
+&lt;p&gt;假设页面访问序列为：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[7, 0, 1, 2, 0, 3, 0, 4]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;帧数 3，使用 LRU 策略：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;步骤&lt;/th&gt;
+          &lt;th&gt;页面访问&lt;/th&gt;
+          &lt;th&gt;内存状态&lt;/th&gt;
+          &lt;th&gt;缺页？&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;7 0&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;7 0 1&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;0 1 2（7 最久未用，被换出）&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0 1 2（已存在）&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;1 2 3（0 最久未用，被换出）&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;2 3 0（1 最久未用，被换出）&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;3 0 4（2 最久未用，被换出）&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;缺页次数：6&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>FIFO 页面置换算法</title>
       <link>https://vsvnakers.github.io/posts/fifo/</link>

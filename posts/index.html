@@ -155,6 +155,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">LRU 页面置换算法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🚀 LRU 页面置换算法 在操作系统内存管理中，除了 FIFO，另一种更聪明且常用的页面置换策略是 —— LRU 页面置换算法
+📌 一、什么是 LRU 页面置换算法？ LRU（Least Recently Used，最近最少使用）页面置换算法是这样一种策略：
+淘汰最近最久未被访问过的页面。
+直白地说：如果一个页面很久没用了，那么它以后可能也不怎么用，所以优先把它换出去。
+✅ 特点： 需要记录页面最近的访问历史 淘汰“最久没用”的页面，而不是最早进入的 通常使用栈（Stack）、链表（List） 或 **时间戳（Timestamp）**结构实现 ❗ 二、缺页中断机制简介（同样适用 LRU） 当访问一个不在内存中的页面时：
+触发缺页中断 如果内存满了，选择最近最久未使用的页面进行置换 加载新页面并恢复执行 💡 缺页次数依然是评估 LRU 表现的关键指标，通常 比 FIFO 更少的缺页次数。
+🧪 三、LRU 算法示例分析 假设页面访问序列为：
+[7, 0, 1, 2, 0, 3, 0, 4] 帧数 3，使用 LRU 策略：
+步骤 页面访问 内存状态 缺页？ 1 7 7 ✅ 2 0 7 0 ✅ 3 1 7 0 1 ✅ 4 2 0 1 2（7 最久未用，被换出） ✅ 5 0 0 1 2（已存在） ❌ 6 3 1 2 3（0 最久未用，被换出） ✅ 7 0 2 3 0（1 最久未用，被换出） ✅ 8 4 3 0 4（2 最久未用，被换出） ✅ 缺页次数：6
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-04-26 00:00:00 +0000 UTC'>April 26, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to LRU 页面置换算法" href="https://vsvnakers.github.io/posts/lru/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">FIFO 页面置换算法
     </h2>
   </header>
