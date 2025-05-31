@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Categories | VSVnakers 主页</title>
+<title>博客 | VSVnakers 主页</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/categories/">
+<link rel="canonical" href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -146,16 +146,33 @@
         </ul>
     </nav>
 </header>
-<main class="main">
+<main class="main"> 
 <header class="page-header">
-    <h1>Categories</h1>
+  <h1>
+    博客
+  </h1>
 </header>
 
-<ul class="terms-tags">
-    <li>
-        <a href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/">博客 <sup><strong><sup>1</sup></strong></sup> </a>
-    </li>
-</ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">二维卷积实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>二维卷积操作：原理解析 &#43; C语言与Python手写实现 一、什么是二维卷积？ 二维卷积（2D Convolution）是图像处理中最基础也最重要的操作之一，广泛应用于：
+图像模糊 边缘检测 卷积神经网络（CNN）特征提取 通俗地讲：
+把一个小的“滤波器”（也叫“卷积核”）放在图像上一个位置，对应区域的值和卷积核每个位置相乘后加总，结果作为输出图像的一个像素值，然后不断滑动这个核，得到整张图的新图像。
+二、卷积的操作步骤（滑动 &#43; 乘加） 假设你有：
+原始图像（5×5） 卷积核（3×3） 操作过程如下：
+卷积核放在图像左上角，和 3x3 区域重叠 对应位置相乘，然后求和 得到的结果就是输出图像对应位置的像素值 卷积核向右移动一格，重复以上过程 到右边边缘后，向下一行移动，从左往右继续滑动 示例计算： 图像窗口：
+1 2 34 5 67 8 9 卷积核：
+1 0 -11 0 -11 0 -1 计算：
+= 1×1 &#43; 2×0 &#43; 3×(-1)&#43; 4×1 &#43; 5×0 &#43; 6×(-1)&#43; 7×1 &#43; 8×0 &#43; 9×(-1)= 1 - 3 &#43; 4 - 6 &#43; 7 - 9 = -6 输出图像中对应位置的值就是 -6。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 02:58:00 +0800 CST'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 二维卷积实现" href="http://localhost:1313/posts/2d-convolution/"></a>
+</article>
     </main>
     
 <footer class="footer">

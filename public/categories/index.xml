@@ -6,6 +6,14 @@
     <description>Recent content in Categories on VSVnakers 主页</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Jun 2025 02:58:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客</title>
+      <link>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 01 Jun 2025 02:58:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

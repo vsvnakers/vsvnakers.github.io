@@ -155,13 +155,54 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">二维卷积实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>二维卷积操作：原理解析 &#43; C语言与Python手写实现 一、什么是二维卷积？ 二维卷积（2D Convolution）是图像处理中最基础也最重要的操作之一，广泛应用于：
+图像模糊 边缘检测 卷积神经网络（CNN）特征提取 通俗地讲：
+把一个小的“滤波器”（也叫“卷积核”）放在图像上一个位置，对应区域的值和卷积核每个位置相乘后加总，结果作为输出图像的一个像素值，然后不断滑动这个核，得到整张图的新图像。
+二、卷积的操作步骤（滑动 &#43; 乘加） 假设你有：
+原始图像（5×5） 卷积核（3×3） 操作过程如下：
+卷积核放在图像左上角，和 3x3 区域重叠 对应位置相乘，然后求和 得到的结果就是输出图像对应位置的像素值 卷积核向右移动一格，重复以上过程 到右边边缘后，向下一行移动，从左往右继续滑动 示例计算： 图像窗口：
+1 2 34 5 67 8 9 卷积核：
+1 0 -11 0 -11 0 -1 计算：
+= 1×1 &#43; 2×0 &#43; 3×(-1)&#43; 4×1 &#43; 5×0 &#43; 6×(-1)&#43; 7×1 &#43; 8×0 &#43; 9×(-1)= 1 - 3 &#43; 4 - 6 &#43; 7 - 9 = -6 输出图像中对应位置的值就是 -6。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 02:58:00 +0800 CST'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 二维卷积实现" href="http://localhost:1313/posts/2d-convolution/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">LRU 页面置换算法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🚀 LRU 页面置换算法 在操作系统内存管理中，除了 FIFO，另一种更聪明且常用的页面置换策略是 —— LRU 页面置换算法
+📌 一、什么是 LRU 页面置换算法？ LRU（Least Recently Used，最近最少使用）页面置换算法是这样一种策略：
+淘汰最近最久未被访问过的页面。
+直白地说：如果一个页面很久没用了，那么它以后可能也不怎么用，所以优先把它换出去。
+✅ 特点： 需要记录页面最近的访问历史 淘汰“最久没用”的页面，而不是最早进入的 通常使用栈（Stack）、链表（List） 或 **时间戳（Timestamp）**结构实现 ❗ 二、缺页中断机制简介（同样适用 LRU） 当访问一个不在内存中的页面时：
+触发缺页中断 如果内存满了，选择最近最久未使用的页面进行置换 加载新页面并恢复执行 💡 缺页次数依然是评估 LRU 表现的关键指标，通常 比 FIFO 更少的缺页次数。
+🧪 三、LRU 算法示例分析 假设页面访问序列为：
+[7, 0, 1, 2, 0, 3, 0, 4] 帧数 3，使用 LRU 策略：
+步骤 页面访问 内存状态 缺页？ 1 7 7 ✅ 2 0 7 0 ✅ 3 1 7 0 1 ✅ 4 2 0 1 2（7 最久未用，被换出） ✅ 5 0 0 1 2（已存在） ❌ 6 3 1 2 3（0 最久未用，被换出） ✅ 7 0 2 3 0（1 最久未用，被换出） ✅ 8 4 3 0 4（2 最久未用，被换出） ✅ 缺页次数：6
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-04-26 00:00:00 +0000 UTC'>April 26, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to LRU 页面置换算法" href="http://localhost:1313/posts/lru/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">FIFO 页面置换算法
     </h2>
   </header>
   <div class="entry-content">
     <p> 学习 FIFO 的总结
 🧠 理解 FIFO 页面置换算法 在操作系统的内存管理中，页面置换算法起着至关重要的作用。当物理内存不足以容纳所有需要的页面时，系统必须选择一部分页面“换出去”，以便为新的页面腾出空间。
-本文将详细介绍最经典、最易理解的页面置换算法之一 —— FIFO（先进先出）页面置换算法，并解释一个令人惊讶的现象：Belady 异常。你还将看到 C 语言和 Rust 的完整实现及验证方式。
 📌 一、什么是 FIFO 页面置换算法？ FIFO（First-In, First-Out）页面置换算法是一种遵循“谁先进来谁先出去”的策略：
 最早进入内存的页面，会最先被淘汰。
 这就像排队买票，先排队的先服务，后来的人必须等队列的前面腾出位置。
@@ -173,7 +214,7 @@
 操作 内存状态 缺页？ 7 7 ✅ 0 7 0 ✅ 1 7 0 1 ✅ 2 0 1 2 ✅ 0 0 1 2 ❌ 3 1 2 3 ✅ 0 2 3 0 ✅ 4 3 0 4 ✅ 缺页次数 = 6
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-04-04 00:00:00 +0000 UTC'>April 4, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-04-24 00:00:00 +0000 UTC'>April 24, 2025</span></footer>
   <a class="entry-link" aria-label="post link to FIFO 页面置换算法" href="http://localhost:1313/posts/fifo/"></a>
 </article>
 
