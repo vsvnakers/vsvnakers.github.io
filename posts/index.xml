@@ -4,10 +4,58 @@
     <title>Posts on VSVnakers 主页</title>
     <link>https://vsvnakers.github.io/posts/</link>
     <description>Recent content in Posts on VSVnakers 主页</description>
-    <generator>Hugo -- 0.147.0</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 02:58:00 +0800</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二维卷积实现</title>
+      <link>https://vsvnakers.github.io/posts/2d-convolution/</link>
+      <pubDate>Sun, 01 Jun 2025 02:58:00 +0800</pubDate>
+      <guid>https://vsvnakers.github.io/posts/2d-convolution/</guid>
+      <description>&lt;h1 id=&#34;二维卷积操作原理解析--c语言与python手写实现&#34;&gt;二维卷积操作：原理解析 + C语言与Python手写实现&lt;/h1&gt;
+&lt;h2 id=&#34;一什么是二维卷积&#34;&gt;一、什么是二维卷积？&lt;/h2&gt;
+&lt;p&gt;二维卷积（2D Convolution）是图像处理中最基础也最重要的操作之一，广泛应用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图像模糊&lt;/li&gt;
+&lt;li&gt;边缘检测&lt;/li&gt;
+&lt;li&gt;卷积神经网络（CNN）特征提取&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;通俗地讲：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把一个小的“滤波器”（也叫“卷积核”）放在图像上一个位置，对应区域的值和卷积核每个位置相乘后加总，结果作为输出图像的一个像素值，然后不断滑动这个核，得到整张图的新图像。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;二卷积的操作步骤滑动--乘加&#34;&gt;二、卷积的操作步骤（滑动 + 乘加）&lt;/h2&gt;
+&lt;p&gt;假设你有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原始图像（5×5）&lt;/li&gt;
+&lt;li&gt;卷积核（3×3）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;操作过程如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;卷积核放在图像左上角，和 3x3 区域重叠&lt;/li&gt;
+&lt;li&gt;对应位置相乘，然后求和&lt;/li&gt;
+&lt;li&gt;得到的结果就是输出图像对应位置的像素值&lt;/li&gt;
+&lt;li&gt;卷积核向右移动一格，重复以上过程&lt;/li&gt;
+&lt;li&gt;到右边边缘后，向下一行移动，从左往右继续滑动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;示例计算&#34;&gt;示例计算：&lt;/h3&gt;
+&lt;p&gt;图像窗口：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1 2 3
+4 5 6
+7 8 9
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;卷积核：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1  0 -1
+1  0 -1
+1  0 -1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;计算：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;= 1×1 + 2×0 + 3×(-1)
++ 4×1 + 5×0 + 6×(-1)
++ 7×1 + 8×0 + 9×(-1)
+= 1 - 3 + 4 - 6 + 7 - 9 = -6
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输出图像中对应位置的值就是 &lt;code&gt;-6&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LRU 页面置换算法</title>
       <link>https://vsvnakers.github.io/posts/lru/</link>

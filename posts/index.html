@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - VSVnakers 主页">
 <meta name="author" content="">
 <link rel="canonical" href="https://vsvnakers.github.io/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.93f625d739f1d6a5c6f20c146bc6a8d26b233492b34b2220c54b12fd46a04ded.css" integrity="sha256-k/Yl1znx1qXG8gwUa8ao0msjNJKzSyIgxUsS/UagTe0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://vsvnakers.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://vsvnakers.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://vsvnakers.github.io/favicon-32x32.png">
@@ -152,6 +152,27 @@
     Posts
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">二维卷积实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>二维卷积操作：原理解析 &#43; C语言与Python手写实现 一、什么是二维卷积？ 二维卷积（2D Convolution）是图像处理中最基础也最重要的操作之一，广泛应用于：
+图像模糊 边缘检测 卷积神经网络（CNN）特征提取 通俗地讲：
+把一个小的“滤波器”（也叫“卷积核”）放在图像上一个位置，对应区域的值和卷积核每个位置相乘后加总，结果作为输出图像的一个像素值，然后不断滑动这个核，得到整张图的新图像。
+二、卷积的操作步骤（滑动 &#43; 乘加） 假设你有：
+原始图像（5×5） 卷积核（3×3） 操作过程如下：
+卷积核放在图像左上角，和 3x3 区域重叠 对应位置相乘，然后求和 得到的结果就是输出图像对应位置的像素值 卷积核向右移动一格，重复以上过程 到右边边缘后，向下一行移动，从左往右继续滑动 示例计算： 图像窗口：
+1 2 3 4 5 6 7 8 9 卷积核：
+1 0 -1 1 0 -1 1 0 -1 计算：
+= 1×1 &#43; 2×0 &#43; 3×(-1) &#43; 4×1 &#43; 5×0 &#43; 6×(-1) &#43; 7×1 &#43; 8×0 &#43; 9×(-1) = 1 - 3 &#43; 4 - 6 &#43; 7 - 9 = -6 输出图像中对应位置的值就是 -6。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 02:58:00 +0800 +0800'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 二维卷积实现" href="https://vsvnakers.github.io/posts/2d-convolution/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
