@@ -1,6 +1,6 @@
 ---
 title: "二维卷积实现"
-date: 2025-06-01T02:58:00+08:00
+date: 2025-05-31T02:58:00+08:00
 tags: ["图像处理", "卷积", "C语言", "Python"]
 categories: ["博客"]
 draft: false

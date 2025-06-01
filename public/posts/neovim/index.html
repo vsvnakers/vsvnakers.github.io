@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>从 0 配置 Neovim | VSVnakers 主页</title>
+<meta name="keywords" content="">
+<meta name="description" content="🚀 从 0 配置 Neovim 成为 VSCode 替代开发环境（v0.9.5）
+✅ 环境说明
+
+Neovim 版本：v0.9.5（Ubuntu 默认仓库版本）
+系统平台：WSL / Ubuntu
+插件管理器：packer.nvim
+
+
+🧱 第一步：安装 Neovim
+sudo apt update
+sudo apt install neovim -y
+确认版本：
+nvim --version
+输出应为：
+NVIM v0.9.5
+
+📦 第二步：安装 git 和 node（供 LSP 和插件使用）
+sudo apt install git curl -y
+
+# 安装 nodejs（供 pyright 使用）
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install nodejs -y
+
+📁 第三步：安装插件管理器 packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+⚙️ 第四步：创建 Neovim 配置文件
+mkdir -p ~/.config/nvim
+nvim ~/.config/nvim/init.lua
+
+🧠 第五步：粘贴完整配置（适配 v0.9.5）
+-- 基础设置
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.termguicolors = true
+
+-- 插件加载
+require(&#39;packer&#39;).startup(function(use)
+  use &#39;wbthomason/packer.nvim&#39;
+  use &#39;nvim-lualine/lualine.nvim&#39;
+  use &#39;nvim-tree/nvim-tree.lua&#39;
+  use &#39;nvim-tree/nvim-web-devicons&#39;
+  use &#39;folke/tokyonight.nvim&#39;
+  use &#39;nvim-lua/plenary.nvim&#39;
+  use &#39;nvim-telescope/telescope.nvim&#39;
+  use { &#39;nvim-treesitter/nvim-treesitter&#39;, run = &#39;:TSUpdate&#39; }
+  use &#39;neovim/nvim-lspconfig&#39;
+  use &#39;hrsh7th/nvim-cmp&#39;
+  use &#39;hrsh7th/cmp-nvim-lsp&#39;
+  use &#39;L3MON4D3/LuaSnip&#39;
+  use &#39;saadparwaiz1/cmp_luasnip&#39;
+end)
+
+-- 启用主题
+vim.cmd[[colorscheme tokyonight]]
+
+-- UI 插件初始化
+require(&#39;lualine&#39;).setup()
+require(&#39;nvim-tree&#39;).setup()
+
+-- Treesitter 配置
+require(&#39;nvim-treesitter.configs&#39;).setup {
+  highlight = { enable = true }
+}
+
+-- LSP 配置
+local lspconfig = require(&#39;lspconfig&#39;)
+lspconfig.pyright.setup {}
+lspconfig.lua_ls.setup {}
+
+-- 自动补全
+local cmp = require&#39;cmp&#39;
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require(&#39;luasnip&#39;).lsp_expand(args.body)
+    end
+  },
+  mapping = cmp.mapping.preset.insert({
+    [&#39;&lt;Tab&gt;&#39;] = cmp.mapping.select_next_item(),
+    [&#39;&lt;S-Tab&gt;&#39;] = cmp.mapping.select_prev_item(),
+    [&#39;&lt;CR&gt;&#39;] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = {
+    { name = &#39;nvim_lsp&#39; },
+    { name = &#39;luasnip&#39; }
+  }
+})
+
+🧪 第六步：同步插件
+重启 Neovim，然后执行：">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/neovim/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/neovim/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="VSVnakers 主页 (Alt + H)">VSVnakers 主页</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/resume" title="👤 个人">
+                    <span>👤 个人</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts" title="📘 博客">
+                    <span>📘 博客</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/docs" title="📚 教程">
+                    <span>📚 教程</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/study" title="🎓 学习">
+                    <span>🎓 学习</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/log" title="📘 日志">
+                    <span>📘 日志</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tools" title="🛠 工具集">
+                    <span>🛠 工具集</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/vsvnakers" title="">
+                    <span><img src='/throw/me.png' width='30' style='vertical-align: middle; position: relative; top: 18px;' /></span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      从 0 配置 Neovim
+    </h1>
+    <div class="post-meta"><span title='2025-06-01 02:58:00 +0800 CST'>June 1, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="-从-0-配置-neovim-成为-vscode-替代开发环境v095">🚀 从 0 配置 Neovim 成为 VSCode 替代开发环境（v0.9.5）<a hidden class="anchor" aria-hidden="true" href="#-从-0-配置-neovim-成为-vscode-替代开发环境v095">#</a></h1>
+<h2 id="-环境说明">✅ 环境说明<a hidden class="anchor" aria-hidden="true" href="#-环境说明">#</a></h2>
+<ul>
+<li>Neovim 版本：v0.9.5（Ubuntu 默认仓库版本）</li>
+<li>系统平台：WSL / Ubuntu</li>
+<li>插件管理器：<code>packer.nvim</code></li>
+</ul>
+<hr>
+<h2 id="-第一步安装-neovim">🧱 第一步：安装 Neovim<a hidden class="anchor" aria-hidden="true" href="#-第一步安装-neovim">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install neovim -y
+</span></span></code></pre></div><p>确认版本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim --version
+</span></span></code></pre></div><p>输出应为：</p>
+<pre tabindex="0"><code>NVIM v0.9.5
+</code></pre><hr>
+<h2 id="-第二步安装-git-和-node供-lsp-和插件使用">📦 第二步：安装 <code>git</code> 和 <code>node</code>（供 LSP 和插件使用）<a hidden class="anchor" aria-hidden="true" href="#-第二步安装-git-和-node供-lsp-和插件使用">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install git curl -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装 nodejs（供 pyright 使用）</span>
+</span></span><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span><span style="display:flex;"><span>sudo apt install nodejs -y
+</span></span></code></pre></div><hr>
+<h2 id="-第三步安装插件管理器-packernvim">📁 第三步：安装插件管理器 <code>packer.nvim</code><a hidden class="anchor" aria-hidden="true" href="#-第三步安装插件管理器-packernvim">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/wbthomason/packer.nvim <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>~/.local/share/nvim/site/pack/packer/start/packer.nvim
+</span></span></code></pre></div><hr>
+<h2 id="-第四步创建-neovim-配置文件">⚙️ 第四步：创建 Neovim 配置文件<a hidden class="anchor" aria-hidden="true" href="#-第四步创建-neovim-配置文件">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/.config/nvim
+</span></span><span style="display:flex;"><span>nvim ~/.config/nvim/init.lua
+</span></span></code></pre></div><hr>
+<h2 id="-第五步粘贴完整配置适配-v095">🧠 第五步：粘贴完整配置（适配 v0.9.5）<a hidden class="anchor" aria-hidden="true" href="#-第五步粘贴完整配置适配-v095">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#75715e">-- 基础设置</span>
+</span></span><span style="display:flex;"><span>vim.opt.number <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>vim.opt.relativenumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>vim.opt.tabstop <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>vim.opt.shiftwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>vim.opt.expandtab <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>vim.opt.termguicolors <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 插件加载</span>
+</span></span><span style="display:flex;"><span>require(<span style="color:#e6db74">&#39;packer&#39;</span>).startup(<span style="color:#66d9ef">function</span>(use)
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;wbthomason/packer.nvim&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;nvim-lualine/lualine.nvim&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;nvim-tree/nvim-tree.lua&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;nvim-tree/nvim-web-devicons&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;folke/tokyonight.nvim&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;nvim-lua/plenary.nvim&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;nvim-telescope/telescope.nvim&#39;</span>
+</span></span><span style="display:flex;"><span>  use { <span style="color:#e6db74">&#39;nvim-treesitter/nvim-treesitter&#39;</span>, run <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;:TSUpdate&#39;</span> }
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;neovim/nvim-lspconfig&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;hrsh7th/nvim-cmp&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;hrsh7th/cmp-nvim-lsp&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;L3MON4D3/LuaSnip&#39;</span>
+</span></span><span style="display:flex;"><span>  use <span style="color:#e6db74">&#39;saadparwaiz1/cmp_luasnip&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 启用主题</span>
+</span></span><span style="display:flex;"><span>vim.cmd<span style="color:#e6db74">[[colorscheme tokyonight]]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- UI 插件初始化</span>
+</span></span><span style="display:flex;"><span>require(<span style="color:#e6db74">&#39;lualine&#39;</span>).setup()
+</span></span><span style="display:flex;"><span>require(<span style="color:#e6db74">&#39;nvim-tree&#39;</span>).setup()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Treesitter 配置</span>
+</span></span><span style="display:flex;"><span>require(<span style="color:#e6db74">&#39;nvim-treesitter.configs&#39;</span>).setup {
+</span></span><span style="display:flex;"><span>  highlight <span style="color:#f92672">=</span> { enable <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- LSP 配置</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">local</span> lspconfig <span style="color:#f92672">=</span> require(<span style="color:#e6db74">&#39;lspconfig&#39;</span>)
+</span></span><span style="display:flex;"><span>lspconfig.pyright.setup {}
+</span></span><span style="display:flex;"><span>lspconfig.lua_ls.setup {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 自动补全</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">local</span> cmp <span style="color:#f92672">=</span> require<span style="color:#e6db74">&#39;cmp&#39;</span>
+</span></span><span style="display:flex;"><span>cmp.setup({
+</span></span><span style="display:flex;"><span>  snippet <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    expand <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(args)
+</span></span><span style="display:flex;"><span>      require(<span style="color:#e6db74">&#39;luasnip&#39;</span>).lsp_expand(args.body)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  mapping <span style="color:#f92672">=</span> cmp.mapping.preset.insert({
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;&lt;Tab&gt;&#39;</span>] <span style="color:#f92672">=</span> cmp.mapping.select_next_item(),
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;&lt;S-Tab&gt;&#39;</span>] <span style="color:#f92672">=</span> cmp.mapping.select_prev_item(),
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;&lt;CR&gt;&#39;</span>] <span style="color:#f92672">=</span> cmp.mapping.confirm({ select <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> }),
+</span></span><span style="display:flex;"><span>  }),
+</span></span><span style="display:flex;"><span>  sources <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    { name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;nvim_lsp&#39;</span> },
+</span></span><span style="display:flex;"><span>    { name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;luasnip&#39;</span> }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><hr>
+<h2 id="-第六步同步插件">🧪 第六步：同步插件<a hidden class="anchor" aria-hidden="true" href="#-第六步同步插件">#</a></h2>
+<p>重启 Neovim，然后执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">PackerSync</span>
+</span></span></code></pre></div><hr>
+<h2 id="-第七步安装-lsp-依赖">🔌 第七步：安装 LSP 依赖<a hidden class="anchor" aria-hidden="true" href="#-第七步安装-lsp-依赖">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g pyright
+</span></span><span style="display:flex;"><span>sudo apt install lua-language-server
+</span></span></code></pre></div><hr>
+<h2 id="-常用命令">🔥 常用命令<a hidden class="anchor" aria-hidden="true" href="#-常用命令">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>功能</th>
+          <th>命令</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>打开文件树</td>
+          <td><code>:NvimTreeToggle</code></td>
+      </tr>
+      <tr>
+          <td>查找文件</td>
+          <td><code>:Telescope find_files</code></td>
+      </tr>
+      <tr>
+          <td>安装语法高亮</td>
+          <td><code>:TSInstall lua python</code></td>
+      </tr>
+      <tr>
+          <td>检查健康</td>
+          <td><code>:checkhealth</code></td>
+      </tr>
+  </tbody>
+</table>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">VSVnakers 主页</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

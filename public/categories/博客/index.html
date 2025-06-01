@@ -159,6 +159,21 @@
     </h2>
   </header>
   <div class="entry-content">
+    <p>🚀 从 0 配置 Neovim 成为 VSCode 替代开发环境（v0.9.5） ✅ 环境说明 Neovim 版本：v0.9.5（Ubuntu 默认仓库版本） 系统平台：WSL / Ubuntu 插件管理器：packer.nvim 🧱 第一步：安装 Neovim sudo apt update sudo apt install neovim -y 确认版本：
+nvim --version 输出应为：
+NVIM v0.9.5 📦 第二步：安装 git 和 node（供 LSP 和插件使用） sudo apt install git curl -y # 安装 nodejs（供 pyright 使用） curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - sudo apt install nodejs -y 📁 第三步：安装插件管理器 packer.nvim git clone --depth 1 https://github.com/wbthomason/packer.nvim \ ~/.local/share/nvim/site/pack/packer/start/packer.nvim ⚙️ 第四步：创建 Neovim 配置文件 mkdir -p ~/.config/nvim nvim ~/.config/nvim/init.lua 🧠 第五步：粘贴完整配置（适配 v0.9.5） -- 基础设置 vim.opt.number = true vim.opt.relativenumber = true vim.opt.tabstop = 4 vim.opt.shiftwidth = 4 vim.opt.expandtab = true vim.opt.termguicolors = true -- 插件加载 require(&#39;packer&#39;).startup(function(use) use &#39;wbthomason/packer.nvim&#39; use &#39;nvim-lualine/lualine.nvim&#39; use &#39;nvim-tree/nvim-tree.lua&#39; use &#39;nvim-tree/nvim-web-devicons&#39; use &#39;folke/tokyonight.nvim&#39; use &#39;nvim-lua/plenary.nvim&#39; use &#39;nvim-telescope/telescope.nvim&#39; use { &#39;nvim-treesitter/nvim-treesitter&#39;, run = &#39;:TSUpdate&#39; } use &#39;neovim/nvim-lspconfig&#39; use &#39;hrsh7th/nvim-cmp&#39; use &#39;hrsh7th/cmp-nvim-lsp&#39; use &#39;L3MON4D3/LuaSnip&#39; use &#39;saadparwaiz1/cmp_luasnip&#39; end) -- 启用主题 vim.cmd[[colorscheme tokyonight]] -- UI 插件初始化 require(&#39;lualine&#39;).setup() require(&#39;nvim-tree&#39;).setup() -- Treesitter 配置 require(&#39;nvim-treesitter.configs&#39;).setup { highlight = { enable = true } } -- LSP 配置 local lspconfig = require(&#39;lspconfig&#39;) lspconfig.pyright.setup {} lspconfig.lua_ls.setup {} -- 自动补全 local cmp = require&#39;cmp&#39; cmp.setup({ snippet = { expand = function(args) require(&#39;luasnip&#39;).lsp_expand(args.body) end }, mapping = cmp.mapping.preset.insert({ [&#39;&lt;Tab&gt;&#39;] = cmp.mapping.select_next_item(), [&#39;&lt;S-Tab&gt;&#39;] = cmp.mapping.select_prev_item(), [&#39;&lt;CR&gt;&#39;] = cmp.mapping.confirm({ select = true }), }), sources = { { name = &#39;nvim_lsp&#39; }, { name = &#39;luasnip&#39; } } }) 🧪 第六步：同步插件 重启 Neovim，然后执行：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 02:58:00 +0800 CST'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 二维卷积实现" href="http://localhost:1313/posts/neovim/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">二维卷积实现
+    </h2>
+  </header>
+  <div class="entry-content">
     <p>二维卷积操作：原理解析 &#43; C语言与Python手写实现 一、什么是二维卷积？ 二维卷积（2D Convolution）是图像处理中最基础也最重要的操作之一，广泛应用于：
 图像模糊 边缘检测 卷积神经网络（CNN）特征提取 通俗地讲：
 把一个小的“滤波器”（也叫“卷积核”）放在图像上一个位置，对应区域的值和卷积核每个位置相乘后加总，结果作为输出图像的一个像素值，然后不断滑动这个核，得到整张图的新图像。
@@ -170,7 +185,7 @@
 = 1×1 &#43; 2×0 &#43; 3×(-1)&#43; 4×1 &#43; 5×0 &#43; 6×(-1)&#43; 7×1 &#43; 8×0 &#43; 9×(-1)= 1 - 3 &#43; 4 - 6 &#43; 7 - 9 = -6 输出图像中对应位置的值就是 -6。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-06-01 02:58:00 +0800 CST'>June 1, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-05-31 02:58:00 +0800 CST'>May 31, 2025</span></footer>
   <a class="entry-link" aria-label="post link to 二维卷积实现" href="http://localhost:1313/posts/2d-convolution/"></a>
 </article>
     </main>
