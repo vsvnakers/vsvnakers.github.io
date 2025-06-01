@@ -9,9 +9,110 @@
     <lastBuildDate>Sun, 01 Jun 2025 02:58:00 +0800</lastBuildDate>
     <atom:link href="https://vsvnakers.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>从 0 配置 Neovim</title>
+      <link>https://vsvnakers.github.io/posts/neovim/</link>
+      <pubDate>Sun, 01 Jun 2025 02:58:00 +0800</pubDate>
+      <guid>https://vsvnakers.github.io/posts/neovim/</guid>
+      <description>&lt;h1 id=&#34;-从-0-配置-neovim-成为-vscode-替代开发环境v095&#34;&gt;🚀 从 0 配置 Neovim 成为 VSCode 替代开发环境（v0.9.5）&lt;/h1&gt;
+&lt;h2 id=&#34;-环境说明&#34;&gt;✅ 环境说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Neovim 版本：v0.9.5（Ubuntu 默认仓库版本）&lt;/li&gt;
+&lt;li&gt;系统平台：WSL / Ubuntu&lt;/li&gt;
+&lt;li&gt;插件管理器：&lt;code&gt;packer.nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第一步安装-neovim&#34;&gt;🧱 第一步：安装 Neovim&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install neovim -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;确认版本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nvim --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;输出应为：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NVIM v0.9.5
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第二步安装-git-和-node供-lsp-和插件使用&#34;&gt;📦 第二步：安装 &lt;code&gt;git&lt;/code&gt; 和 &lt;code&gt;node&lt;/code&gt;（供 LSP 和插件使用）&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install git curl -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装 nodejs（供 pyright 使用）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install nodejs -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第三步安装插件管理器-packernvim&#34;&gt;📁 第三步：安装插件管理器 &lt;code&gt;packer.nvim&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --depth &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; https://github.com/wbthomason/packer.nvim &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;~/.local/share/nvim/site/pack/packer/start/packer.nvim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第四步创建-neovim-配置文件&#34;&gt;⚙️ 第四步：创建 Neovim 配置文件&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p ~/.config/nvim
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nvim ~/.config/nvim/init.lua
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第五步粘贴完整配置适配-v095&#34;&gt;🧠 第五步：粘贴完整配置（适配 v0.9.5）&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- 基础设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.number &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.relativenumber &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.tabstop &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.shiftwidth &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.expandtab &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.opt.termguicolors &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- 插件加载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;packer&amp;#39;&lt;/span&gt;).startup(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(use)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;wbthomason/packer.nvim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-lualine/lualine.nvim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-tree/nvim-tree.lua&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-tree/nvim-web-devicons&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;folke/tokyonight.nvim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-lua/plenary.nvim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-telescope/telescope.nvim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use { &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-treesitter/nvim-treesitter&amp;#39;&lt;/span&gt;, run &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;:TSUpdate&amp;#39;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;neovim/nvim-lspconfig&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hrsh7th/nvim-cmp&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hrsh7th/cmp-nvim-lsp&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;L3MON4D3/LuaSnip&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  use &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;saadparwaiz1/cmp_luasnip&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- 启用主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim.cmd&lt;span style=&#34;color:#e6db74&#34;&gt;[[colorscheme tokyonight]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- UI 插件初始化&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lualine&amp;#39;&lt;/span&gt;).setup()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-tree&amp;#39;&lt;/span&gt;).setup()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Treesitter 配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim-treesitter.configs&amp;#39;&lt;/span&gt;).setup {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  highlight &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { enable &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- LSP 配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;local&lt;/span&gt; lspconfig &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lspconfig&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lspconfig.pyright.setup {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lspconfig.lua_ls.setup {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- 自动补全&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;local&lt;/span&gt; cmp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; require&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cmp&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cmp.setup({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  snippet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    expand &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      require(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;luasnip&amp;#39;&lt;/span&gt;).lsp_expand(args.body)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mapping &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cmp.mapping.preset.insert({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;Tab&amp;gt;&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cmp.mapping.select_next_item(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;S-Tab&amp;gt;&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cmp.mapping.select_prev_item(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;CR&amp;gt;&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cmp.mapping.confirm({ select &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; }),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sources &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    { name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nvim_lsp&amp;#39;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    { name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;luasnip&amp;#39;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第六步同步插件&#34;&gt;🧪 第六步：同步插件&lt;/h2&gt;
+&lt;p&gt;重启 Neovim，然后执行：&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>二维卷积实现</title>
       <link>https://vsvnakers.github.io/posts/2d-convolution/</link>
-      <pubDate>Sun, 01 Jun 2025 02:58:00 +0800</pubDate>
+      <pubDate>Sat, 31 May 2025 02:58:00 +0800</pubDate>
       <guid>https://vsvnakers.github.io/posts/2d-convolution/</guid>
       <description>&lt;h1 id=&#34;二维卷积操作原理解析--c语言与python手写实现&#34;&gt;二维卷积操作：原理解析 + C语言与Python手写实现&lt;/h1&gt;
 &lt;h2 id=&#34;一什么是二维卷积&#34;&gt;一、什么是二维卷积？&lt;/h2&gt;
