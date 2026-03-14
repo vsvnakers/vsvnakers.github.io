@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import theme from './theme'
 
 export default defineConfig({
   title: 'VSVnakers 主页',
@@ -11,7 +10,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: 'https://github.com/vsvnakers.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap', rel: 'stylesheet' }],
+    ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap', rel: 'stylesheet' }],
     ['link', { rel: 'stylesheet', href: '/custom.css' }]
   ],
 
