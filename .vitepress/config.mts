@@ -17,7 +17,7 @@ export default defineConfig({
     },
 
     nav: [
-      { text: '📝 博客', link: '/docs/posts/' },
+      { text: '📝 博客', link: '/posts/' },
       { text: '👤 关于', link: '/resume/' },
       { text: '📚 学习', link: '/study/' },
       { text: '🛠 工具', link: '/tools/' },
