@@ -53,7 +53,7 @@ html.dark-mode-transition div[class*='language-'] {
   100% { opacity: 0; }
 }
 
-body.dark-mode-flash::after {
+body.dark-mode-flash::before {
   content: '';
   position: fixed;
   top: 0;
@@ -88,6 +88,12 @@ body.dark-mode-flash::after {
 .post-item,
 .vercount-item {
   will-change: auto;
+}
+
+/* 确保内容区域在正确的层级 */
+.VPContent {
+  position: relative;
+  z-index: 1;
 }
 
 /* =================================
@@ -188,44 +194,42 @@ a:hover {
    如需自定义背景图片，将图片放在 public/bg.jpg 即可
    ================================= */
 
-/* 自定义背景图片支持 */
-body {
-  /* 默认渐变背景 */
+/* 自定义背景图片层 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
   background: linear-gradient(-45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #5f27cd, #00d2d3, #ff9ff3, #54a0ff);
   background-size: 600% 600%;
   animation: gradientBG 8s ease infinite;
-  min-height: 100vh;
 }
 
 /* 如果存在自定义背景图片，使用图片 */
-body.has-custom-bg {
+body.has-custom-bg::after {
   background: var(--vp-background-image) no-repeat center center fixed;
   background-size: cover;
   animation: none;
 }
 
-/* 暗色模式背景 */
-.dark body {
+/* 暗色模式背景层 - 如果有自定义图片则保持图片 */
+.dark body::after {
   background: linear-gradient(-45deg, #0a0a0f, #1a1a2e, #0f0f1a, #1a0a2e, #0a1a2e, #1a0a1a);
   background-size: 600% 600%;
   animation: gradientBG 10s ease infinite;
 }
 
-.dark body.has-custom-bg {
+.dark body.has-custom-bg::after {
   background: var(--vp-background-image) no-repeat center center fixed;
   background-size: cover;
   animation: none;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 100%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 0%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 浮动的光斑粒子 - 固定定位不影响布局 - 加强效果 */
+/* 粒子效果层 - 在背景之上，内容之下 */
 body::before {
   content: '';
   position: fixed;
@@ -247,6 +251,14 @@ body::before {
   animation: float 15s ease-in-out infinite;
 }
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
   33% { transform: translateY(-30px) scale(1.1) rotate(5deg); }
@@ -254,33 +266,42 @@ body::before {
   100% { transform: translateY(0) scale(1) rotate(0deg); }
 }
 
-/* 闪烁的星光粒子 - 固定定位不影响布局 - 加强效果 */
-body::after {
-  content: '';
+/* 闪烁的星光粒子 - 在背景之上，内容之下 */
+.stars-layer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   background-image:
     radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 1) 50%, transparent 100%),
     radial-gradient(3px 3px at 20% 30%, rgba(255, 107, 107, 0.9) 50%, transparent 100%),
     radial-gradient(5px 5px at 30% 70%, rgba(72, 219, 251, 0.8) 50%, transparent 100%),
     radial-gradient(3px 3px at 50% 50%, rgba(254, 202, 87, 0.9) 50%, transparent 100%),
     radial-gradient(4px 4px at 70% 20%, rgba(29, 209, 161, 0.8) 50%, transparent 100%),
-    radial-gradient(3px 3px at 80% 80%, rgba(95, 39, 205, 0.9) 50%, transparent 100%),
+    radial-gradient(3px 3px at 80% 80%, rgba(255, 255, 255, 1) 50%, transparent 100%),
     radial-gradient(4px 4px at 90% 40%, rgba(0, 210, 211, 0.9) 50%, transparent 100%),
     radial-gradient(3px 3px at 15% 85%, rgba(255, 159, 243, 0.8) 50%, transparent 100%),
     radial-gradient(5px 5px at 45% 15%, rgba(84, 160, 255, 0.8) 50%, transparent 100%),
-    radial-gradient(3px 3px at 65% 65%, rgba(255, 255, 255, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 25% 55%, rgba(255, 107, 107, 0.8) 50%, transparent 100%),
-    radial-gradient(3px 3px at 55% 85%, rgba(72, 219, 251, 0.9) 50%, transparent 100%),
-    radial-gradient(4px 4px at 35% 35%, rgba(254, 202, 87, 0.8) 50%, transparent 100%),
-    radial-gradient(3px 3px at 75% 75%, rgba(29, 209, 161, 0.9) 50%, transparent 100%),
-    radial-gradient(4px 4px at 85% 55%, rgba(95, 39, 205, 0.8) 50%, transparent 100%);
+    radial-gradient(3px 3px at 65% 65%, rgba(255, 255, 255, 1) 50%, transparent 100%);
   animation: twinkle 3s linear infinite;
+}
+
+/* 暗黑模式星光 */
+.dark .stars-layer {
+  background-image:
+    radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 1) 50%, transparent 100%),
+    radial-gradient(3px 3px at 20% 30%, rgba(99, 102, 241, 1) 50%, transparent 100%),
+    radial-gradient(5px 5px at 30% 70%, rgba(168, 85, 247, 0.9) 50%, transparent 100%),
+    radial-gradient(3px 3px at 50% 50%, rgba(236, 72, 153, 1) 50%, transparent 100%),
+    radial-gradient(4px 4px at 70% 20%, rgba(0, 210, 211, 0.9) 50%, transparent 100%),
+    radial-gradient(3px 3px at 80% 80%, rgba(255, 255, 255, 1) 50%, transparent 100%),
+    radial-gradient(4px 4px at 90% 40%, rgba(99, 102, 241, 1) 50%, transparent 100%),
+    radial-gradient(3px 3px at 15% 85%, rgba(168, 85, 247, 0.9) 50%, transparent 100%),
+    radial-gradient(5px 5px at 45% 15%, rgba(236, 72, 153, 0.9) 50%, transparent 100%),
+    radial-gradient(3px 3px at 65% 65%, rgba(0, 210, 211, 1) 50%, transparent 100%);
 }
 
 @keyframes twinkle {
@@ -701,11 +722,8 @@ div[class*='language-']::before {
    深色模式 - 强视觉特效
    ================================= */
 
-/* 暗黑模式 - 彩色光斑 - 固定定位不影响布局 - 加强效果 */
+/* 暗黑模式 - 彩色光斑粒子 */
 .dark body::before {
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
   background-image:
     radial-gradient(circle at 15% 25%, rgba(99, 102, 241, 0.5) 0%, transparent 50%),
     radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.5) 0%, transparent 50%),
@@ -718,29 +736,7 @@ div[class*='language-']::before {
   animation: float 12s ease-in-out infinite;
 }
 
-/* 暗黑模式 - 闪烁星光 - 固定定位不影响布局 - 加强效果 */
-.dark body::after {
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 1) 50%, transparent 100%),
-    radial-gradient(3px 3px at 20% 30%, rgba(99, 102, 241, 1) 50%, transparent 100%),
-    radial-gradient(5px 5px at 30% 70%, rgba(168, 85, 247, 0.9) 50%, transparent 100%),
-    radial-gradient(3px 3px at 50% 50%, rgba(236, 72, 153, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 70% 20%, rgba(0, 210, 211, 0.9) 50%, transparent 100%),
-    radial-gradient(3px 3px at 80% 80%, rgba(255, 255, 255, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 90% 40%, rgba(99, 102, 241, 1) 50%, transparent 100%),
-    radial-gradient(3px 3px at 15% 85%, rgba(168, 85, 247, 0.9) 50%, transparent 100%),
-    radial-gradient(5px 5px at 45% 15%, rgba(236, 72, 153, 0.9) 50%, transparent 100%),
-    radial-gradient(3px 3px at 65% 65%, rgba(0, 210, 211, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 25% 55%, rgba(99, 102, 241, 0.9) 50%, transparent 100%),
-    radial-gradient(3px 3px at 55% 85%, rgba(168, 85, 247, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 35% 35%, rgba(236, 72, 153, 0.9) 50%, transparent 100%),
-    radial-gradient(3px 3px at 75% 75%, rgba(0, 210, 211, 1) 50%, transparent 100%),
-    radial-gradient(4px 4px at 85% 55%, rgba(99, 102, 241, 0.9) 50%, transparent 100%);
-  animation: twinkle 3s linear infinite;
-}
+/* 暗黑模式星光已经在 .stars-layer 中定义，不需要在 body::after 重复 */
 
 /* 暗黑玻璃态 */
 .dark .VPContent,
