@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'VSVnakers 主页',
-  description: '微电子 · 技术爱好者',
+  description: 'VSVnakers 的个人主页',
   lang: 'zh-CN',
   lastUpdated: true,
 

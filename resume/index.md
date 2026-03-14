@@ -1,21 +1,19 @@
 ---
-title: "我的信息"
-date: 2025-04-03
-draft: false
+title: "关于我"
 ---
+
+# 👤 关于我
 
 ## 基本信息
 
-- 姓名：VSVnakers  
-- 职业：微电子  
-- 技能：None ...  
-- 联系方式: vsvnakers@outlook.com
-- **[个人 Github](https://github.com/vsvnakers)**
+- **姓名**：VSVnakers
+- **职业**：计算机某行业
+- **技能**：学习中
+- **联系方式**：vsvnakers@outlook.com
+- **Github**：https://github.com/vsvnakers
 
-## 教育背景
-某学校
-...
-- **[..](https://opencamp.ai/user/my)**
-## 工作经历
+## 简介
 
-...
+欢迎来到我的个人主页！
+
+这里会记录我的学习过程和一些技术心得。

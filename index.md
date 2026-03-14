@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: VSVnakers
-  text: 微电子 · 技术爱好者
+  text: 计算机某行业
   image:
     src: https://github.com/vsvnakers.png
     alt: VSVnakers
