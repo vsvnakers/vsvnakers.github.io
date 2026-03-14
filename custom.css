@@ -23,33 +23,43 @@ html {
   transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html.dark-mode-transition,
-html.dark-mode-transition * {
+/* 只对特定元素应用过渡，避免影响布局 */
+html.dark-mode-transition .VPContent,
+html.dark-mode-transition .VPNavBar,
+html.dark-mode-transition .VPSidebar,
+html.dark-mode-transition .VPFeature,
+html.dark-mode-transition .VPButton,
+html.dark-mode-transition .post-item,
+html.dark-mode-transition .vercount-item,
+html.dark-mode-transition .VPHero,
+html.dark-mode-transition table,
+html.dark-mode-transition blockquote,
+html.dark-mode-transition div[class*='language-'] {
   transition:
     background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* 切换时的闪光效果 */
+/* 切换时的闪光效果 - 固定在 body 上，不影响布局 */
 @keyframes flashLight {
-  0% { background-color: rgba(99, 102, 241, 0); }
-  50% { background-color: rgba(99, 102, 241, 0.1); }
-  100% { background-color: rgba(99, 102, 241, 0); }
+  0% { opacity: 0; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0; }
 }
 
-html.dark::before {
+body.dark-mode-flash::after {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(99, 102, 241, 0.15);
   pointer-events: none;
-  z-index: 9999;
-  animation: flashLight 0.5s ease-out;
+  z-index: 10000;
+  animation: flashLight 0.4s ease-out;
 }
 
 /* 切换按钮动画增强 */
@@ -63,6 +73,17 @@ html.dark::before {
 
 .VPSwitchAppearance:active {
   transform: scale(0.95);
+}
+
+/* 防止过渡影响布局 */
+.VPContent,
+.VPNavBar,
+.VPSidebar,
+.VPHero,
+.VPFeature,
+.post-item,
+.vercount-item {
+  will-change: auto;
 }
 
 /* =================================
@@ -174,7 +195,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* 浮动的光斑粒子 */
+/* 浮动的光斑粒子 - 固定定位不影响布局 */
 body::before {
   content: '';
   position: fixed;
@@ -182,14 +203,14 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  z-index: -1;
   background-image:
     radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 40% 60%, rgba(99, 102, 241, 0.2) 0%, transparent 40%),
     radial-gradient(circle at 60% 20%, rgba(168, 85, 247, 0.25) 0%, transparent 45%),
     radial-gradient(circle at 30% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 35%);
-  pointer-events: none;
-  z-index: -1;
   animation: float 15s ease-in-out infinite;
 }
 
@@ -200,7 +221,7 @@ body::before {
   100% { transform: translateY(0) scale(1) rotate(0deg); }
 }
 
-/* 闪烁的星光粒子 */
+/* 闪烁的星光粒子 - 固定定位不影响布局 */
 body::after {
   content: '';
   position: fixed;
@@ -208,6 +229,8 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  z-index: -1;
   background-image:
     radial-gradient(3px 3px at 10% 10%, rgba(255, 255, 255, 0.9) 50%, transparent 100%),
     radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
@@ -219,8 +242,6 @@ body::after {
     radial-gradient(2px 2px at 15% 85%, rgba(99, 102, 241, 0.7) 50%, transparent 100%),
     radial-gradient(3px 3px at 45% 15%, rgba(168, 85, 247, 0.6) 50%, transparent 100%),
     radial-gradient(2px 2px at 65% 65%, rgba(236, 72, 153, 0.8) 50%, transparent 100%);
-  pointer-events: none;
-  z-index: -1;
   animation: twinkle 4s linear infinite;
 }
 
@@ -649,7 +670,7 @@ div[class*='language-']::before {
   animation: gradientBG 10s ease infinite;
 }
 
-/* 暗黑模式 - 彩色光斑 */
+/* 暗黑模式 - 彩色光斑 - 固定定位不影响布局 */
 .dark body::before {
   background-image:
     radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.35) 0%, transparent 45%),
@@ -660,8 +681,11 @@ div[class*='language-']::before {
   animation: float 12s ease-in-out infinite;
 }
 
-/* 暗黑模式 - 闪烁星光 */
+/* 暗黑模式 - 闪烁星光 - 固定定位不影响布局 */
 .dark body::after {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     radial-gradient(3px 3px at 10% 10%, rgba(255, 255, 255, 1) 50%, transparent 100%),
     radial-gradient(2px 2px at 20% 30%, rgba(168, 85, 247, 0.9) 50%, transparent 100%),
