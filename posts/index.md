@@ -1,7 +1,7 @@
 ---
-title: 博客
+title: Blog
 ---
 
-# 博客
+# Blog
 
 <PostList />

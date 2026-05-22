@@ -2,41 +2,41 @@
 layout: home
 hero:
   name: VSVnakers
-  text: 计算机学习者
-  tagline: 记录技术学习、项目实践与思考
+  text: Systems Programmer
+  tagline: Rust · OS · Linux Kernel
   image:
     src: https://github.com/vsvnakers.png
     alt: VSVnakers
   actions:
     - theme: brand
-      text: 博客
+      text: Blog
       link: /posts/
     - theme: alt
-      text: 关于
+      text: About
       link: /resume/
 features:
-  - icon: ✍️
-    title: 博客
-    details: 技术笔记与学习心得
+  - icon: ⚡
+    title: Blog
+    details: Technical notes and project insights
     link: /posts/
   - icon: 📖
-    title: 学习资源
-    details: 整理的学习路线与资料
+    title: Study
+    details: Curated learning paths and resources
     link: /study/
   - icon: 🔧
-    title: 工具
-    details: 好用的开发工具推荐
+    title: Tools
+    details: Development tools worth sharing
     link: /tools/
 ---
 
 <ClientOnly>
   <div class="vercount-container">
     <div class="vercount-item">
-      <div class="vercount-label">访问量</div>
+      <div class="vercount-label">Views</div>
       <div class="vercount-value" id="vercount-views">—</div>
     </div>
     <div class="vercount-item">
-      <div class="vercount-label">访客数</div>
+      <div class="vercount-label">Visitors</div>
       <div class="vercount-value" id="vercount-visitors">—</div>
     </div>
   </div>
@@ -61,20 +61,18 @@ onMounted(() => {
     })
 })
 
-function animateNumber(elementId, target) {
-  const el = document.getElementById(elementId)
+function animateNumber(id, target) {
+  const el = document.getElementById(id)
   if (!el) return
   const duration = 1500
   const start = performance.now()
-
   function update(now) {
-    const progress = Math.min((now - start) / duration, 1)
-    const eased = 1 - Math.pow(1 - progress, 4)
+    const p = Math.min((now - start) / duration, 1)
+    const eased = 1 - Math.pow(1 - p, 4)
     el.textContent = Math.floor(target * eased).toLocaleString()
-    if (progress < 1) requestAnimationFrame(update)
+    if (p < 1) requestAnimationFrame(update)
     else el.textContent = target.toLocaleString()
   }
-
   requestAnimationFrame(update)
 }
 </script>

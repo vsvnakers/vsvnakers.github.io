@@ -9,6 +9,12 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: 'https://github.com/vsvnakers.png' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap',
+      rel: 'stylesheet'
+    }],
     ['link', { rel: 'stylesheet', href: '/custom.css' }]
   ],
 
@@ -19,10 +25,10 @@ export default defineConfig({
     },
 
     nav: [
-      { text: '博客', link: '/posts/' },
-      { text: '学习', link: '/study/' },
-      { text: '工具', link: '/tools/' },
-      { text: '关于', link: '/resume/' },
+      { text: 'Blog', link: '/posts/' },
+      { text: 'Study', link: '/study/' },
+      { text: 'Tools', link: '/tools/' },
+      { text: 'About', link: '/resume/' },
     ],
 
     socialLinks: [
@@ -35,21 +41,21 @@ export default defineConfig({
 
     outline: {
       level: [2, 3],
-      label: '目录'
+      label: 'On this page'
     },
 
     docFooter: {
-      prev: '上一篇',
-      next: '下一篇'
+      prev: 'Previous',
+      next: 'Next'
     },
 
     search: {
       provider: 'local',
       options: {
         translations: {
-          button: '搜索',
-          placeholder: '搜索文章...',
-          noResults: '未找到结果'
+          button: 'Search',
+          placeholder: 'Search posts...',
+          noResults: 'No results found'
         }
       }
     }
@@ -57,12 +63,11 @@ export default defineConfig({
 
   markdown: {
     theme: {
-      light: 'github-light',
+      light: 'github-dark',
       dark: 'github-dark'
     }
   },
 
   ignoreDeadLinks: true,
-
   srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**']
 })
