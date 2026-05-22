@@ -1,0 +1,788 @@
+/* ============================================
+   VSVnakers Blog — Dark Neon Design System
+   Force dark mode with html.dark specificity
+   ============================================ */
+
+/* --- Override VitePress dark mode variables --- */
+html.dark {
+  /* Backgrounds */
+  --vp-c-bg: #0a0e1a;
+  --vp-c-bg-alt: #111827;
+  --vp-c-bg-elv: #1a2236;
+  --vp-c-bg-soft: #1e293b;
+
+  /* Text */
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+  --vp-c-text-3: #64748b;
+
+  /* Borders */
+  --vp-c-border: #1e293b;
+  --vp-c-divider: #1e293b;
+  --vp-c-gutter: #162032;
+
+  /* Brand */
+  --vp-c-brand: #3b82f6;
+  --vp-c-brand-light: #60a5fa;
+  --vp-c-brand-dark: #2563eb;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.15);
+
+  /* Gray */
+  --vp-c-gray-1: #1e293b;
+  --vp-c-gray-2: #1e293b;
+  --vp-c-gray-3: #334155;
+  --vp-c-gray-soft: rgba(148, 163, 184, 0.1);
+
+  /* Inline code */
+  --vp-code-inline-bg: rgba(59, 130, 246, 0.1);
+  --vp-code-inline-color: #60a5fa;
+
+  /* Font */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+}
+
+/* --- Global base --- */
+html.dark body {
+  background: #0a0e1a;
+  color: #e2e8f0;
+  font-family: var(--vp-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth theme transition */
+html.dark .VPContent,
+html.dark .VPNavBar,
+html.dark .VPSidebar,
+html.dark .VPFooter {
+  transition:
+    background-color 200ms cubic-bezier(0, 0, 0.2, 1),
+    border-color 200ms cubic-bezier(0, 0, 0.2, 1),
+    color 150ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+html.dark .VPNavBar {
+  background: rgba(17, 24, 39, 0.9) !important;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-bottom: 1px solid #1e293b !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .VPNavBar .title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+}
+
+html.dark .VPNavBar .title .clip {
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .VPNavBarMenuLink .text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8 !important;
+  transition: color 150ms ease;
+}
+
+html.dark .VPNavBarMenuLink:hover .text {
+  color: #60a5fa !important;
+}
+
+html.dark .VPNavBarMenuLink.active .text {
+  color: #3b82f6 !important;
+}
+
+html.dark .VPNavBarTitle {
+  white-space: nowrap;
+}
+
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+html.dark .VPSidebar {
+  background: #111827 !important;
+  border-right: 1px solid #1e293b !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+html.dark .VPSidebarItem .text {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  transition: color 150ms ease;
+}
+
+html.dark .VPSidebarItem .text:hover {
+  color: #60a5fa;
+}
+
+html.dark .VPSidebarItem.active > .item > .indicator {
+  background: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+html.dark .VPSidebarItem.active > .text {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+
+/* ============================================
+   CONTENT AREA
+   ============================================ */
+
+html.dark .VPContent {
+  background: #0a0e1a !important;
+}
+
+html.dark .VPDoc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+html.dark .VPDoc h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+html.dark .VPDoc h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+html.dark .VPDoc h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+html.dark .VPDoc p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+html.dark .VPDoc a {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+html.dark .VPDoc a:hover {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
+html.dark .VPDoc strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+html.dark .VPDoc ul,
+html.dark .VPDoc ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+html.dark .VPDoc li {
+  line-height: 1.75;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+html.dark .VPDoc li::marker {
+  color: #3b82f6;
+}
+
+html.dark .VPDoc .last-updated {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+html.dark .VPHero {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5) !important;
+  padding: 3rem 2rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+html.dark .VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #22d3ee, #3b82f6, transparent);
+  opacity: 0.7;
+}
+
+html.dark .VPHero-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #e2e8f0 !important;
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+html.dark .VPHero .text {
+  font-size: 1.125rem;
+  color: #94a3b8 !important;
+  font-weight: 400;
+}
+
+html.dark .VPHero .tagline {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+html.dark .VPHero .VPImage .image {
+  border-radius: 50%;
+  border: 2px solid #334155;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+
+/* ============================================
+   FEATURE CARDS
+   ============================================ */
+
+html.dark .VPFeature {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease !important;
+  padding: 1.5rem !important;
+}
+
+html.dark .VPFeature:hover {
+  border-color: #3b82f6 !important;
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(59, 130, 246, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+html.dark .VPFeature .title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #e2e8f0 !important;
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+html.dark .VPFeature .details {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+html.dark .VPFeature .icon {
+  font-size: 1.5rem;
+  filter: none;
+}
+
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+html.dark .VPButton {
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease !important;
+}
+
+html.dark .VPButton.brand {
+  background: #3b82f6 !important;
+  border: 1px solid #3b82f6 !important;
+  color: #fff !important;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+html.dark .VPButton.brand:hover {
+  background: #60a5fa !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+html.dark .VPButton.alt {
+  background: transparent !important;
+  border: 1px solid #334155 !important;
+  color: #94a3b8 !important;
+}
+
+html.dark .VPButton.alt:hover {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+}
+
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+
+html.dark div[class*='language-'] {
+  border-radius: 8px !important;
+  border: 1px solid #1e293b !important;
+  background: #111827 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+html.dark :not(pre) > code {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+  font-family: var(--vp-font-family-mono);
+}
+
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+
+html.dark blockquote {
+  border-left: 3px solid #3b82f6 !important;
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-radius: 0 6px 6px 0 !important;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: #94a3b8;
+  box-shadow: none !important;
+}
+
+html.dark blockquote p {
+  color: #94a3b8;
+}
+
+html.dark blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+html.dark table {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+html.dark th {
+  background: #1a2236 !important;
+  color: #e2e8f0 !important;
+  font-weight: 600;
+  text-shadow: none !important;
+  border-bottom: 1px solid #1e293b;
+  text-align: left;
+}
+
+html.dark td {
+  border-bottom: 1px solid #162032;
+  color: #94a3b8;
+}
+
+html.dark tr:last-child td {
+  border-bottom: none;
+}
+
+html.dark tr:hover {
+  background: rgba(59, 130, 246, 0.08) !important;
+}
+
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+html.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+html.dark .VPFooter {
+  background: #111827 !important;
+  border-top: 1px solid #1e293b !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+html.dark .VPFooter a {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+html.dark .VPFooter .copyright {
+  color: #64748b;
+}
+
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+html.dark .VPLocalSearchBox {
+  border-radius: 8px !important;
+  border: 1px solid #1e293b !important;
+  background: #111827 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .VPLocalSearchBox:focus-within {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2), 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+
+html.dark .VPSocialLinks a {
+  color: #64748b !important;
+  transition: color 150ms ease;
+}
+
+html.dark .VPSocialLinks a:hover {
+  color: #3b82f6 !important;
+}
+
+
+/* ============================================
+   OUTLINE / TOC
+   ============================================ */
+
+html.dark .VPDocOutlineItem .outline-link {
+  color: #64748b;
+  font-size: 0.75rem;
+  transition: color 150ms ease;
+}
+
+html.dark .VPDocOutlineItem .outline-link:hover,
+html.dark .VPDocOutlineItem .outline-link.active {
+  color: #3b82f6;
+}
+
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+
+html.dark .VPSwitchAppearance {
+  border: 1px solid #1e293b;
+  background: #1a2236;
+}
+
+html.dark .VPSwitchAppearance:hover {
+  border-color: #3b82f6;
+}
+
+
+/* ============================================
+   DOC FOOTER NAV
+   ============================================ */
+
+html.dark .VPDocFooter .pager .title {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+html.dark .VPDocFooter .pager .link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 150ms ease;
+}
+
+html.dark .VPDocFooter .pager:hover .link {
+  color: #3b82f6;
+}
+
+
+/* ============================================
+   BLOG POST LIST
+   ============================================ */
+
+html.dark .post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html.dark .post-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #162032;
+}
+
+html.dark .post-item:first-child {
+  padding-top: 0;
+}
+
+html.dark .post-item:last-child {
+  border-bottom: none;
+}
+
+html.dark .post-link {
+  display: block;
+  text-decoration: none;
+}
+
+html.dark .post-link h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.25rem;
+  transition: color 150ms ease;
+}
+
+html.dark .post-link:hover h3 {
+  color: #3b82f6;
+}
+
+html.dark .post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+html.dark .post-date {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+html.dark .post-excerpt {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+html.dark .post-tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+html.dark .post-tag {
+  font-size: 0.65rem;
+  padding: 0.15em 0.5em;
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+html.dark .post-year {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #1e293b;
+  letter-spacing: -0.025em;
+}
+
+html.dark .post-year:first-child {
+  margin-top: 0;
+}
+
+/* Empty state */
+html.dark .empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+html.dark .empty-state p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+html.dark .empty-state .hint {
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  text-align: left;
+}
+
+html.dark .empty-state .hint code {
+  background: #1a2236;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: var(--vp-font-family-mono);
+  color: #22d3ee;
+  border: 1px solid #1e293b;
+}
+
+
+/* ============================================
+   VERCOUNT
+   ============================================ */
+
+html.dark .vercount-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+html.dark .vercount-item {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+}
+
+html.dark .vercount-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+html.dark .vercount-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  font-family: var(--vp-font-family-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================
+   PAGE ANIMATION
+   ============================================ */
+
+html.dark .VPContent {
+  animation: darkFadeIn 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes darkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  html.dark .VPHero {
+    padding: 2rem 1.25rem !important;
+  }
+
+  html.dark .VPHero-name {
+    font-size: 2rem;
+  }
+
+  html.dark .VPDoc {
+    padding: 1.5rem 1rem;
+  }
+
+  html.dark .vercount-container {
+    gap: 1rem;
+  }
+}
+
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark *,
+  html.dark *::before,
+  html.dark *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
