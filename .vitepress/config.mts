@@ -6,6 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   lastUpdated: true,
   cleanUrls: true,
+  appearance: 'dark',
 
   head: [
     ['link', { rel: 'icon', href: 'https://github.com/vsvnakers.png' }],
