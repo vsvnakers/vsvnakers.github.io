@@ -1,16 +1,14 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'VSVnakers 主页',
-  description: 'VSVnakers 的个人主页',
+  title: 'VSVnakers',
+  description: 'VSVnakers 的个人博客',
   lang: 'zh-CN',
   lastUpdated: true,
+  cleanUrls: true,
 
   head: [
     ['link', { rel: 'icon', href: 'https://github.com/vsvnakers.png' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap', rel: 'stylesheet' }],
     ['link', { rel: 'stylesheet', href: '/custom.css' }]
   ],
 
@@ -21,20 +19,18 @@ export default defineConfig({
     },
 
     nav: [
-      { text: '📝 博客', link: '/posts/' },
-      { text: '👤 关于', link: '/resume/' },
-      { text: '📚 学习', link: '/study/' },
-      { text: '🛠 工具', link: '/tools/' },
+      { text: '博客', link: '/posts/' },
+      { text: '学习', link: '/study/' },
+      { text: '工具', link: '/tools/' },
+      { text: '关于', link: '/resume/' },
     ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vsvnakers' },
-      { icon: 'email', link: 'mailto:vsvnakers@outlook.com' },
     ],
 
     footer: {
-      message: 'Made with ❤️',
-      copyright: 'Copyright © 2025-present VSVnakers'
+      copyright: '© 2025 VSVnakers'
     },
 
     outline: {
@@ -52,7 +48,7 @@ export default defineConfig({
       options: {
         translations: {
           button: '搜索',
-          placeholder: '输入关键词...',
+          placeholder: '搜索文章...',
           noResults: '未找到结果'
         }
       }
@@ -66,5 +62,7 @@ export default defineConfig({
     }
   },
 
-  ignoreDeadLinks: true
+  ignoreDeadLinks: true,
+
+  srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**']
 })

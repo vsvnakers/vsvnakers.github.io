@@ -1,19 +1,12 @@
 ---
-title: "关于我"
+title: 关于
 ---
 
-# 👤 关于我
+# 关于
 
-## 基本信息
+**VSVnakers** — 计算机学习者
 
-- **姓名**：VSVnakers
-- **职业**：计算机某行业
-- **技能**：学习中
-- **联系方式**：vsvnakers@outlook.com
-- **Github**：https://github.com/vsvnakers
+正在学习 Rust、操作系统、Linux 内核等底层技术。
 
-## 简介
-
-欢迎来到我的个人主页！
-
-这里会记录我的学习过程和一些技术心得。
+- GitHub: [github.com/vsvnakers](https://github.com/vsvnakers)
+- Email: vsvnakers@outlook.com
