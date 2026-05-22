@@ -1,0 +1,524 @@
+/* ============================================
+   Dark Neon Design System — VSVnakers Blog
+   All selectors use html.dark for max specificity
+   ============================================ */
+
+/* --- VitePress Variable Overrides --- */
+html.dark {
+  --vp-c-bg: #0a0e1a;
+  --vp-c-bg-alt: #0f1629;
+  --vp-c-bg-elv: #111827;
+  --vp-c-bg-soft: #1a2236;
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+  --vp-c-text-3: #64748b;
+  --vp-c-border: #1e293b;
+  --vp-c-divider: #1e293b;
+  --vp-c-gutter: #162032;
+  --vp-c-brand: #3b82f6;
+  --vp-c-brand-light: #60a5fa;
+  --vp-c-brand-dark: #2563eb;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.15);
+  --vp-c-gray-1: #1e293b;
+  --vp-c-gray-2: #1e293b;
+  --vp-c-gray-3: #334155;
+  --vp-c-gray-soft: rgba(148, 163, 184, 0.1);
+  --vp-code-inline-bg: rgba(59, 130, 246, 0.1);
+  --vp-code-inline-color: #60a5fa;
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* --- Body --- */
+html.dark body {
+  background: #0a0e1a !important;
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Containers --- */
+html.dark .Layout {
+  background: #0a0e1a !important;
+}
+
+html.dark .VPContent {
+  background: #0a0e1a !important;
+}
+
+html.dark .VPContent.is-home {
+  background: #0a0e1a !important;
+}
+
+html.dark .VPHome {
+  background: #0a0e1a !important;
+}
+
+/* --- Navbar --- */
+html.dark .VPNavBar {
+  background: rgba(15, 22, 41, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #1e293b !important;
+}
+
+html.dark .VPNavBar .title .clip {
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  color: #e2e8f0 !important;
+  font-weight: 700;
+}
+
+html.dark .VPNavBarMenuLink .text {
+  color: #94a3b8 !important;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+html.dark .VPNavBarMenuLink:hover .text {
+  color: #60a5fa !important;
+}
+
+html.dark .VPNavBarMenuLink.active .text {
+  color: #3b82f6 !important;
+}
+
+/* --- Sidebar --- */
+html.dark .VPSidebar {
+  background: #0f1629 !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+html.dark .VPSidebarItem .text {
+  color: #94a3b8;
+}
+
+html.dark .VPSidebarItem .text:hover {
+  color: #60a5fa;
+}
+
+html.dark .VPSidebarItem.active > .text {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* --- Hero --- */
+html.dark .VPHero {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.08), 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+html.dark .VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #22d3ee, #3b82f6, transparent);
+  opacity: 0.8;
+}
+
+html.dark .VPHero-name {
+  color: #e2e8f0 !important;
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+html.dark .VPHero .text {
+  color: #94a3b8 !important;
+}
+
+html.dark .VPHero .tagline {
+  color: #64748b;
+}
+
+html.dark .VPHero .VPImage .image {
+  border-radius: 50%;
+  border: 2px solid #334155;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+}
+
+/* --- Feature Cards --- */
+html.dark .VPFeature {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease !important;
+}
+
+html.dark .VPFeature:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+html.dark .VPFeature .title {
+  color: #e2e8f0 !important;
+  background: none !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  font-weight: 700;
+}
+
+html.dark .VPFeature .details {
+  color: #64748b;
+}
+
+/* --- Buttons --- */
+html.dark .VPButton.brand {
+  background: #3b82f6 !important;
+  border: 1px solid #3b82f6 !important;
+  color: #fff !important;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+html.dark .VPButton.brand:hover {
+  background: #60a5fa !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.4);
+}
+
+html.dark .VPButton.alt {
+  background: transparent !important;
+  border: 1px solid #334155 !important;
+  color: #94a3b8 !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+html.dark .VPButton.alt:hover {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+}
+
+/* --- Code Blocks --- */
+html.dark div[class*='language-'] {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark :not(pre) > code {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* --- Blockquotes --- */
+html.dark blockquote {
+  border-left: 3px solid #3b82f6 !important;
+  background: rgba(59, 130, 246, 0.06) !important;
+  color: #94a3b8;
+  box-shadow: none !important;
+  border-radius: 0 6px 6px 0 !important;
+}
+
+/* --- Tables --- */
+html.dark table {
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark th {
+  background: #1a2236 !important;
+  color: #e2e8f0 !important;
+  text-shadow: none !important;
+  border-bottom: 1px solid #1e293b;
+}
+
+html.dark td {
+  border-bottom: 1px solid #162032;
+  color: #94a3b8;
+}
+
+html.dark tr:hover {
+  background: rgba(59, 130, 246, 0.06) !important;
+}
+
+/* --- Scrollbar --- */
+html.dark ::-webkit-scrollbar { width: 6px; height: 6px; }
+html.dark ::-webkit-scrollbar-track { background: transparent; }
+html.dark ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* --- Footer --- */
+html.dark .VPFooter {
+  background: #0f1629 !important;
+  border-top: 1px solid #1e293b !important;
+}
+
+html.dark .VPFooter .copyright {
+  color: #64748b;
+}
+
+html.dark .VPFooter a {
+  color: #3b82f6;
+}
+
+/* --- Search --- */
+html.dark .VPLocalSearchBox {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .VPLocalSearchBox:focus-within {
+  border-color: #3b82f6 !important;
+}
+
+/* --- Social Links --- */
+html.dark .VPSocialLinks a {
+  color: #64748b !important;
+}
+
+html.dark .VPSocialLinks a:hover {
+  color: #3b82f6 !important;
+}
+
+/* --- Theme Toggle --- */
+html.dark .VPSwitchAppearance {
+  border: 1px solid #1e293b;
+  background: #1a2236;
+}
+
+/* --- TOC --- */
+html.dark .VPDocOutlineItem .outline-link {
+  color: #64748b;
+}
+
+html.dark .VPDocOutlineItem .outline-link:hover,
+html.dark .VPDocOutlineItem .outline-link.active {
+  color: #3b82f6;
+}
+
+/* --- Doc Footer Nav --- */
+html.dark .VPDocFooter .pager .title {
+  color: #64748b;
+}
+
+html.dark .VPDocFooter .pager .link {
+  color: #94a3b8;
+}
+
+html.dark .VPDocFooter .pager:hover .link {
+  color: #3b82f6;
+}
+
+/* --- Typography in Doc --- */
+html.dark .VPDoc h1 {
+  color: #e2e8f0;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+html.dark .VPDoc h2 {
+  color: #e2e8f0;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+}
+
+html.dark .VPDoc h3 {
+  color: #e2e8f0;
+}
+
+html.dark .VPDoc p {
+  color: #94a3b8;
+  line-height: 1.75;
+}
+
+html.dark .VPDoc a {
+  color: #3b82f6;
+}
+
+html.dark .VPDoc a:hover {
+  color: #60a5fa;
+}
+
+html.dark .VPDoc strong {
+  color: #e2e8f0;
+}
+
+html.dark .VPDoc li {
+  color: #94a3b8;
+}
+
+html.dark .VPDoc li::marker {
+  color: #3b82f6;
+}
+
+/* --- Blog Post List --- */
+.post-list { list-style: none; padding: 0; margin: 0; }
+
+.post-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #162032;
+}
+
+.post-item:first-child { padding-top: 0; }
+.post-item:last-child { border-bottom: none; }
+
+.post-link { display: block; text-decoration: none; }
+
+.post-link h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.25rem;
+  transition: color 150ms ease;
+}
+
+.post-link:hover h3 { color: #3b82f6; }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.post-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.post-excerpt {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.post-tag {
+  font-size: 0.65rem;
+  padding: 0.15em 0.5em;
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.post-year {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #1e293b;
+  letter-spacing: -0.025em;
+}
+
+.post-year:first-child { margin-top: 0; }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-state p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state .hint {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.empty-state .hint code {
+  background: #1a2236;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: 'JetBrains Mono', monospace;
+  color: #22d3ee;
+  border: 1px solid #1e293b;
+}
+
+/* --- Vercount --- */
+.vercount-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.vercount-item {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+}
+
+.vercount-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.vercount-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Page Animation --- */
+html.dark .VPContent {
+  animation: neonFadeIn 0.2s ease-out;
+}
+
+@keyframes neonFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  html.dark .VPHero { padding: 2rem 1.25rem !important; }
+  html.dark .VPHero-name { font-size: 2rem; }
+  html.dark .VPDoc { padding: 1.5rem 1rem; }
+  .vercount-container { gap: 1rem; }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html.dark *, html.dark *::before, html.dark *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

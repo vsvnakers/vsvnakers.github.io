@@ -15,57 +15,38 @@ export default defineConfig({
     ['link', {
       href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap',
       rel: 'stylesheet'
-    }]
+    }],
+    // Critical inline CSS to prevent white flash
+    ['style', {}, `
+      html.dark, html.dark body {
+        background: #0a0e1a !important;
+        color: #e2e8f0 !important;
+      }
+    `]
   ],
 
   themeConfig: {
-    logo: {
-      src: 'https://github.com/vsvnakers.png',
-      alt: 'VSVnakers'
-    },
-
+    logo: { src: 'https://github.com/vsvnakers.png', alt: 'VSVnakers' },
     nav: [
       { text: 'Blog', link: '/posts/' },
       { text: 'Study', link: '/study/' },
       { text: 'Tools', link: '/tools/' },
       { text: 'About', link: '/resume/' },
     ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vsvnakers' },
-    ],
-
-    footer: {
-      copyright: '© 2025 VSVnakers'
-    },
-
-    outline: {
-      level: [2, 3],
-      label: 'On this page'
-    },
-
-    docFooter: {
-      prev: 'Previous',
-      next: 'Next'
-    },
-
+    socialLinks: [{ icon: 'github', link: 'https://github.com/vsvnakers' }],
+    footer: { copyright: '© 2025 VSVnakers' },
+    outline: { level: [2, 3], label: 'On this page' },
+    docFooter: { prev: 'Previous', next: 'Next' },
     search: {
       provider: 'local',
       options: {
-        translations: {
-          button: 'Search',
-          placeholder: 'Search posts...',
-          noResults: 'No results found'
-        }
+        translations: { button: 'Search', placeholder: 'Search...', noResults: 'No results' }
       }
     }
   },
 
   markdown: {
-    theme: {
-      light: 'github-dark',
-      dark: 'github-dark'
-    }
+    theme: { light: 'github-dark', dark: 'github-dark' }
   },
 
   ignoreDeadLinks: true,
