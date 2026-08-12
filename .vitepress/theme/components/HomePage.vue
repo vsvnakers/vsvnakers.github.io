@@ -8,7 +8,7 @@
         </div>
 
         <h1>
-          在紫色夜空下，<br>
+          在光与星轨之间，<br>
           <span>写代码与宇宙。</span>
         </h1>
 
@@ -43,13 +43,13 @@
           <svg class="dream-mascot" viewBox="0 0 420 470" role="presentation">
             <defs>
               <linearGradient id="moonGlow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f2eaff" />
-                <stop offset="0.55" stop-color="#bba1ff" />
-                <stop offset="1" stop-color="#7450d8" />
+                <stop offset="0" stop-color="var(--dream-orb-start)" />
+                <stop offset="0.55" stop-color="var(--dream-orb-middle)" />
+                <stop offset="1" stop-color="var(--dream-orb-end)" />
               </linearGradient>
               <linearGradient id="hairGlow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#2f2252" />
-                <stop offset="1" stop-color="#120c28" />
+                <stop offset="0" stop-color="var(--dream-hair-start)" />
+                <stop offset="1" stop-color="var(--dream-hair-end)" />
               </linearGradient>
               <filter id="softGlow">
                 <feGaussianBlur stdDeviation="8" result="blur" />
@@ -59,28 +59,28 @@
 
             <circle cx="218" cy="208" r="143" fill="url(#moonGlow)" opacity=".92" filter="url(#softGlow)" />
             <circle class="dream-moon-cutout" cx="252" cy="174" r="132" fill="var(--dream-moon-cutout)" opacity=".96" />
-            <g fill="#fff" filter="url(#softGlow)">
+            <g fill="var(--dream-spark)" filter="url(#softGlow)">
               <circle cx="75" cy="90" r="3"/><circle cx="354" cy="112" r="2"/>
               <circle cx="334" cy="292" r="3"/><circle cx="83" cy="282" r="2"/>
             </g>
 
             <path d="M128 384c10-53 41-83 88-90 49 7 79 38 88 90l17 75H111z" fill="url(#hairGlow)" />
-            <path d="M155 211l18-61 45 31 43-31 19 62c12 28 7 72-12 99-15 21-32 34-50 34s-36-13-51-34c-20-28-25-71-12-100z" fill="#e9d9f0" />
+            <path d="M155 211l18-61 45 31 43-31 19 62c12 28 7 72-12 99-15 21-32 34-50 34s-36-13-51-34c-20-28-25-71-12-100z" fill="var(--dream-face)" />
             <path d="M150 225c-7-57 19-104 68-104 48 0 77 47 68 105-13-10-25-24-31-42-17 23-54 39-105 41z" fill="url(#hairGlow)" />
             <path d="M165 184l-4-54 45 25M272 184l3-54-43 25" fill="url(#hairGlow)" stroke="#9b74ed" stroke-width="4" stroke-linejoin="round" />
             <path d="M174 251c10 7 21 7 31 0M233 251c10 7 21 7 31 0" fill="none" stroke="#6f4aa3" stroke-width="5" stroke-linecap="round" />
             <path d="M211 279c5 5 10 5 15 0" fill="none" stroke="#bd7ba7" stroke-width="4" stroke-linecap="round" />
             <path d="M160 243c-13 0-20 8-20 22 0 17 11 29 24 29M275 243c13 0 20 8 20 22 0 17-11 29-24 29" fill="none" stroke="#a477e7" stroke-width="11" stroke-linecap="round" />
-            <path d="M188 337l30 28 30-28 17 19-47 51-47-51z" fill="#8153ce" opacity=".9" />
-            <path d="M109 458c5-43 21-72 62-102l47 51 47-51c41 29 57 59 63 102" fill="#17102d" stroke="#8f6add" stroke-width="3" />
-            <circle cx="219" cy="416" r="7" fill="#d5beff" filter="url(#softGlow)" />
+            <path d="M188 337l30 28 30-28 17 19-47 51-47-51z" fill="var(--dream-collar)" opacity=".9" />
+            <path d="M109 458c5-43 21-72 62-102l47 51 47-51c41 29 57 59 63 102" fill="var(--dream-outfit)" stroke="var(--dream-outfit-line)" stroke-width="3" />
+            <circle cx="219" cy="416" r="7" fill="var(--dream-gem)" filter="url(#softGlow)" />
           </svg>
 
           <div class="dream-code-chip dream-code-chip--top">
             <span></span> cargo run
           </div>
           <div class="dream-code-chip dream-code-chip--bottom">
-            <b>01</b> 夜明け前
+            <b>01</b> 昼夜之间
           </div>
         </div>
       </div>

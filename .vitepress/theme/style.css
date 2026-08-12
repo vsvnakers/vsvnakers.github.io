@@ -29,6 +29,17 @@
   --dream-art-wash: rgba(255, 250, 255, 0.44);
   --dream-glass-line: rgba(255, 255, 255, 0.72);
   --dream-moon-cutout: #f8f5ff;
+  --dream-orb-start: #fffdf1;
+  --dream-orb-middle: #ffe6b5;
+  --dream-orb-end: #c8a8ff;
+  --dream-hair-start: #9b82d2;
+  --dream-hair-end: #4f3979;
+  --dream-spark: #fff5bf;
+  --dream-face: #faeaf2;
+  --dream-collar: #a46be2;
+  --dream-outfit: #f9f1ff;
+  --dream-outfit-line: #9c76dc;
+  --dream-gem: #ffd981;
   --dream-backdrop: url('/assets/violet-dayscape.png');
   --dream-backdrop-position: center 64px;
 }
@@ -60,6 +71,17 @@
   --dream-art-wash: rgba(7, 4, 18, 0.34);
   --dream-glass-line: rgba(238, 225, 255, 0.15);
   --dream-moon-cutout: #100a21;
+  --dream-orb-start: #f2eaff;
+  --dream-orb-middle: #bba1ff;
+  --dream-orb-end: #7450d8;
+  --dream-hair-start: #2f2252;
+  --dream-hair-end: #120c28;
+  --dream-spark: #fff;
+  --dream-face: #e9d9f0;
+  --dream-collar: #8153ce;
+  --dream-outfit: #17102d;
+  --dream-outfit-line: #8f6add;
+  --dream-gem: #d5beff;
   --dream-backdrop: url('/assets/violet-nightscape.png');
   --dream-backdrop-position: center 64px;
 }
@@ -436,6 +458,16 @@ body::before {
     radial-gradient(circle at 50% 28%, rgba(255, 241, 176, 0.5), transparent 34%),
     linear-gradient(150deg, rgba(255, 207, 225, 0.34), transparent 54%),
     var(--dream-surface);
+}
+
+:root:not(.dark) .dream-hero__copy {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 28px;
+  background: rgba(255, 250, 255, 0.22);
+  box-shadow: 0 24px 70px rgba(111, 77, 132, 0.1), inset 0 1px rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px) saturate(118%);
+  -webkit-backdrop-filter: blur(14px) saturate(118%);
 }
 
 .dream-orbit {
