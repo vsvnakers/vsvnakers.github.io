@@ -207,8 +207,16 @@ body::before {
   -webkit-backdrop-filter: blur(30px) saturate(155%);
 }
 
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1280px !important;
+}
+
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 1160px !important;
+}
+
 .VPDoc .content-container {
-  max-width: 780px !important;
+  max-width: 1080px !important;
 }
 
 .VPDoc h1,
