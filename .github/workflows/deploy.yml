@@ -8,18 +8,25 @@ on:
     - cron: '30 4 * * *' # UTC 04:30 = 北京时间 12:30，为论文任务排队留出缓冲
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PAPER_DAILY_TOKEN: ${{ secrets.PAPER_DAILY_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Checkout daily paper digests
+        if: env.PAPER_DAILY_TOKEN != ''
         uses: actions/checkout@v4
         with:
           repository: vsvnakers/paper-daily
           ref: master
           path: .paper-daily-source
+          token: ${{ env.PAPER_DAILY_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -28,6 +35,7 @@ jobs:
 
       - run: npm ci
       - name: Sync paper digests
+        if: env.PAPER_DAILY_TOKEN != ''
         run: node scripts/sync-papers.mjs .paper-daily-source/essay_read papers/daily
       - run: npm run build
 
