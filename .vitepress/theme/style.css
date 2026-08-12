@@ -26,6 +26,8 @@
   --dream-purple-bright: #9b6cff;
   --dream-glow: rgba(124, 58, 237, 0.24);
   --dream-shadow: 0 24px 70px rgba(65, 38, 102, 0.13);
+  --dream-art-wash: rgba(248, 245, 255, 0.84);
+  --dream-glass-line: rgba(255, 255, 255, 0.72);
   --dream-moon-cutout: #f8f5ff;
 }
 
@@ -44,15 +46,17 @@
   --vp-c-divider: rgba(196, 167, 255, 0.13);
   --vp-nav-bg-color: rgba(12, 8, 24, 0.68);
   --dream-bg: #0c0818;
-  --dream-surface: rgba(27, 17, 50, 0.53);
-  --dream-surface-strong: rgba(34, 21, 63, 0.72);
-  --dream-border: rgba(196, 167, 255, 0.16);
+  --dream-surface: rgba(22, 13, 43, 0.42);
+  --dream-surface-strong: rgba(31, 18, 58, 0.62);
+  --dream-border: rgba(205, 178, 255, 0.24);
   --dream-text: #f4eeff;
   --dream-muted: #ad9fc3;
   --dream-purple: #a779ff;
   --dream-purple-bright: #cfb9ff;
   --dream-glow: rgba(155, 108, 255, 0.32);
-  --dream-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+  --dream-shadow: 0 30px 90px rgba(0, 0, 0, 0.46);
+  --dream-art-wash: rgba(7, 4, 18, 0.34);
+  --dream-glass-line: rgba(238, 225, 255, 0.15);
   --dream-moon-cutout: #100a21;
 }
 
@@ -62,8 +66,10 @@ html {
 
 body {
   background:
+    linear-gradient(var(--dream-art-wash), var(--dream-art-wash)),
     radial-gradient(circle at 12% 18%, rgba(143, 92, 255, 0.12), transparent 26rem),
     radial-gradient(circle at 88% 42%, rgba(217, 129, 255, 0.08), transparent 30rem),
+    url('/assets/violet-nightscape.png') center 64px / cover fixed no-repeat,
     var(--dream-bg);
 }
 
@@ -79,6 +85,7 @@ body::before {
     linear-gradient(120deg, transparent 48%, rgba(155, 108, 255, 0.03) 49%, transparent 50%);
   background-size: 36px 36px, 220px 220px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
+  animation: dream-sky-drift 32s linear infinite;
 }
 
 ::selection {
@@ -112,6 +119,7 @@ body::before {
   border-radius: 50%;
   background: var(--dream-purple);
   box-shadow: 0 0 16px var(--dream-purple);
+  animation: dream-pulse 2.8s ease-in-out infinite;
 }
 
 .VPNavBarMenuLink {
@@ -146,9 +154,12 @@ body::before {
 .VPDoc .container > .content {
   border: 1px solid var(--dream-border);
   border-radius: 28px;
-  background: var(--dream-surface);
-  box-shadow: var(--dream-shadow);
-  backdrop-filter: blur(22px) saturate(135%);
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 34%),
+    var(--dream-surface);
+  box-shadow: var(--dream-shadow), inset 0 1px var(--dream-glass-line);
+  backdrop-filter: blur(30px) saturate(155%);
+  -webkit-backdrop-filter: blur(30px) saturate(155%);
 }
 
 .VPDoc .content-container {
@@ -367,8 +378,9 @@ body::before {
   background:
     linear-gradient(150deg, rgba(201, 177, 255, 0.13), transparent 54%),
     var(--dream-surface);
-  box-shadow: var(--dream-shadow), inset 0 1px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px) saturate(135%);
+  box-shadow: var(--dream-shadow), inset 0 1px var(--dream-glass-line), 0 0 70px var(--dream-glow);
+  backdrop-filter: blur(30px) saturate(155%);
+  -webkit-backdrop-filter: blur(30px) saturate(155%);
 }
 
 .dream-mascot {
@@ -484,10 +496,13 @@ body::before {
   border: 1px solid var(--dream-border);
   border-radius: 24px;
   color: var(--dream-text) !important;
-  background: var(--dream-surface);
-  box-shadow: 0 16px 50px rgba(19, 10, 40, 0.1);
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 38%),
+    var(--dream-surface);
+  box-shadow: 0 18px 55px rgba(19, 10, 40, 0.18), inset 0 1px var(--dream-glass-line);
   text-decoration: none !important;
-  backdrop-filter: blur(22px) saturate(130%);
+  backdrop-filter: blur(28px) saturate(155%);
+  -webkit-backdrop-filter: blur(28px) saturate(155%);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
@@ -507,7 +522,7 @@ body::before {
 .dream-card:hover {
   transform: translateY(-6px);
   border-color: rgba(167, 121, 255, .48);
-  box-shadow: 0 26px 70px rgba(52, 27, 92, .2);
+  box-shadow: 0 26px 70px rgba(52, 27, 92, .3), inset 0 1px var(--dream-glass-line), 0 0 34px var(--dream-glow);
 }
 
 .dream-card:hover::after { transform: scale(1.28); }
@@ -570,8 +585,9 @@ body::before {
   background:
     radial-gradient(circle at 5% 50%, var(--dream-glow), transparent 24%),
     var(--dream-surface);
-  box-shadow: var(--dream-shadow);
-  backdrop-filter: blur(24px);
+  box-shadow: var(--dream-shadow), inset 0 1px var(--dream-glass-line);
+  backdrop-filter: blur(30px) saturate(155%);
+  -webkit-backdrop-filter: blur(30px) saturate(155%);
 }
 
 .dream-message-card__spark {
@@ -617,9 +633,12 @@ body::before {
   padding: 30px;
   border: 1px solid var(--dream-border);
   border-radius: 26px;
-  background: var(--dream-surface);
-  box-shadow: var(--dream-shadow);
-  backdrop-filter: blur(24px) saturate(135%);
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 36%),
+    var(--dream-surface);
+  box-shadow: var(--dream-shadow), inset 0 1px var(--dream-glass-line);
+  backdrop-filter: blur(30px) saturate(155%);
+  -webkit-backdrop-filter: blur(30px) saturate(155%);
 }
 
 .message-form {
@@ -802,17 +821,23 @@ body::before {
 }
 
 .post-card {
+  position: relative;
   display: block;
   padding: 26px;
   border: 1px solid var(--dream-border);
   border-radius: 20px;
   color: var(--dream-text) !important;
-  background: rgba(126, 81, 210, .06);
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 42%),
+    var(--dream-surface);
+  box-shadow: 0 14px 44px rgba(13, 7, 29, .18), inset 0 1px var(--dream-glass-line);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
   text-decoration: none !important;
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
-.post-card:hover { transform: translateY(-3px); border-color: var(--dream-purple); }
+.post-card:hover { transform: translateY(-4px); border-color: var(--dream-purple); box-shadow: 0 20px 54px rgba(31, 15, 67, .28), 0 0 24px var(--dream-glow); }
 .post-card__meta { display: flex; justify-content: space-between; color: var(--dream-purple); font-family: var(--vp-font-family-mono); font-size: 10px; }
 .post-card h2 { margin: 18px 0 8px; padding: 0; border: 0; }
 .post-card p { color: var(--dream-muted); }
@@ -877,16 +902,23 @@ body::before {
 }
 
 .paper-card {
+  position: relative;
   padding: 24px;
   border: 1px solid var(--dream-border);
   border-radius: 19px;
-  background: rgba(126, 81, 210, .055);
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 42%),
+    var(--dream-surface);
+  box-shadow: 0 14px 44px rgba(13, 7, 29, .16), inset 0 1px var(--dream-glass-line);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .paper-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: rgba(167, 121, 255, .52);
+  box-shadow: 0 20px 54px rgba(31, 15, 67, .28), 0 0 24px var(--dream-glow);
 }
 
 .paper-card__meta,
@@ -963,7 +995,18 @@ body::before {
 
 @keyframes dream-spin { to { transform: rotate(360deg); } }
 
+@keyframes dream-pulse {
+  0%, 100% { opacity: .65; transform: scale(.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes dream-sky-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 36px 18px, 220px 0; }
+}
+
 @media (max-width: 960px) {
+  body { background-position: center 64px; background-size: auto 100vh; }
   .dream-hero { grid-template-columns: 1fr; padding-top: 75px; text-align: center; }
   .dream-hero__copy { display: flex; flex-direction: column; align-items: center; }
   .dream-hero__art { min-height: 520px; }
