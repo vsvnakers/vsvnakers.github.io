@@ -1132,12 +1132,12 @@ body::before {
   gap: 8px;
   color: var(--dream-purple);
   font-family: var(--vp-font-family-mono);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   line-height: 1.5;
 }
 
-.resource-card__meta small { overflow: hidden; max-width: 100%; color: var(--dream-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.resource-card__meta small { overflow: hidden; max-width: 100%; color: var(--dream-muted); font-size: 14px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .resource-card__body { min-width: 0; grid-area: body; }
 .resource-card h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.4; }
 .resource-card p { margin: 0; color: var(--dream-muted); font-size: 17px; line-height: 1.7; }
