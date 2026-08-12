@@ -58,7 +58,7 @@
             </defs>
 
             <circle cx="218" cy="208" r="143" fill="url(#moonGlow)" opacity=".92" filter="url(#softGlow)" />
-            <circle cx="252" cy="174" r="132" fill="var(--dream-moon-cutout)" opacity=".96" />
+            <circle class="dream-moon-cutout" cx="252" cy="174" r="132" fill="var(--dream-moon-cutout)" opacity=".96" />
             <g fill="#fff" filter="url(#softGlow)">
               <circle cx="75" cy="90" r="3"/><circle cx="354" cy="112" r="2"/>
               <circle cx="334" cy="292" r="3"/><circle cx="83" cy="282" r="2"/>

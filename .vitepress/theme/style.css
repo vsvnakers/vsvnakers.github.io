@@ -26,9 +26,11 @@
   --dream-purple-bright: #9b6cff;
   --dream-glow: rgba(124, 58, 237, 0.24);
   --dream-shadow: 0 24px 70px rgba(65, 38, 102, 0.13);
-  --dream-art-wash: rgba(248, 245, 255, 0.84);
+  --dream-art-wash: rgba(255, 250, 255, 0.44);
   --dream-glass-line: rgba(255, 255, 255, 0.72);
   --dream-moon-cutout: #f8f5ff;
+  --dream-backdrop: url('/assets/violet-dayscape.png');
+  --dream-backdrop-position: center 64px;
 }
 
 .dark {
@@ -58,6 +60,8 @@
   --dream-art-wash: rgba(7, 4, 18, 0.34);
   --dream-glass-line: rgba(238, 225, 255, 0.15);
   --dream-moon-cutout: #100a21;
+  --dream-backdrop: url('/assets/violet-nightscape.png');
+  --dream-backdrop-position: center 64px;
 }
 
 html {
@@ -69,8 +73,22 @@ body {
     linear-gradient(var(--dream-art-wash), var(--dream-art-wash)),
     radial-gradient(circle at 12% 18%, rgba(143, 92, 255, 0.12), transparent 26rem),
     radial-gradient(circle at 88% 42%, rgba(217, 129, 255, 0.08), transparent 30rem),
-    url('/assets/violet-nightscape.png') center 64px / cover fixed no-repeat,
+    var(--dream-backdrop) var(--dream-backdrop-position) / cover fixed no-repeat,
     var(--dream-bg);
+}
+
+:root:not(.dark) body::before {
+  opacity: 0.3;
+  background-image:
+    radial-gradient(circle, rgba(103, 72, 139, 0.18) 1px, transparent 1px),
+    linear-gradient(120deg, transparent 48%, rgba(185, 115, 190, 0.08) 49%, transparent 50%);
+}
+
+:root:not(.dark) .VPDoc .container > .content,
+:root:not(.dark) .dream-card,
+:root:not(.dark) .dream-message-card,
+:root:not(.dark) .dream-moon-card {
+  box-shadow: 0 24px 70px rgba(100, 62, 125, 0.16), inset 0 1px rgba(255, 255, 255, 0.92);
 }
 
 body::before {
@@ -97,6 +115,10 @@ body::before {
   border-bottom: 1px solid var(--dream-border) !important;
   background: var(--vp-nav-bg-color) !important;
   backdrop-filter: blur(22px) saturate(150%);
+}
+
+:root:not(.dark) .VPNavBar {
+  background: rgba(255, 250, 255, 0.74) !important;
 }
 
 .VPNavBar.has-sidebar .content-body {
@@ -398,6 +420,22 @@ body::before {
   width: 96%;
   height: 96%;
   overflow: visible;
+}
+
+:root:not(.dark) .dream-moon-cutout {
+  opacity: 0;
+}
+
+:root:not(.dark) .dream-mascot circle[fill="url(#moonGlow)"] {
+  transform-origin: 218px 208px;
+  transform: scale(.82);
+}
+
+:root:not(.dark) .dream-moon-card {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255, 241, 176, 0.5), transparent 34%),
+    linear-gradient(150deg, rgba(255, 207, 225, 0.34), transparent 54%),
+    var(--dream-surface);
 }
 
 .dream-orbit {
