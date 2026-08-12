@@ -1086,10 +1086,17 @@ body::before {
 
 .resource-card {
   display: grid;
-  grid-template-columns: 150px minmax(260px, 1.2fr) minmax(210px, .8fr) auto;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "meta body action"
+    "meta note action";
   align-items: center;
-  gap: 22px;
-  padding: 18px 20px;
+  gap: 8px 20px;
+  padding: 20px 22px;
   border: 1px solid var(--dream-border);
   border-radius: 22px;
   color: var(--dream-text) !important;
@@ -1111,6 +1118,7 @@ body::before {
 .resource-card__meta {
   display: flex;
   min-width: 0;
+  grid-area: meta;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
@@ -1121,27 +1129,31 @@ body::before {
 }
 
 .resource-card__meta small { overflow: hidden; max-width: 100%; color: var(--dream-muted); text-overflow: ellipsis; white-space: nowrap; }
-.resource-card h3 { margin: 0 0 6px; font-size: 17px; }
-.resource-card p { margin: 0; color: var(--dream-muted); line-height: 1.75; }
+.resource-card__body { min-width: 0; grid-area: body; }
+.resource-card h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.4; }
+.resource-card p { margin: 0; color: var(--dream-muted); font-size: 13px; line-height: 1.65; }
 
 .resource-card__note {
   margin: 0;
-  padding-left: 12px;
+  min-width: 0;
+  grid-area: note;
+  padding: 7px 10px;
   border-left: 2px solid var(--dream-purple);
   color: var(--dream-muted);
-  font-size: 12px;
-  line-height: 1.65;
+  background: var(--dream-glow);
+  font-size: 11px;
+  line-height: 1.55;
 }
 
 .resource-card strong {
+  grid-area: action;
   color: var(--dream-purple);
-  font-size: 12px;
+  font-size: 11px;
   white-space: nowrap;
 }
 
 @media (max-width: 900px) {
-  .resource-card { grid-template-columns: 130px 1fr auto; }
-  .resource-card__note { display: none; }
+  .resource-card { grid-template-columns: 112px minmax(0, 1fr) auto; gap: 8px 16px; }
 }
 
 @keyframes dream-float {
@@ -1198,9 +1210,13 @@ body::before {
   .dream-grid { grid-template-columns: 1fr; }
   .dream-card--wide { grid-column: auto; }
   .dream-card { min-height: 270px; }
-  .resource-card { grid-template-columns: 1fr auto; gap: 12px 16px; padding: 18px; }
-  .resource-card__meta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
-  .resource-card__body { min-width: 0; }
+  .resource-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "meta meta" "body action" "note note";
+    gap: 10px 14px;
+    padding: 18px;
+  }
+  .resource-card__meta { flex-direction: row; justify-content: space-between; }
   .dream-message-card { margin-bottom: 74px; padding: 30px 24px; grid-template-columns: 1fr; text-align: center; }
   .dream-message-card__spark { display: none; }
   .dream-message-card .dream-button { grid-column: auto; justify-self: stretch; }
