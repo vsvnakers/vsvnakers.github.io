@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import { tokenizeSearchText } from '../scripts/search-tokenizer.mjs'
 
 export default withMermaid(defineConfig({
   title: 'VSVnakers',
@@ -29,9 +30,36 @@ export default withMermaid(defineConfig({
     search: {
       provider: 'local',
       options: {
+        disableDetailedView: true,
+        miniSearch: {
+          options: {
+            tokenize: tokenizeSearchText
+          },
+          searchOptions: {
+            combineWith: 'AND',
+            boost: { title: 8, titles: 4, text: 1 },
+            prefix: (_term, index, terms) => index === terms.length - 1,
+            fuzzy: (term) => /^[a-z\d]/i.test(term) && term.length >= 5 ? 0.15 : false,
+            maxFuzzy: 1,
+            weights: { fuzzy: 0.25, prefix: 0.7 }
+          }
+        },
         translations: {
           button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
-          modal: { noResultsText: '没有找到相关内容' }
+          modal: {
+            resetButtonTitle: '清空搜索',
+            backButtonTitle: '关闭搜索',
+            noResultsText: '没有找到相关内容',
+            footer: {
+              selectText: '选择',
+              selectKeyAriaLabel: '回车',
+              navigateText: '切换',
+              navigateUpKeyAriaLabel: '上箭头',
+              navigateDownKeyAriaLabel: '下箭头',
+              closeText: '关闭',
+              closeKeyAriaLabel: 'ESC'
+            }
+          }
         }
       }
     },
