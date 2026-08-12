@@ -152,6 +152,7 @@ body::before {
 }
 
 .VPDoc .container > .content {
+  padding-top: 42px;
   border: 1px solid var(--dream-border);
   border-radius: 28px;
   background:
@@ -1049,7 +1050,7 @@ body::before {
   .message-form, .message-list { padding: 22px; }
   .message-form__footer { align-items: stretch; flex-direction: column; }
   .message-form button { width: 100%; }
-  .VPDoc .container > .content { border-radius: 20px; }
+  .VPDoc .container > .content { padding-top: 30px; border-radius: 20px; }
   .post-card__footer { align-items: flex-start; flex-direction: column; }
 }
 
