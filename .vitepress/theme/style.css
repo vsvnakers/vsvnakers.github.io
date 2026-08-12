@@ -1068,16 +1068,17 @@ body::before {
 
 .resource-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin: 24px 0 48px;
 }
 
 .resource-card {
-  display: flex;
-  min-height: 290px;
-  flex-direction: column;
-  padding: 26px;
+  display: grid;
+  grid-template-columns: 150px minmax(260px, 1.2fr) minmax(210px, .8fr) auto;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 20px;
   border: 1px solid var(--dream-border);
   border-radius: 22px;
   color: var(--dream-text) !important;
@@ -1098,21 +1099,22 @@ body::before {
 
 .resource-card__meta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
   color: var(--dream-purple);
   font-family: var(--vp-font-family-mono);
   font-size: 10px;
   font-weight: 700;
 }
 
-.resource-card__meta small { color: var(--dream-muted); }
-.resource-card h3 { margin: 26px 0 10px; font-size: 21px; }
+.resource-card__meta small { overflow: hidden; max-width: 100%; color: var(--dream-muted); text-overflow: ellipsis; white-space: nowrap; }
+.resource-card h3 { margin: 0 0 6px; font-size: 17px; }
 .resource-card p { margin: 0; color: var(--dream-muted); line-height: 1.75; }
 
 .resource-card__note {
-  margin: 18px 0;
+  margin: 0;
   padding-left: 12px;
   border-left: 2px solid var(--dream-purple);
   color: var(--dream-muted);
@@ -1121,9 +1123,14 @@ body::before {
 }
 
 .resource-card strong {
-  margin-top: auto;
   color: var(--dream-purple);
   font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .resource-card { grid-template-columns: 130px 1fr auto; }
+  .resource-card__note { display: none; }
 }
 
 @keyframes dream-float {
@@ -1180,8 +1187,9 @@ body::before {
   .dream-grid { grid-template-columns: 1fr; }
   .dream-card--wide { grid-column: auto; }
   .dream-card { min-height: 270px; }
-  .resource-grid { grid-template-columns: 1fr; }
-  .resource-card { min-height: 260px; }
+  .resource-card { grid-template-columns: 1fr auto; gap: 12px 16px; padding: 18px; }
+  .resource-card__meta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
+  .resource-card__body { min-width: 0; }
   .dream-message-card { margin-bottom: 74px; padding: 30px 24px; grid-template-columns: 1fr; text-align: center; }
   .dream-message-card__spark { display: none; }
   .dream-message-card .dream-button { grid-column: auto; justify-self: stretch; }

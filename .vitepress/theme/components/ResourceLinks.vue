@@ -16,10 +16,12 @@ import { recommendedResources } from '../../../tools/resources'
         <span>{{ resource.category }}</span>
         <small>{{ resource.domain }}</small>
       </div>
-      <h3>{{ resource.title }}</h3>
-      <p>{{ resource.description }}</p>
+      <div class="resource-card__body">
+        <h3>{{ resource.title }}</h3>
+        <p>{{ resource.description }}</p>
+      </div>
       <div class="resource-card__note">{{ resource.note }}</div>
-      <strong>前往浏览 ↗</strong>
+      <strong aria-hidden="true">浏览 ↗</strong>
     </a>
   </div>
 </template>
