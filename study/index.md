@@ -52,17 +52,20 @@ sidebar: false
 - **[rCore Tutorial Guide 2025S](https://learningos.cn/rCore-Tutorial-Guide-2025S/0setup-devel-env.html)**：实验环境、任务要求与排错入口。
 - **[ArceOS Tutorial Book](https://oslearning365.github.io/arceos-tutorial-book/)**：了解组件化内核的构造方式，适合在完成基础实验后继续阅读。
 
-### 社区与训练营
+### 继续实践
 
-- **[EulixOS Community](https://opencamp.cn/EulixOS/camp/202501)**：开源操作系统相关课程与活动。
-- **[Open Source OS Community](https://opencamp.ai/os2edu)**：操作系统学习社区和开放课程入口。
+- **[Linux Kernel Labs](https://linux-kernel-labs.github.io/refs/heads/master/)**：用讲义和动手实验学习系统调用、进程、内存、中断与设备驱动，适合从教学内核过渡到真实 Linux。
+- **[openEuler](https://www.openeuler.org/en/)**：观察服务器、云、边缘和嵌入式场景中的开源 Linux 发行版生态，也可以从 SIG 与贡献指南进入社区实践。
+- **[LinuxBlog.io](https://linuxblog.io/)**：补充 Linux 管理、性能优化、网络、安全和故障排查方面的实用文章。
 
 ## 计算机组成与 Verilog
 
-- **[一生一芯讲义](https://ysyx.oscc.cc/docs/)**：从程序运行一路深入到处理器实现，适合作为计算机系统主线。
-- **[HDLBits](https://hdlbits.01xz.net/wiki/Main_Page)**：在线 Verilog 练习平台，可用于巩固组合逻辑、时序逻辑和有限状态机。
+- **[CS61C: Great Ideas in Computer Architecture](https://cs61c.org/su26/)**：从 C、RISC-V 进入数据通路、流水线、缓存、并行与虚拟内存，适合作为组成原理主线。
+- **[Onur Mutlu's Lecture Videos and Materials](https://people.inf.ethz.ch/omutlu/lecture-videos.html)**：包含数字设计、计算机体系结构、并行架构和内存系统课程，适合在主线之后按专题深入。
+- **[ChipVerify Verilog Tutorial](https://chipverify.com/tutorials/verilog)**：按主题学习 Verilog 语法、模块、过程块和验证基础。
+- **[HDLBits](https://hdlbits.01xz.net/wiki/Main_Page)**：在线 Verilog 练习平台，用于巩固组合逻辑、时序逻辑和有限状态机。
 
-学习这部分时，重点不是堆积 HDL 语法，而是建立“指令—处理器状态—硬件信号”之间的联系。
+建议先用 CS61C 建立“程序—指令—处理器—存储层次”的联系，再用 ChipVerify 与 HDLBits 完成小型电路练习；遇到体系结构或内存系统问题时，再进入 Onur Mutlu 的专题课程。
 
 ## Linux 内核
 
@@ -71,11 +74,12 @@ sidebar: false
 
 阅读源码时，我会尽量从一个具体入口切入，例如一次系统调用、一个 `/proc` 节点或一次中断，而不是按目录顺序浏览整个内核。
 
-## AI 系统
+## AI 工程与模型基础
 
-- **[AI Systems Training Camp](https://opencamp.cn/InfiniTensor/camp/2024winter)**：从系统实现角度理解张量计算、算子与训练框架，可作为系统方向的拓展主题。
+- **[Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)**：从反向传播开始亲手构建神经网络、语言模型、GPT 与 tokenizer，适合建立模型内部机制的直觉。
+- **[AI Engineer Roadmap](https://roadmap.sh/ai-engineer)**：用路线图检查应用 AI 所需的模型、工具和工程能力，适合查漏补缺，不必按图一次性学完。
 
-这部分暂时作为拓展路线，不与当前的 Rust—操作系统—内核主线争夺优先级。
+这部分暂时作为拓展路线：先完成 Zero to Hero 中可运行的实现，再用 Roadmap 选择与实际项目有关的下一项能力，避免把路线图变成收藏清单。
 
 ## 学习记录原则
 

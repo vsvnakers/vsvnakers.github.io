@@ -71,11 +71,16 @@ Linux 内核源码与真实系统
 
 ## 第三阶段：补上硬件视角
 
-操作系统最终运行在真实硬件上。异常、时钟中断、内存映射和设备访问都依赖处理器提供的机制。
+操作系统最终运行在真实硬件上。异常、时钟中断、内存映射和设备访问都依赖处理器提供的机制。这一阶段不必急着设计复杂处理器，先把软件行为和硬件状态对应起来。
 
-[一生一芯讲义](https://ysyx.oscc.cc/docs/)适合作为计算机系统主线，[HDLBits](https://hdlbits.01xz.net/wiki/Main_Page)则可以用来熟悉 Verilog 语法和数字电路练习。
+### 建议顺序
 
-这个阶段可以围绕三个问题展开：
+1. [CS61C](https://cs61c.org/su26/)：以 C 和 RISC-V 为起点，理解数据通路、流水线、缓存、并行和虚拟内存；
+2. [ChipVerify Verilog Tutorial](https://chipverify.com/tutorials/verilog)：补齐模块、组合逻辑、时序逻辑和 testbench 等 Verilog 基础；
+3. [HDLBits](https://hdlbits.01xz.net/wiki/Main_Page)：用短题验证语法与电路设计是否真正掌握；
+4. [Onur Mutlu 的课程资料](https://people.inf.ethz.ch/omutlu/lecture-videos.html)：按需要深入数字设计、体系结构、并行架构或内存系统。
+
+学习时可以持续追问三个问题：
 
 1. 一条指令怎样经过取指、译码、执行并更新体系结构状态？
 2. 处理器怎样进入异常处理，又怎样返回原程序？
@@ -89,7 +94,9 @@ Linux 源码规模很大，不适合从目录第一页顺序读到最后。更�
 
 - [Linux Kernel Source](https://elixir.bootlin.com/linux/v6.13.7/source)：在线交叉引用，适合追踪符号与调用关系；
 - [Linux Kernel Documentation](https://www.kernel.org/doc/html/latest/)：优先查阅的官方说明；
-- [Linux Journey](https://labex.io/linuxjourney)：循序学习命令行、权限、进程、文件系统与 Linux 系统管理。
+- [Linux Kernel Labs](https://linux-kernel-labs.github.io/refs/heads/master/)：通过系统调用、进程、内存、中断和驱动实验，从概念过渡到真实内核；
+- [Linux Journey](https://labex.io/linuxjourney)：循序学习命令行、权限、进程、文件系统与 Linux 系统管理；
+- [LinuxBlog.io](https://linuxblog.io/)：在遇到管理、性能、网络或故障排查问题时查阅实践文章。
 
 ### 推荐的切入方式
 
@@ -110,5 +117,9 @@ Linux 源码规模很大，不适合从目录第一页顺序读到最后。更�
 - 一段包含现象、假设和结论的调试记录。
 
 路线不是日程表，不需要一次规划到底。完成一个小闭环后再调整下一步，通常比制定一份庞大的年度清单更可靠。
+
+## 拓展：从模型原理到 AI 工程
+
+AI 暂时不加入系统主线，但可以作为独立拓展。先跟随 [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) 从反向传播逐步实现语言模型、GPT 和 tokenizer，留下能够运行与修改的代码；完成一个小项目后，再用 [AI Engineer Roadmap](https://roadmap.sh/ai-engineer) 检查工程能力缺口。路线图只负责导航，实际项目才决定下一步学什么。
 
 完整资源入口会继续维护在[学习页面](/study/)。
