@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '30 4 * * *' # UTC 04:30 = 北京时间 12:30，为论文任务排队留出缓冲
+    - cron: '0 3 * * *' # UTC 03:00 = 北京时间 11:00，为 08:00 的论文任务留出生成时间
   workflow_dispatch:
 
 permissions:

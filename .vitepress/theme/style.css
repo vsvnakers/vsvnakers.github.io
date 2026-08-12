@@ -1097,7 +1097,7 @@ body::before {
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  grid-template-columns: 180px minmax(0, 1fr) auto;
+  grid-template-columns: 300px minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
   grid-template-areas:
     "meta body action"
@@ -1132,7 +1132,7 @@ body::before {
   gap: 8px;
   color: var(--dream-purple);
   font-family: var(--vp-font-family-mono);
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.5;
 }
@@ -1162,7 +1162,7 @@ body::before {
 }
 
 @media (max-width: 900px) {
-  .resource-card { grid-template-columns: 152px minmax(0, 1fr) auto; gap: 12px 20px; }
+  .resource-card { grid-template-columns: 260px minmax(0, 1fr) auto; gap: 12px 20px; }
 }
 
 @keyframes dream-float {
