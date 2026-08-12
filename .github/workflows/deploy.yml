@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '30 4 * * *' # UTC 04:30 = 北京时间 12:30，为论文任务排队留出缓冲
+  workflow_dispatch:
 
 jobs:
   build:
@@ -11,12 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout daily paper digests
+        uses: actions/checkout@v4
+        with:
+          repository: vsvnakers/paper-daily
+          ref: master
+          path: .paper-daily-source
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
 
       - run: npm ci
+      - name: Sync paper digests
+        run: node scripts/sync-papers.mjs .paper-daily-source/essay_read papers/daily
       - run: npm run build
 
       - uses: peaceiris/actions-gh-pages@v3

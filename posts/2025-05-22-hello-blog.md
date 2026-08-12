@@ -1,36 +1,87 @@
 ---
-title: Blog is Live
+title: 从第一篇文章开始：这个网站是怎样搭起来的
+description: 记录个人网站的目标、技术选择、部署流程，以及我准备如何维护它。
 date: 2025-05-22
-tags: [meta]
+tags: [网站, VitePress, GitHub Pages]
 ---
 
-First post on my new blog. Built with VitePress, deployed on GitHub Pages.
+这是这个网站的第一篇文章。与其只留下一句 “Hello, World”，不如借这个入口说明：这个网站为什么存在，它是怎样运行的，以及之后会放些什么。
 
 <!-- more -->
 
-## How to Write
+## 为什么做一个个人网站
 
-Create a Markdown file in `posts/`:
+零散的收藏夹适合保存链接，却不适合沉淀自己的理解。聊天记录、临时笔记和代码片段也很容易在时间里失去上下文。
 
+我希望这里能承担三件事：
+
+1. **记录学习过程**：把 Rust、操作系统和 Linux 内核中的关键问题写清楚。
+2. **整理可靠资料**：不仅收集链接，还说明它解决什么问题、适合在哪个阶段阅读。
+3. **保留长期作品**：让文章使用普通 Markdown 保存，不被某个平台的编辑器或推荐算法绑住。
+
+## 技术选择
+
+网站使用 [VitePress](https://vitepress.dev/) 构建。内容是 Markdown，界面部分由 Vue 和 CSS 完成，最后输出为静态 HTML。
+
+这套方案很适合个人知识站：
+
+- Markdown 文件可以直接进入 Git 版本管理；
+- 不需要数据库和长期运行的服务器；
+- 页面生成后加载简单，托管成本接近于零；
+- 需要定制时仍然可以使用 Vue 组件。
+
+## 从提交到上线
+
+源码保存在仓库的 `main` 分支。每次向 `main` 推送提交后，GitHub Actions 会自动执行以下步骤：
+
+```text
+push main
+    ↓
+npm ci
+    ↓
+npm run build
+    ↓
+生成 .vitepress/dist
+    ↓
+发布到 gh-pages
 ```
-posts/
-  2025-05-22-my-post.md
-```
 
-Add frontmatter:
+因此，日常维护只需要编辑内容、在本地检查，然后提交并推送。`gh-pages` 是自动生成的发布分支，不应该手动修改。
+
+## 内容怎样组织
+
+目前网站分为四部分：
+
+- **文章**：能够独立阅读的技术总结与阶段复盘；
+- **学习**：按方向整理的资料和建议顺序；
+- **工具**：实际有使用价值的软件与服务；
+- **留言**：读者可以通过 GitHub Issues 留下问题。
+
+新增文章时，只需要在 `posts/` 下创建 Markdown 文件并填写基本信息：
 
 ```yaml
 ---
-title: Post Title
-date: 2025-05-22
-tags: [tag1, tag2]
+title: 文章标题
+description: 一句话说明文章解决什么问题
+date: 2026-08-12
+tags: [Rust, 操作系统]
 ---
 ```
 
-Use `<!-- more -->` to mark the excerpt cutoff.
+文章首页会读取这些信息，自动按日期倒序生成列表。
 
-## Tech Stack
+## 写作约定
 
-- VitePress (Vue 3 + Vite)
-- GitHub Pages deployment
-- Dark Neon design system
+为了让这里不再变成另一个无人整理的收藏夹，我给内容留了几个简单约束：
+
+- 标题尽量描述具体问题，而不是只写一个宽泛名词；
+- 开头说明文章适合谁、准备解决什么；
+- 引用资料时补充自己的判断，不只粘贴链接；
+- 尚未验证的结论明确标注，代码尽量保留运行环境；
+- 旧文章有错误就直接修正，由 Git 保存修改历史。
+
+## 接下来
+
+网站的样式会继续调整，但内容会优先于装饰。下一阶段准备沿着 Rust、操作系统实验和 Linux 内核阅读这条主线，把学习过程中反复遇到的问题整理成可以复用的文章。
+
+如果你对某个主题感兴趣，或者发现页面中的错误，欢迎去[留言板](/guestbook/)留下问题。

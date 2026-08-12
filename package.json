@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "sync-papers": "node scripts/sync-papers.mjs D:/paper-daily/essay_read papers/daily"
   },
   "devDependencies": {
     "vitepress": "^1.6.3",

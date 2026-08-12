@@ -1,21 +1,16 @@
 import DefaultTheme from 'vitepress/theme'
-import { onMounted, watch } from 'vue'
-import { useData } from 'vitepress'
-import PostList from './components/PostList.vue'
-import type { Theme } from 'vitepress'
+import HomePage from './components/HomePage.vue'
+import MessageBoard from './components/MessageBoard.vue'
+import PostArchive from './components/PostArchive.vue'
+import PaperArchive from './components/PaperArchive.vue'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
-    app.component('PostList', PostList)
-  },
-  setup() {
-    const { isDark } = useData()
-    onMounted(() => {
-      // Force dark mode always
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('vitepress-theme-appearance', 'dark')
-    })
+    app.component('HomePage', HomePage)
+    app.component('MessageBoard', MessageBoard)
+    app.component('PostArchive', PostArchive)
+    app.component('PaperArchive', PaperArchive)
   }
-} satisfies Theme
+}

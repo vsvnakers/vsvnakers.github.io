@@ -2,3 +2,8 @@ node_modules/
 .vitepress/cache/
 .vitepress/dist/
 skills/
+.codex-temp/
+.pnpm-store/
+.claude/
+.paper-daily-source/
+papers/daily/

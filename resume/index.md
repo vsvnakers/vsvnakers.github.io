@@ -1,12 +1,47 @@
 ---
-title: About
+title: 关于
+description: 关于 VSVnakers 与这个网站
+sidebar: false
+aside: false
 ---
 
-# About
+# 关于
 
-**VSVnakers** — Systems Programmer
+你好，我是 **VSVnakers**。
 
-Currently learning Rust, operating systems, and Linux kernel internals.
+我目前把主要精力放在系统编程相关方向：Rust、操作系统、计算机组成和 Linux 内核。这里是我的公开学习空间，用来保存长期有效的笔记、文章和资料索引。
 
-- **GitHub**: [github.com/vsvnakers](https://github.com/vsvnakers)
-- **Email**: vsvnakers@outlook.com
+## 我在关注什么
+
+- **Rust**：所有权模型、工程实践，以及它在系统软件中的使用方式；
+- **操作系统**：进程与调度、虚拟内存、文件系统和并发；
+- **计算机系统**：从指令执行、异常处理到软硬件接口；
+- **Linux 内核**：沿真实调用路径理解成熟内核的实现与取舍。
+
+这些是当前学习方向，不是“已经精通”的技能清单。网站会保留探索过程中的修改与修正。
+
+## 为什么维护这个网站
+
+我相信写作是检验理解的一种方式。一个概念只有在能够解释前提、过程和边界时，才算真正开始掌握。
+
+因此，这里的内容会尽量做到：
+
+- 从具体问题出发，而不是堆砌术语；
+- 区分已经验证的结论与仍在探索的想法；
+- 给出必要的上下文、资料来源和复现路径；
+- 发现错误后直接修正，由 Git 保留历史。
+
+## 从哪里开始
+
+- 想了解网站本身，可以读[从第一篇文章开始](/posts/2025-05-22-hello-blog)；
+- 想看我的学习方向，可以读[系统学习地图](/posts/2026-08-12-systems-learning-map)；
+- 想快速浏览近期研究，可以进入[每日论文](/papers/)；
+- 想查资料，可以进入[学习页面](/study/)；
+- 有问题或建议，欢迎前往[留言板](/guestbook/)。
+
+## 联系方式
+
+- GitHub：[github.com/vsvnakers](https://github.com/vsvnakers)
+- Email：[vsvnakers@outlook.com](mailto:vsvnakers@outlook.com)
+
+讨论文章错误、学习路线和系统编程问题都很欢迎。涉及具体问题时，如果能附上环境、现象和已经尝试过的方法，会更容易一起定位。

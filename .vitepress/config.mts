@@ -2,53 +2,54 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'VSVnakers',
-  description: 'VSVnakers 的个人博客',
+  description: '在紫色夜空下记录代码、系统与灵感',
   lang: 'zh-CN',
+  appearance: 'dark',
   lastUpdated: true,
   cleanUrls: true,
-  appearance: 'dark',
-
   head: [
-    ['link', { rel: 'icon', href: 'https://github.com/vsvnakers.png' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', {
-      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap',
-      rel: 'stylesheet'
-    }],
-    // Critical inline CSS to prevent white flash
-    ['style', {}, `
-      html.dark, html.dark body {
-        background: #0a0e1a !important;
-        color: #e2e8f0 !important;
-      }
-    `]
+    ['meta', { name: 'theme-color', content: '#0c0818' }],
+    ['meta', { name: 'color-scheme', content: 'dark light' }]
   ],
-
   themeConfig: {
-    logo: { src: 'https://github.com/vsvnakers.png', alt: 'VSVnakers' },
+    siteTitle: 'VSVnakers',
     nav: [
-      { text: 'Blog', link: '/posts/' },
-      { text: 'Study', link: '/study/' },
-      { text: 'Tools', link: '/tools/' },
-      { text: 'About', link: '/resume/' },
+      { text: '首页', link: '/' },
+      { text: '文章', link: '/posts/' },
+      { text: '论文', link: '/papers/' },
+      { text: '学习', link: '/study/' },
+      { text: '工具', link: '/tools/' },
+      { text: '留言', link: '/guestbook/' },
+      { text: '关于', link: '/resume/' }
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vsvnakers' }],
-    footer: { copyright: '© 2025 VSVnakers' },
-    outline: { level: [2, 3], label: 'On this page' },
-    docFooter: { prev: 'Previous', next: 'Next' },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vsvnakers' }
+    ],
     search: {
       provider: 'local',
       options: {
-        translations: { button: 'Search', placeholder: 'Search...', noResults: 'No results' }
+        translations: {
+          button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
+          modal: { noResultsText: '没有找到相关内容' }
+        }
       }
+    },
+    outline: { level: [2, 3], label: '本页目录' },
+    docFooter: { prev: '上一篇', next: '下一篇' },
+    lastUpdated: { text: '最后更新' },
+    darkModeSwitchLabel: '主题',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
+    returnToTopLabel: '返回顶部',
+    sidebarMenuLabel: '目录',
+    footer: {
+      message: 'Built with curiosity and a little stardust.',
+      copyright: '© 2026 VSVnakers'
     }
   },
-
   markdown: {
-    theme: { light: 'github-dark', dark: 'github-dark' }
+    theme: { light: 'github-light', dark: 'github-dark' }
   },
-
   ignoreDeadLinks: true,
-  srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**']
+  srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**', '.paper-daily-source/**']
 })
