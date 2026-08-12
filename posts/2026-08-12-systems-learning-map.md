@@ -89,7 +89,7 @@ Linux 源码规模很大，不适合从目录第一页顺序读到最后。更�
 
 - [Linux Kernel Source](https://elixir.bootlin.com/linux/v6.13.7/source)：在线交叉引用，适合追踪符号与调用关系；
 - [Linux Kernel Documentation](https://www.kernel.org/doc/html/latest/)：优先查阅的官方说明；
-- [Linux Kernel Journey](https://www.kerneltravel.net/)：中文社区文章与学习资源。
+- [Linux Journey](https://labex.io/linuxjourney)：循序学习命令行、权限、进程、文件系统与 Linux 系统管理。
 
 ### 推荐的切入方式
 

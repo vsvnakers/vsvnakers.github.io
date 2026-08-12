@@ -20,6 +20,13 @@ sidebar: false
 | 组成原理 | 软件抽象如何落到处理器和设备？ | RTL 练习、调试记录 |
 | Linux 内核 | 真实内核如何实现这些机制？ | 调用链笔记、源码分析 |
 
+## 基础工具与 Linux 环境
+
+- **[The Missing Semester 中文版](https://missing-semester-cn.github.io/)**：先补齐 Shell、编辑器、Git、调试与自动化等课程里常被略过的实用工具。
+- **[Linux Journey](https://labex.io/linuxjourney)**：从命令行、权限和进程逐步进入文件系统、网络与系统管理。
+- **[Learn X in Y Minutes](https://learnxinyminutes.com/)**：需要快速了解一门语言或配置格式时，用它建立语法概览，再转向正式文档。
+- **[Arch Linux](https://archlinux.org/)**：通过发行版公告、软件包与社区资源了解一个持续更新的 Linux 系统；具体配置问题可继续查阅 ArchWiki。
+
 ## Rust
 
 ### 主线阅读
@@ -61,7 +68,6 @@ sidebar: false
 
 - **[Linux Kernel Source](https://elixir.bootlin.com/linux/v6.13.7/source)**：支持符号搜索和交叉引用，适合追踪函数、结构体与调用关系。
 - **[Linux Kernel Documentation](https://www.kernel.org/doc/html/latest/)**：内核官方文档；遇到具体子系统时优先从这里查起。
-- **[Linux Kernel Journey](https://www.kerneltravel.net/)**：中文内核社区及技术文章入口。
 
 阅读源码时，我会尽量从一个具体入口切入，例如一次系统调用、一个 `/proc` 节点或一次中断，而不是按目录顺序浏览整个内核。
 
