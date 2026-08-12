@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: 'VSVnakers',
   description: '在紫色夜空下记录代码、系统与灵感',
   lang: 'zh-CN',
@@ -52,4 +53,4 @@ export default defineConfig({
   },
   ignoreDeadLinks: true,
   srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**', '.paper-daily-source/**']
-})
+}))
