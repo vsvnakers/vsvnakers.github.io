@@ -1066,6 +1066,66 @@ body::before {
   cursor: pointer;
 }
 
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 48px;
+}
+
+.resource-card {
+  display: flex;
+  min-height: 290px;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid var(--dream-border);
+  border-radius: 22px;
+  color: var(--dream-text) !important;
+  background:
+    linear-gradient(145deg, var(--dream-glass-line), transparent 42%),
+    var(--dream-surface);
+  box-shadow: 0 18px 48px rgba(31, 15, 67, .13), inset 0 1px var(--dream-glass-line);
+  text-decoration: none !important;
+  backdrop-filter: blur(24px) saturate(145%);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.resource-card:hover {
+  border-color: var(--dream-purple);
+  box-shadow: 0 22px 58px rgba(31, 15, 67, .2), 0 0 22px var(--dream-glow);
+  transform: translateY(-4px);
+}
+
+.resource-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--dream-purple);
+  font-family: var(--vp-font-family-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.resource-card__meta small { color: var(--dream-muted); }
+.resource-card h3 { margin: 26px 0 10px; font-size: 21px; }
+.resource-card p { margin: 0; color: var(--dream-muted); line-height: 1.75; }
+
+.resource-card__note {
+  margin: 18px 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--dream-purple);
+  color: var(--dream-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.resource-card strong {
+  margin-top: auto;
+  color: var(--dream-purple);
+  font-size: 12px;
+}
+
 @keyframes dream-float {
   0%, 100% { transform: translateY(0) rotate(0); }
   50% { transform: translateY(-12px) rotate(8deg); }
@@ -1120,6 +1180,8 @@ body::before {
   .dream-grid { grid-template-columns: 1fr; }
   .dream-card--wide { grid-column: auto; }
   .dream-card { min-height: 270px; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .resource-card { min-height: 260px; }
   .dream-message-card { margin-bottom: 74px; padding: 30px 24px; grid-template-columns: 1fr; text-align: center; }
   .dream-message-card__spark { display: none; }
   .dream-message-card .dream-button { grid-column: auto; justify-self: stretch; }

@@ -8,6 +8,12 @@ sidebar: false
 
 这个页面只收录用途明确、值得再次使用的工具。与单纯的收藏夹不同，每一项都会说明适用场景和选择它的理由。
 
+## 值得浏览
+
+这里保存值得完整阅读或反复查阅的技术网站。内容会继续增加，并优先收录有清晰知识主线、实践价值或可靠参考资料的网站。
+
+<ResourceLinks />
+
 ## 文档翻译
 
 ### [BabelDOC](https://app.immersivetranslate.com/babel-doc)
