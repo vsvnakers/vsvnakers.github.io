@@ -9,6 +9,7 @@
     "sync-papers": "node scripts/sync-papers.mjs D:/paper-daily/essay_read papers/daily"
   },
   "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
     "mermaid": "^11.16.1",
     "vitepress": "^1.6.3",
     "vitepress-plugin-mermaid": "^2.0.17",

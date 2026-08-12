@@ -40,7 +40,15 @@ function escapeGeneratedAngles(content) {
   })
 }
 
+function repairGeneratedControlCharacters(content) {
+  return content
+    .replace(/\u0008/g, '\\b')
+    .replace(/\u000c/g, '\\f')
+    .replace(/[\u0000-\u0007\u000b\u000e-\u001f]/g, '')
+}
+
 function parsePaper(content, date, filename) {
+  content = repairGeneratedControlCharacters(content)
   const arxivId = path.basename(filename, '.md')
   const title = match(content, /^#\s+(.+)$/m, arxivId)
   const description = match(content, /^>\s+(.+)$/m, 'DeepSeek 生成的中文论文解读')

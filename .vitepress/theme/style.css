@@ -188,6 +188,13 @@ body::before {
   text-underline-offset: 4px;
 }
 
+.VPDoc mjx-container[jax="SVG"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: var(--dream-text);
+}
+
 .dream-home-page .VPContent,
 .dream-guestbook-page .VPContent {
   padding-bottom: 0 !important;

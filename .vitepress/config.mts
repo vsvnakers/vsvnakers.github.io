@@ -49,7 +49,11 @@ export default withMermaid(defineConfig({
     }
   },
   markdown: {
-    theme: { light: 'github-light', dark: 'github-dark' }
+    theme: { light: 'github-light', dark: 'github-dark' },
+    math: true
+  },
+  mermaid: {
+    suppressErrorRendering: true
   },
   ignoreDeadLinks: true,
   srcExclude: ['plan.md', 'README.md', 'auto_push.py', 'skills/**', '.paper-daily-source/**']
