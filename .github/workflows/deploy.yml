@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  repository_dispatch:
+    types:
+      - papers-updated
   schedule:
     - cron: '0 3 * * *' # UTC 03:00 = 北京时间 11:00，为 08:00 的论文任务留出生成时间
   workflow_dispatch:
@@ -19,8 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Require paper repository access
+        shell: bash
+        run: |
+          if [ -z "$PAPER_DAILY_TOKEN" ]; then
+            echo "::error::Missing PAPER_DAILY_TOKEN. Add a token with read access to vsvnakers/paper-daily in this repository's Actions secrets."
+            exit 1
+          fi
+
       - name: Checkout daily paper digests
-        if: env.PAPER_DAILY_TOKEN != ''
         uses: actions/checkout@v4
         with:
           repository: vsvnakers/paper-daily
@@ -35,7 +45,6 @@ jobs:
 
       - run: npm ci
       - name: Sync paper digests
-        if: env.PAPER_DAILY_TOKEN != ''
         run: node scripts/sync-papers.mjs .paper-daily-source/essay_read papers/daily
       - run: npm run build
 

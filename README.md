@@ -18,7 +18,9 @@ npm run build
 
 ### 每日论文
 
-部署工作流会从公开仓库 `vsvnakers/paper-daily` 拉取 DeepSeek 生成的论文解读，并发布到 `/papers/`。工作流每天北京时间约 12:30 自动运行，也支持手动触发。
+部署工作流会从私有仓库 `vsvnakers/paper-daily` 拉取 DeepSeek 生成的论文解读，并发布到 `/papers/`。`paper-daily` 每天北京时间 08:00 生成论文后会立即触发本站同步；本站也会在每天 11:00 补跑一次，并支持手动触发。
+
+跨仓库同步需要在本站仓库的 Actions secrets 中配置 `PAPER_DAILY_TOKEN`，该令牌只需拥有 `vsvnakers/paper-daily` 的 Contents 读取权限。若令牌缺失，部署会明确失败，不再静默发布旧论文。
 
 本地同步使用：
 
@@ -26,4 +28,4 @@ npm run build
 npm run sync-papers
 ```
 
-该命令默认读取 `D:/paper-daily/essay_read`。生成的 `papers/daily/` 只用于构建，不提交到当前仓库。
+该命令默认读取 `D:/paper-daily/essay_read`。自动部署时会临时生成 `papers/daily/`；需要补齐历史内容时，也可以在本地同步后提交这些 Markdown 文件。
