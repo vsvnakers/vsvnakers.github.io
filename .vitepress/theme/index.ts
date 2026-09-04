@@ -4,6 +4,7 @@ import MessageBoard from './components/MessageBoard.vue'
 import PostArchive from './components/PostArchive.vue'
 import PaperArchive from './components/PaperArchive.vue'
 import ResourceLinks from './components/ResourceLinks.vue'
+import RelaxGames from './components/RelaxGames.vue'
 import './style.css'
 
 export default {
@@ -14,5 +15,6 @@ export default {
     app.component('PostArchive', PostArchive)
     app.component('PaperArchive', PaperArchive)
     app.component('ResourceLinks', ResourceLinks)
+    app.component('RelaxGames', RelaxGames)
   }
 }

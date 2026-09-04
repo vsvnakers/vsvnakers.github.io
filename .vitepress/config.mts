@@ -21,6 +21,7 @@ export default withMermaid(defineConfig({
       { text: '论文', link: '/papers/' },
       { text: '学习', link: '/study/' },
       { text: '工具', link: '/tools/' },
+      { text: '玩耍', link: '/play/' },
       { text: '留言', link: '/guestbook/' },
       { text: '关于', link: '/resume/' }
     ],

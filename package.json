@@ -6,6 +6,7 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
+    "test:game": "node scripts/game-logic.test.mjs",
     "sync-papers": "node scripts/sync-papers.mjs D:/paper-daily/essay_read papers/daily"
   },
   "devDependencies": {
