@@ -5,6 +5,7 @@ import PostArchive from './components/PostArchive.vue'
 import PaperArchive from './components/PaperArchive.vue'
 import ResourceLinks from './components/ResourceLinks.vue'
 import RelaxGames from './components/RelaxGames.vue'
+import NebulaSnake from './components/NebulaSnake.vue'
 import './style.css'
 
 export default {
@@ -16,5 +17,6 @@ export default {
     app.component('PaperArchive', PaperArchive)
     app.component('ResourceLinks', ResourceLinks)
     app.component('RelaxGames', RelaxGames)
+    app.component('NebulaSnake', NebulaSnake)
   }
 }
