@@ -1,6 +1,6 @@
 ---
 title: 星间休息站
-description: 两个无需登录、打开就能玩的轻量小游戏
+description: 三个无需登录、打开就能玩的轻量小游戏
 sidebar: false
 aside: false
 editLink: false
@@ -14,4 +14,5 @@ lastUpdated: false
 <ClientOnly>
   <RelaxGames />
   <NebulaSnake />
+  <SudokuGame />
 </ClientOnly>
