@@ -22,15 +22,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Require paper repository access
+      - name: Check paper repository access
+        id: paper-access
         shell: bash
         run: |
           if [ -z "$PAPER_DAILY_TOKEN" ]; then
-            echo "::error::Missing PAPER_DAILY_TOKEN. Add a token with read access to vsvnakers/paper-daily in this repository's Actions secrets."
-            exit 1
+            echo "::warning::PAPER_DAILY_TOKEN 未配置，本次跳过论文同步，仅部署站点现有内容。"
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout daily paper digests
+        id: checkout-papers
+        if: steps.paper-access.outputs.available == 'true'
+        continue-on-error: true
         uses: actions/checkout@v4
         with:
           repository: vsvnakers/paper-daily
@@ -44,8 +50,27 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
+
+      # 同步脚本会先清空 papers/daily 再重建，因此源数据不到位时必须跳过，否则会误删已有论文页。
       - name: Sync paper digests
-        run: node scripts/sync-papers.mjs .paper-daily-source/essay_read papers/daily
+        if: steps.checkout-papers.outcome == 'success'
+        run: |
+          if [ ! -d .paper-daily-source/essay_read ]; then
+            echo "::warning::未找到 .paper-daily-source/essay_read，跳过同步。"
+            exit 0
+          fi
+          count=$(find .paper-daily-source/essay_read -name '*.md' | wc -l)
+          if [ "$count" -eq 0 ]; then
+            echo "::warning::paper-daily 中没有可同步的论文（0 个 md），跳过同步。"
+            exit 0
+          fi
+          node scripts/sync-papers.mjs .paper-daily-source/essay_read papers/daily
+
+      - name: Report skipped paper sync
+        if: steps.checkout-papers.outcome != 'success'
+        run: |
+          echo "::warning::论文同步已跳过：paper-daily 仓库不可用或 PAPER_DAILY_TOKEN 失效。站点已按现有内容构建部署。"
+
       - run: npm run build
 
       - uses: peaceiris/actions-gh-pages@v3
